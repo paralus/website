@@ -98,14 +98,32 @@ function Navbar() {
               href="#"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Calendar
+              Features
             </a>
 
             <a
               href="#"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Reports
+              Documentation
+            </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              GitHub
+            </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Blog
+            </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Join our Slack
             </a>
           </div>
         </div>
