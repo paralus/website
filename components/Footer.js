@@ -34,19 +34,22 @@ export default function Footer() {
               Project
             </h6>
             <p className="mb-4">
-              <a href="#!" className="text-sky-900 hover:text-sky-600">
-                Documentation
-              </a>
+              <Link href="https://docs-rafaylabs.vercel.app/">
+                {" "}
+                <a className="text-sky-900 hover:text-sky-600">Documentation</a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-sky-900 hover:text-sky-600">
-                GitHub
-              </a>
+              <Link href="#!">
+                {" "}
+                <a className="text-sky-900 hover:text-sky-600">GitHub</a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-sky-900 hover:text-sky-600">
-                Press Release
-              </a>
+              <Link href="#!">
+                {" "}
+                <a className="text-sky-900 hover:text-sky-600">Press Release</a>
+              </Link>
             </p>
           </div>
           <div className="">
@@ -54,19 +57,26 @@ export default function Footer() {
               Community
             </h6>
             <p className="mb-4">
-              <a href="#!" className="text-sky-900 hover:text-sky-600">
-                Join our Slack
-              </a>
+              <Link href="#!">
+                {" "}
+                <a className="text-sky-900 hover:text-sky-600">
+                  Join our Slack
+                </a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-sky-900 hover:text-sky-600">
-                Code of Conduct
-              </a>
+              <Link href="#!">
+                {" "}
+                <a className="text-sky-900 hover:text-sky-600">
+                  Code of Conduct
+                </a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-sky-900 hover:text-sky-600">
-                Blog
-              </a>
+              <Link href="#!">
+                {" "}
+                <a className="text-sky-900 hover:text-sky-600">Blog</a>
+              </Link>
             </p>
           </div>
         </div>
