@@ -62,7 +62,7 @@ export default function Footer() {
               </Link>
             </p>
             <p className="mb-4">
-              <Link href="#!">
+              <Link href="/codeofconduct">
                 <a className="text-sky-900 hover:text-sky-600">
                   Code of Conduct
                 </a>
