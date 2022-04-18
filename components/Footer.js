@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -19,7 +20,7 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex items-center text-right">
-              made with 💖 by folks at{" "}
+              made with 💖 by folks a
               <Image
                 src="/images/rafay-logo-dark.png"
                 alt="Zero-Trust Access for Kubernetes"
@@ -35,19 +36,16 @@ export default function Footer() {
             </h6>
             <p className="mb-4">
               <Link href="https://docs-rafaylabs.vercel.app/">
-                {" "}
                 <a className="text-sky-900 hover:text-sky-600">Documentation</a>
               </Link>
             </p>
             <p className="mb-4">
               <Link href="#!">
-                {" "}
                 <a className="text-sky-900 hover:text-sky-600">GitHub</a>
               </Link>
             </p>
             <p className="mb-4">
               <Link href="#!">
-                {" "}
                 <a className="text-sky-900 hover:text-sky-600">Press Release</a>
               </Link>
             </p>
@@ -58,7 +56,6 @@ export default function Footer() {
             </h6>
             <p className="mb-4">
               <Link href="#!">
-                {" "}
                 <a className="text-sky-900 hover:text-sky-600">
                   Join our Slack
                 </a>
@@ -66,7 +63,6 @@ export default function Footer() {
             </p>
             <p className="mb-4">
               <Link href="#!">
-                {" "}
                 <a className="text-sky-900 hover:text-sky-600">
                   Code of Conduct
                 </a>
@@ -74,7 +70,6 @@ export default function Footer() {
             </p>
             <p className="mb-4">
               <Link href="#!">
-                {" "}
                 <a className="text-sky-900 hover:text-sky-600">Blog</a>
               </Link>
             </p>
