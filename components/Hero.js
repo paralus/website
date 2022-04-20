@@ -16,8 +16,7 @@ export default function Hero() {
           The Zero-Trust Access Service enables controlled, audited access for
           developers, SREs and automation systems to your Kubernetes
           infrastructure. It comes with just-in-time service account creation and
-          user-level credentials management that integrates with your enterprise’s
-          RBAC/SSO solution.
+          user-level credentials management that integrates with your RBAC/SSO solution.
         </p>
         <div className="flex justify-end">
           <button className="bg-sky-500 hover:bg-sky-700 text-white text-sm font-semibold py-2 px-4 rounded-md">

@@ -8,7 +8,7 @@ export default function ReadyCta() {
         <div className="text-5xl text-center font-bold">Try ZTKA</div>
         <div className="flex justify-center">
           <div className="text-xl font-semibold text-center text-sky-200 subtitleTextWrapper">
-            Our elaborate yet simple quickstart guide will help you get started with ZTKA in under 10 minutes! 
+            Our simple quickstart guide will help you get started with ZTKA in under 5 minutes! 
           </div>
         </div>
         <div className="flex justify-center mt-5">

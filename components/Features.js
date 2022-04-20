@@ -101,12 +101,11 @@ export default function Features() {
         <div className="flex flex-col lg:flex-row-reverse pt-40 items-center lg:justify-center">
           <div className="space-y-6 text-sky-900 featureTextWrapper pb-5 lg:pb-0">
             <h2 className="text-4xl font-semibold text-center lg:text-left">
-              Use the Dashboard or CLI
+              Use the Web Dashboard and CLI
             </h2>
             <p className="text-base font-light text-center lg:text-left">
               Whether you prefer an elaborate GUI or using your machine’s
-              terminal, ZTKA ships with several interaction options. In short,
-              you can use ZTKA via GUI or CLI
+              terminal, ZTKA ships with several interaction options.
             </p>
             <ul
               role="list"
