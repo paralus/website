@@ -12,10 +12,8 @@ export default function Features() {
               cluster
             </h2>
             <p className="text-base font-light text-center lg:text-left">
-              Easily generate, manage and revoke kubeconfig for different
-              clusters and people, for single and multi cloud environments.
-              Whatever and wherever clusters you have, configure access to them
-              all in one place
+              Easily generate, manage and revoke kubeconfig for resources on single or multi cloud environments.
+              Configure access to all your clusters, wherever they are, all from one place.
             </p>
             <ul
               role="list"
@@ -58,7 +56,7 @@ export default function Features() {
               <li>
                 Control{" "}
                 <code className="text-green-600 font-light mx-1">kubectl</code>{" "}
-                access via pre-configured user and organization roles
+                access via pre-configured roles
               </li>
               <li>Protect your Kubernetes resources from bad actors</li>
             </ul>
@@ -77,8 +75,8 @@ export default function Features() {
               Real-time Audit Logs
             </h2>
             <p className="text-base font-light text-center lg:text-left">
-              View all cluster access activity logs in one place, historically
-              and in real-time
+              Keep a track of all the activities performed and resources accessed by a user. These real time and historical logs come handy
+              for auditing and governance purposes.
             </p>
             <ul
               role="list"
@@ -103,12 +101,11 @@ export default function Features() {
         <div className="flex flex-col lg:flex-row-reverse pt-40 items-center lg:justify-center">
           <div className="space-y-6 text-sky-900 featureTextWrapper pb-5 lg:pb-0">
             <h2 className="text-4xl font-semibold text-center lg:text-left">
-              Multiple interface options
+              Use the Web Dashboard and CLI
             </h2>
             <p className="text-base font-light text-center lg:text-left">
               Whether you prefer an elaborate GUI or using your machine’s
-              terminal, ZTKA ships with several interaction options. In short,
-              ZTKA comes with a UI or no UI
+              terminal, ZTKA ships with several interaction options.
             </p>
             <ul
               role="list"
@@ -118,11 +115,10 @@ export default function Features() {
                 Install ZTKA in your cluster using Helm, and access it through a
                 web GUI or web CLI console
               </li>
-              <li>Configure time-based authentication</li>
               <li>Use ZTKA via the REST API</li>
               <li>
                 Or use <code className="text-green-600 font-light">rctl</code>{" "}
-                to manage kubeconfig files directly in your machine’s terminal
+                to manage kubeconfig files directly from your local terminal
               </li>
             </ul>
           </div>

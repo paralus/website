@@ -9,15 +9,14 @@ export default function Hero() {
           RCloud + Zero-Trust Kubernetes
         </h1>
         <h2 className="md:text-right text-2xl font-semibold text-sky-200">
-          Free, open source platform manage{" "}
+          Free, open source platform to manage{" "}
           <code className="mx-1">kubectl</code> configuration.
         </h2>
         <p className="md:text-right text-base font-light">
           The Zero-Trust Access Service enables controlled, audited access for
           developers, SREs and automation systems to your Kubernetes
-          infrastructure, with just-in-time service account creation and
-          user-level credentials management integrated with your enterprise’s
-          RBAC/SSO solution.
+          infrastructure. It comes with just-in-time service account creation and
+          user-level credentials management that integrates with your RBAC/SSO solution.
         </p>
         <div className="flex justify-end">
           <button className="bg-sky-500 hover:bg-sky-700 text-white text-sm font-semibold py-2 px-4 rounded-md">
