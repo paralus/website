@@ -1,22 +1,16 @@
-import Head from "next/head";
-import Hero from "../components/Hero";
-import Features from "../components/Features";
-import Layout from "../components/Layout";
-import ReadyCta from "../components/ReadyCta";
+import { PageSEO } from '@/components/SEO'
+import siteMetadata from '@/data/siteMetadata'
+import Hero from '@/components/Hero'
+import Features from '@/components/Features'
+import ReadyCta from '@/components/ReadyCta'
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
-    <div>
-      <Head>
-        <title>Open Source Zero-Trust</title>
-        <meta name="description" content="Zero-trust Kubernetes" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Layout>
-        <Hero />
-        <Features />
-        <ReadyCta />
-      </Layout>
-    </div>
-  );
+    <>
+      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <Hero />
+      <Features />
+      <ReadyCta />
+    </>
+  )
 }

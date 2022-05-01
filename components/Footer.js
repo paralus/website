@@ -1,28 +1,28 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="text-center lg:text-left bg-sky-300 text-sky-900">
+    <footer className="bg-sky-300 text-center text-sky-900 lg:text-left">
       <div className="mx-6 px-20 py-10 text-center md:text-left">
-        <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center">
               <Image
-                src="/images/logo.png"
+                src="/static/images/logo.png"
                 alt="Zero-Trust Access for Kubernetes"
                 width={100}
                 height={100}
               />
-              <a className="font-light text-4xl ml-2 text-white" href="/">
+              <a className="ml-2 text-4xl font-light text-white" href="/">
                 RCloud
               </a>
             </div>
             <div className="flex items-center text-right">
               made with 💖 by folks a
               <Image
-                src="/images/rafay-logo-dark.png"
+                src="/static/images/rafay-logo-dark.png"
                 alt="Zero-Trust Access for Kubernetes"
                 width={107}
                 height={40}
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
           <div></div>
           <div className="">
-            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
               Project
             </h6>
             <p className="mb-4">
@@ -51,21 +51,17 @@ export default function Footer() {
             </p>
           </div>
           <div className="">
-            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
               Community
             </h6>
             <p className="mb-4">
               <Link href="#!">
-                <a className="text-sky-900 hover:text-sky-600">
-                  Join our Slack
-                </a>
+                <a className="text-sky-900 hover:text-sky-600">Join our Slack</a>
               </Link>
             </p>
             <p className="mb-4">
               <Link href="/codeofconduct">
-                <a className="text-sky-900 hover:text-sky-600">
-                  Code of Conduct
-                </a>
+                <a className="text-sky-900 hover:text-sky-600">Code of Conduct</a>
               </Link>
             </p>
             <p className="mb-4">
@@ -76,15 +72,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="text-center p-2 bg-sky-300 text-sky-900">
+      <div className="bg-sky-300 p-2 text-center text-sky-900">
         <span>© 2022 Copyright</span>
-        <a
-          className="mx-2 font-semibold text-sky-900"
-          href="https://tailwind-elements.com/"
-        >
+        <a className="mx-2 font-semibold text-sky-900" href="https://rafay.co">
           RCloud Authors
         </a>
       </div>
     </footer>
-  );
+  )
 }

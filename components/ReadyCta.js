@@ -5,10 +5,12 @@ export default function ReadyCta() {
   return (
     <div className="px-20 pt-20 pb-20 bg-slate-900">
       <div className="flex flex-col justify-center gap-y-6">
-        <div className="text-5xl text-center font-bold">Try ZTKA</div>
+        <div className="text-5xl text-center font-bold">Try it yourself!</div>
         <div className="flex justify-center">
           <div className="text-xl font-semibold text-center text-sky-200 subtitleTextWrapper">
-            Our simple quickstart guide will help you get started with ZTKA in under 5 minutes! 
+            Explore our documentation or check out our GitHub repo to get
+            started with RCloud and the Zero-Trust Access Service for
+            Kubernetes.
           </div>
         </div>
         <div className="flex justify-center mt-5">
