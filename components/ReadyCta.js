@@ -13,7 +13,7 @@ export default function ReadyCta() {
           </div>
         </div>
         <div className="mt-5 flex justify-center">
-          <Link href="/docs">
+          <Link href="/docs" passHref>
             <button className="w-fit rounded-md bg-sky-500 py-2 px-4 text-sm font-semibold text-white hover:bg-sky-700">
               Get Started
             </button>

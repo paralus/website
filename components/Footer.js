@@ -15,9 +15,9 @@ export default function Footer() {
                 width={100}
                 height={100}
               />
-              <a className="ml-2 text-4xl font-light text-white" href="/">
-                RCloud
-              </a>
+              <Link href="/">
+                <a className="ml-2 text-4xl font-light text-white">RCloud</a>
+              </Link>
             </div>
             <div className="flex items-center text-right">
               made with 💖 by folks a
@@ -74,9 +74,9 @@ export default function Footer() {
       </div>
       <div className="bg-sky-300 p-2 text-center text-sky-900">
         <span>© 2022 Copyright</span>
-        <a className="mx-2 font-semibold text-sky-900" href="https://rafay.co">
-          RCloud Authors
-        </a>
+        <Link href="https://rafay.co">
+          <a className="mx-2 font-semibold text-sky-900">RCloud Authors</a>
+        </Link>
       </div>
     </footer>
   )
