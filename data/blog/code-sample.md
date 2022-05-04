@@ -1,8 +1,9 @@
 ---
-title: Sample .md file
-date: '2016-03-08'
+title: Setting up Pelajaic with kubectl
+date: '2022-05-02'
 tags: ['markdown', 'code', 'features']
 draft: false
+authors: ['kyle', 'elena']
 summary: Example of a markdown file with code blocks and syntax highlighting
 ---
 

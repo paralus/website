@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-sky-300 text-center text-sky-900 lg:text-left">
-      <div className="mx-6 px-20 py-10 text-center md:text-left">
+    <footer className="border-t-2 border-slate-800 bg-slate-900 px-10 text-center text-white lg:mx-20 lg:text-left">
+      <div className="mx-6 py-10 text-center md:text-left">
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center">
@@ -16,13 +16,13 @@ export default function Footer() {
                 height={100}
               />
               <Link href="/">
-                <a className="ml-2 text-4xl font-light text-white">RCloud</a>
+                <a className="ml-2 text-4xl font-bold text-cyan-400">ZTKA</a>
               </Link>
             </div>
             <div className="flex items-center text-right">
-              made with 💖 by folks a
+              made with 💖 by folks at
               <Image
-                src="/static/images/rafay-logo-dark.png"
+                src="/static/images/rafay-logo-light.png"
                 alt="Zero-Trust Access for Kubernetes"
                 width={107}
                 height={40}
@@ -36,17 +36,17 @@ export default function Footer() {
             </h6>
             <p className="mb-4">
               <Link href="https://docs-rafaylabs.vercel.app/">
-                <a className="text-sky-900 hover:text-sky-600">Documentation</a>
+                <a className="text-slate-500 hover:text-sky-600">Documentation</a>
               </Link>
             </p>
             <p className="mb-4">
               <Link href="#!">
-                <a className="text-sky-900 hover:text-sky-600">GitHub</a>
+                <a className="text-slate-500 hover:text-sky-600">GitHub</a>
               </Link>
             </p>
             <p className="mb-4">
               <Link href="#!">
-                <a className="text-sky-900 hover:text-sky-600">Press Release</a>
+                <a className="text-slate-500 hover:text-sky-600">Press Release</a>
               </Link>
             </p>
           </div>
@@ -56,26 +56,26 @@ export default function Footer() {
             </h6>
             <p className="mb-4">
               <Link href="#!">
-                <a className="text-sky-900 hover:text-sky-600">Join our Slack</a>
+                <a className="text-slate-500 hover:text-sky-600">Join our Slack</a>
               </Link>
             </p>
             <p className="mb-4">
               <Link href="/codeofconduct">
-                <a className="text-sky-900 hover:text-sky-600">Code of Conduct</a>
+                <a className="text-slate-500 hover:text-sky-600">Code of Conduct</a>
               </Link>
             </p>
             <p className="mb-4">
               <Link href="#!">
-                <a className="text-sky-900 hover:text-sky-600">Blog</a>
+                <a className="text-slate-500 hover:text-sky-600">Blog</a>
               </Link>
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-sky-300 p-2 text-center text-sky-900">
+      <div className="bg-slate-900 p-2 text-center text-cyan-400">
         <span>© 2022 Copyright</span>
         <Link href="https://rafay.co">
-          <a className="mx-2 font-semibold text-sky-900">RCloud Authors</a>
+          <a className="mx-2 font-semibold text-cyan-400">ZTKA Authors</a>
         </Link>
       </div>
     </footer>

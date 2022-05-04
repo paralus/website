@@ -7,7 +7,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <nav className="fixed z-10 w-full bg-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl border-b-2 border-slate-700 px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <div className="flex items-center">
@@ -18,7 +18,7 @@ function Navbar() {
                 height={40}
               />
               <Link href="/">
-                <a className="ml-2 text-xl font-light">RCloud</a>
+                <a className="ml-2 text-xl font-bold text-cyan-400">ZTKA</a>
               </Link>
             </div>
             <div className="hidden md:block">
