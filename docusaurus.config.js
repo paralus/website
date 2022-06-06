@@ -55,7 +55,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/paralus/website/tree/main",
+          // editUrl: "https://github.com/paralus/website/tree/main",
         },
         blog: {
           showReadingTime: true,
@@ -91,7 +91,7 @@ const config = {
             label: "Documentation",
           },
           {
-            to: "https://github.com/paralus/paralus",
+            to: "https://github.com/paralus",
             label: "GitHub",
             position: "right",
           },
@@ -118,7 +118,7 @@ const config = {
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/K8sParalus",
+                href: "https://twitter.com/paralus_",
               },
             ],
           },
@@ -131,12 +131,12 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/paralus/paralus",
+                href: "https://github.com/paralus",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Paralus`,
+        copyright: `Copyright © ${new Date().getFullYear()} Rafay Systems, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
