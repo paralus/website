@@ -1,8 +1,9 @@
 ---
-title: EKS
+title: Elastic Kubernetes Service (EKS) on AWS  
 description: "Setup ZTKA on Amazon Elastic Kubernetes Service EKS with this quick start guide."
 sidebar_position: 3
 sidebar_label: "EKS"
+slug: /quickstart/eks
 ---
 
 Welcome to this quickstart guide to install ZTKA on Amazon Elastic Kubernetes Service (EKS)
