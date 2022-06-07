@@ -1,29 +1,29 @@
 ---
-title: Elastic Kubernetes Service (EKS) on AWS  
-description: "Setup ZTKA on Amazon Elastic Kubernetes Service EKS with this quick start guide."
+title: Install Paralus on Amazon Elastic Kubernetes Service (EKS)
+description: "Install Paralus on Amazon Elastic Kubernetes Service EKS with this quick start guide."
 sidebar_position: 3
 sidebar_label: "EKS"
 slug: /quickstart/eks
 ---
 
-Welcome to this quickstart guide to install ZTKA on Amazon Elastic Kubernetes Service (EKS)
+Welcome to this quickstart guide to install Paralus on Amazon Elastic Kubernetes Service (EKS)
 
-With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes Service (EKS) cluster on a custom domain and deploy ZTKA on it.
+With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes Service (EKS) cluster on a custom domain and configure access to it on Paralus.
 
 **Table Of Content:**
 
 - [Pre Requisites](#pre-requisites)
 - [Configuring A User on IAM](#configuring-a-user-on-iam)
 - [Creating EKS Cluster](#creating-eks-cluster)
-- [Installing ZTKA](#installing-ztka)
+- [Installing Paralus](#installing-paralus)
 - [Configuring DNS Settings](#configuring-dns-settings)
   - [Resetting Default Password](#resetting-default-password)
-  - [Accessing ZTKA Web UI](#accessing-ztka-web-ui)
+  - [Accessing Paralus Web UI](#accessing-paralus-web-ui)
   - [Importing Existing Cluster](#importing-existing-cluster)
 
 ## Pre Requisites
 
-To setup ZTKA on Amazon Elastic Kubernetes Service (EKS) there are a few prerequisites
+To setup Paralus on Amazon Elastic Kubernetes Service (EKS) there are a few prerequisites:
 
 - An AWS Account - _you can [register for AWS account](https://aws.amazon.com/resources/create-account/) if you don't have one_
 - A Domain Name - _with permission to manage DNS settings._
@@ -66,28 +66,28 @@ aws sts get-caller-identity
 There are two ways to create an Amazon EKS cluster:
 
 - From AWS Management Console - _refer to this document on [Creating an Amazon EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html)._
-  - _This is a standard way of setting up an EKS cluster. However, it is a long process as one needs to configure various settings during the process. We have no followed this guide for the current guide. However, this should be the preferred way to deploy a cluster for a production scenario._
-- Using eksctl utility - _refer to this document on [Getting Started With Amazon EKS - eksctl](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)_
+  - _This is a standard way of setting up an EKS cluster. However, it is a long process as one needs to configure various settings during the process. We have not followed this process in this quickstart document._
+- Using `eksctl` utility - _refer to this document on [Getting Started With Amazon EKS - eksctl](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)_
   - _eksctl bascially does all the heavy lifting for you and creates a cluster along with all the configurations with default values. This is a good way to test your POC but not something we would recommend for a production setup, atleast with the default values._
 
-After the cluster is created, you need to update the kubeconfig file for AWS. You can do so by using the following command
+After the cluster is created, you need to update the kubeconfig file for AWS. You can do so by using the following command:
 
 ```bash
 aws eks update-kubeconfig --name ferocious-gopher-1653447065
 Added new context arn:aws:eks:us-west-2:645114859692:cluster/ferocious-gopher-1653447065 to /home/user/.kube/config
 ```
 
-## Installing ZTKA
+## Installing Paralus
 
-Clone the [rcloud-helm repository](https://github.com/RafayLabs/rcloud-helm)
+Clone the [helm-chart](https://github.com/paralus/helm-charts)
 
-1.  Add helm repo
+1. Add helm repo
 
-        `helm repo add rafaylabs https://rafaylabs.github.io/rcloud-helm`
+      `helm repo add paralus https://paralus.github.io/helm-charts`
 
-2.  Create `values.eks.yaml`
+2. Create `values.eks.yaml`
 
-        ```yaml
+      ```yaml
         ingress:
           enabled: false
 
@@ -108,23 +108,23 @@ Clone the [rcloud-helm repository](https://github.com/RafayLabs/rcloud-helm)
             service:
               annotations:
                 service.beta.kubernetes.io/aws-load-balancer-type: nlb
-        ```
+      ```
 
     > Note: When deploying this in production, set `kratos.development: false`
 
-3.  Create `values.domain.yaml`
+3. Create `values.domain.yaml`
 
-        ```yaml
+      ```yaml
         ingress:
           host: "chartexample.com"
           consoleSubdomain: "console-eks-oss"
           coreConnectorSubdomain: "*.core-connector.eks-oss"
           userSubdomain: "*.user.eks-oss"
-        ```
+      ```
 
-4.  Install ZTKA
+4. Install Paralus
 
-        ```yaml
+      ```yaml
         helm install myrelease rafaylabs/rcloud --devel --version=0.0.1-alpha.1 -f values.domain.yaml -f values.eks.yaml -n rcloud-system --create-namespace
 
         NAME: myrelease
@@ -147,7 +147,7 @@ Clone the [rcloud-helm repository](https://github.com/RafayLabs/rcloud-helm)
 
         kubectl logs -f --namespace rcloud-system $(kubectl get pods --namespace rcloud-system -l app.kubernetes.io/name='rcloud-base' -o jsonpath='{ .items[0].metadata.name }') initialize-rcloud-base | grep 'Org Admin signup URL:'
 
-        ```
+      ```
 
 > Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
 
@@ -182,7 +182,7 @@ Adding CNAME records
 
 ### Resetting Default Password
 
-ZTKA comes configured with default credentials that allow you to access the web UI.
+Paralus comes configured with default credentials that allow you to access the web UI.
 
 In order to get the `Password Reset URL`, copy the command displayed after helm install and execute it
 
@@ -195,10 +195,10 @@ Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flo
 
 Access the URL in a browser, and provide a new password.
 
-<img src="/img/docs/oss-password-reset.png" alt="ztka password reset" />
+<img src="/img/docs/oss-password-reset.png" alt="Paralus password reset" />
 Password Reset Screen
 
-### Accessing ZTKA Web UI
+### Accessing Paralus Web UI
 
 In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
 
@@ -207,12 +207,12 @@ In a new browser window/tab navigate to `http://console.chartexample.com` and lo
 
 You'll be taken to the projects page where you'll see a default project.
 
-<img src="/img/docs/oss-default.png" alt="ztka default project screen" />
-ZTKA Default Project Screen
+<img src="/img/docs/oss-default.png" alt="Paralus default project screen" />
+Paralus Default Project Screen
 
 ### Importing Existing Cluster
 
-Everything in ZTKA is group into `Projects`. Each project will have clusters, users and groups associted with it. Hence the first step it to create a new Project.
+Everything in Paralus is grouped into `Projects`. Each project will have [clusters](../usage/clusters), [users](../usage/users) and [groups](../usage/groups) associted with it. Hence the first step it to create a new Project.
 
 Click on `New Project` to create a new project
 
@@ -231,18 +231,18 @@ Click on `New Cluster`, select `Import Existing Kubernetes Cluster` & click Cont
 <img src="/img/docs/import-cluster-1.png" alt="Import Existing Kubernetes Cluster" />
 Import Existing Kubernetes Cluster
 
-Click `Continue` and download the bootstrap yaml file by clicking `Import Bootstrap YAML`. This will download the YAML file required to connect your cluster with ZTKA.
+Click `Continue` and download the bootstrap yaml file by clicking `Import Bootstrap YAML`. This will download the YAML file required to connect your cluster with Paralus.
 
 <img src="/img/docs/importcluster-3.png" alt="Download Bootstrap YAML file" />
 Download Bootstrap YAML file
 
-Apply the yaml file to import the cluster into ZTKA.
+Apply the yaml file to import the cluster into Paralus.
 
 ```bash
 kubectl apply -f mylocalcluster.yaml
 ```
 
-Wait for the changes to take place. On the portal you will see that the cluster is imported successfully. It usually takes 3-5 minutes for the status to update.
+Wait for the changes to take place. On the portal you will see that the cluster is imported successfully. *It usually takes 3-5 minutes for the status to update.*
 
 <img src="/img/docs/localcluster-setup.png" alt="Import Cluster Success" />
 Import Cluster Success
@@ -256,6 +256,6 @@ Accessing imported cluster via kubectl
 
 > Note: If you get Connection Error repeatedly, delete the `prompt` pod in your cluster.
 
-Congratulations! You've successfully deployed ZTKA and imported a local cluster.
+Congratulations! You've successfully deployed Paralus and imported a local cluster.
 
-Refer to our documentation to learn about various configurations and how you can use ZTKA.
+Refer to our documentation to learn about various [features of Paralus](../usage/).
