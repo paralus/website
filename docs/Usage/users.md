@@ -37,7 +37,7 @@ But, since the user has not be configured with any roles and permissions, they w
 
 ### IdP Users
 
-To add new IdP users, you need to configure an [Identity Provider](../sso/sso). Once people login via your identity provider, they are automatically added to IdP users list.
+To add new IdP users, you need to configure an [Identity Provider](../single-sign-on/). Once people login via your identity provider, they are automatically added to IdP users list.
 
 ## Edit a User
 
