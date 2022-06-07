@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Zero-Trust Access Kubernetes
 description: ""
 sidebar_position: 1
 category: ""
@@ -18,3 +18,17 @@ Comply with security policies with completely private datapaths. Reduce complexi
 - Comply with internal security policies & industry regulations
 - Make your Security and DevSecOps teams happy
 - Make the CNCF World a better place through Open Source 💖
+
+## Zero Trust
+
+Most of the global workforce today is working remotely. They access sensitive data using their devices from anywhere in the world. Hence, organizations need to implement a security framework that adapts to this. Comes in Zero Trust. A modern security framework that does away with implicit trust and provides fine grained control over your applications and infrastructure.
+
+The concept of Zero Trust is governed by 3 principles:
+
+1. Explicit Verification: Always authenticate and authorize incoming requests based on data available.
+2. Least Privilege Access: Provide just enough access to a user
+3. Always Assume Breach: Assume that a breach has already happened and hence deny by default and authenticate all users, devices in the system.
+
+As a developer, you should adopt Zero Trust principles to keep the users safe and applications secured on your Kubernetes clusters. The Zero Trust Kubectl Access or Paralus is a handy tool for you to manage access to your Kubernetes clusters. It allows you to configure kubectl access for your teams at organization, project and namespace level. It works seamlessly with Kubernetes’s native RBAC support and integrates seamlessly with SSO. You can configure these settings using an intuitive UI or use our command line utility rctl.
+
+Wondering where to start? Refer our Getting Started guide to quickly understand Paralus and secure your applications.
