@@ -1,17 +1,17 @@
 ---
 title: Google
-description: "Configuring Google as Identity Provider"
+description: "Configuring Google as Identity Provider for Paralus"
 slug: /single-sign-on/google
 
 ---
 
-In this document, we'll show you how to use Google as an Identity provider. This will allow your users to login via Google and access ZTKA. Below is the list of items that we will cover in this document:
+In this document, we'll show you how to use Google as an Identity provider for Paralus. This will allow your users to login via Google and access Paralus. Below is the list of items that we will cover in this document:
 
 
 - [Creating a Google SSO Application](#creating-a-google-sso-application)
   - [Configuring the OAuth Consent UI](#configuring-the-oauth-consent-ui)
   - [Creating OAuth App](#creating-oauth-app)
-- [Adding an Identity Provider to ZTKA](#adding-an-identity-provider-to-ztka)
+- [Adding an Identity Provider to Paralus](#adding-an-identity-provider-to-paralus)
 - [Verify Login with Google](#verify-login-with-google)
 
 ## Creating a Google SSO Application
@@ -42,15 +42,15 @@ After you've configured the consent UI, navigate to **Credentials** and create a
 1. Click on **Create Credentials** button from the top navigation bar and choose **OAuth Client ID** from the list.
 2. In Application Type, select **Web Application**
 3. Provide a Name
-4. Add an **Authorized redirect URI**. This will be the one provided by ZTKA OIDC setup page.
+4. Add an **Authorized redirect URI**. This will be the one provided by Paralus OIDC setup page.
 5. Click create to create the OAuth app
 
        <img src="/img/docs/oidc-google-4.png" alt="Creating OAuth App" />
        Creating OAuth App
 
-## Adding an Identity Provider to ZTKA
+## Adding an Identity Provider to Paralus
 
-Login to your ZTKA dashboard and navigate to `System -> Identity Providers` and click on **New Identity Provider**
+Login to your Paralus dashboard and navigate to `System -> Identity Providers` and click on **New Identity Provider**
 
 Provide the name of the identity provider and choose IdP type from the drop down. *Incase your identity provider is not in the list, choose Others.*
 
@@ -60,22 +60,22 @@ Under **Scope** provide `openid,email,profile`
 
 For **Issuer URL**, provide this url: `https://accounts.google.com`
 
-<img src="/img/docs/oidc-google-5.png" alt="Adding new identity provider in ZTKA" />
-Adding new identity provider in ZTKA
+<img src="/img/docs/oidc-google-5.png" alt="Adding new identity provider in Paralus" />
+Adding new identity provider in Paralus
 
 Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the callback URL for the Google OAuth app created in the earlier step.
 
-On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/RafayLabs/rcloud-base/main/_kratos/oidc-mappers/google.jsonnet?token=GHSAT0AAAAAABPXWZYZI3XFS3LORAHBY5EAYUW7P3A` as the mapper url.
+On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/core/main/_kratos/oidc-mappers/google.jsonnet?token=GHSAT0AAAAAABPXWZYYYDYHSOMNVI4O4WGQYVAFHKQ` as the mapper url.
 
 Click Save & Exit.
 
-At this point, you have successfully added Google as an identify provider for ZTKA.
+At this point, you have successfully added Google as an identify provider for Paralus.
 
 ## Verify Login with Google
 
-To confirm if the setup was correct, logout from ZTKA.
+To confirm if the setup was correct, logout from Paralus.
 
 On the login screen, you should now see a `Sign In With Google` button. Click on it to begin the login process using Google.
 
@@ -87,11 +87,11 @@ Enter your Google credentials and login to Google. All the application to access
 <img src="/img/docs/oidc-google-7.png" alt="Authenticate on Google" />
 Authenticate on Google
 
-Once authenticated, you'll be redirected to ZTKA dashboard.
+Once authenticated, you'll be redirected to Paralus dashboard.
 
-<img src="/img/docs/oidc-google-8.png" alt="Redirect to ZTKA" />
-Redirect to ZTKA
+<img src="/img/docs/oidc-google-8.png" alt="Redirect to Paralus" />
+Redirect to Paralus
 
-> Note: Depending on the permission, the user that logs in using Google might not see the above screen. As an admin, you'll have to configure their group and assign them a project.
+> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
 
-Congratulations! You've successfully configured Google as an identity provider for ZTKA.
+Congratulations! You've successfully configured Google as an identity provider for Paralus.

@@ -1,11 +1,11 @@
 ---
 title: Slack
-description: "Configuring Slack as Identity Provider"
+description: "Configuring Slack as Identity Provider for Paralus"
 slug: /single-sign-on/slack
 
 ---
 
-In this document, we'll show you how to use Slack as an Identity provider. This will allow your users to login via Slack and access Paralus. Below is the list of items that we will cover in this document:
+In this document, we'll show you how to use Slack as an Identity provider for Paralus. This will allow your users to login via Slack and access Paralus. Below is the list of items that we will cover in this document:
 
 - [Creating a Slack SSO Application](#creating-a-slack-sso-application)
 - [Adding an Identity Provider to Paralus](#adding-an-identity-provider-to-paralus)
@@ -47,7 +47,7 @@ Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the redirect URL for the Slack OAuth app created in the earlier step.
 
-On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/RafayLabs/rcloud-base/main/_kratos/oidc-mappers/slack.jsonnet?token=GHSAT0AAAAAABPXWZYYTJQN3N323DOC5C6EYUYUQ2A` as the mapper url. Click Save & Exit.
+On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/core/main/_kratos/oidc-mappers/slack.jsonnet?token=GHSAT0AAAAAABPXWZYZR2EXM74KFPRRQZUCYVAFNPA` as the mapper url. Click Save & Exit.
 
 At this point, you have successfully added Slack as an identify provider for Paralus.
 
@@ -70,6 +70,6 @@ Once authenticated, you'll be redirected to Paralus dashboard.
 <img src="/img/docs/oidc-google-8.png" alt="Redirect to Paralus" />
 Redirect to Paralus
 
-> Note: Depending on the permission, the user that logs in using Slack might not see the above screen. As an admin, you'll have to configure their group and assign them a project.
+> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
 
 Congratulations! You've successfully configured Slack as an identity provider for Paralus.
