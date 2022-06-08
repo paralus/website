@@ -35,7 +35,7 @@ Provide the name of the identity provider and choose IdP type as `Slack` from th
 
 For client identifier & secret, provide the `client-id` & `client-secret` of the Slack app created earlier.
 
-Under **Scopes** provide `identity.basic` and `identity.email`
+Under **Scopes** provide `email, openid, profile`
 
 For **Issuer URL**, provide this url: `https://slack.com`
 
