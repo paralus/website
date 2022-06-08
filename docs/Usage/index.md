@@ -9,7 +9,7 @@ Learn how to use various features of Paralus:
 
 - [Clusters](clusters)
 - [Groups](groups)
-- [Audit Logs](kubectl-logs)
+- [Audit Logs](audit-logs)
 - [Projects](projects)
 - [Roles](roles)
 - [Users](users)
