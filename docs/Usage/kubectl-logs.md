@@ -1,10 +1,10 @@
 ---
-title: "Kubectl Logs"
-description: "Learn how Kubectl logs work"
-slug: /usage/kubectl-logs
+title: "Audit Logs"
+description: "Learn how Audit logs work in Paralus"
+slug: /usage/audit-logs
 ---
 
-Audit Logs in ZTKA are a way to track everything that happens in ZTKA. These provide a chronological log to provide evidence of the sequence of activities. All the changes performed by any authorized user on the organized are tracked.
+Audit Logs in Paralus are a way to track everything that happens in ZTKA. These provide a chronological log to provide evidence of the sequence of activities. All the changes performed by any authorized user on the organized are tracked.
 
 Anyone across the organization can view the logs, however these logs cannot be deleted.
 
@@ -32,12 +32,10 @@ You can apply the following filters to filter the logs:
 - Client Type
 - Time Range
 
-<img src="/img/docs/logs-system.png" alt="Default Cluster Labels" />
-Default cluster labels
+<img src="/img/docs/logs-system.png" alt="Default Cluster Labels" height="75%" width="75%"/>
 
 ## Kubectl Logs
 
 Kubectl logs lists the history of commands and API logs called under each project.
 
-<img src="/img/docs/logs-kubectl.png" alt="Default Cluster Labels" />
-Default cluster labels
+<img src="/img/docs/logs-kubectl.png" alt="Default Cluster Labels" height="75%" width="75%"/>
