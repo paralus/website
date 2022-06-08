@@ -177,8 +177,7 @@ Navigate to your domain's DNS setting page. _The steps for changing DNS settings
 
 While you are on your DNS Setting page, for the selected domain name, you need to add three CNAME records. These will be based on the subdomains provided in the notes section post installation.
 
-<img src="/img/docs/customdomain-dnssettings.png" alt="Custom Domain DNS Settings" />
-Adding CNAME records
+<img src="/img/docs/customdomain-dnssettings.png" alt="Custom Domain DNS Settings" height="75%" width="75%" />
 
 ### Resetting Default Password
 
@@ -195,8 +194,7 @@ Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flo
 
 Access the URL in a browser, and provide a new password.
 
-<img src="/img/docs/oss-password-reset.png" alt="Paralus password reset" />
-Password Reset Screen
+<img src="/img/docs/oss-password-reset.png" alt="Paralus password reset" height="75%" width="75%" />
 
 ### Accessing Paralus Web UI
 
@@ -207,8 +205,7 @@ In a new browser window/tab navigate to `http://console.chartexample.com` and lo
 
 You'll be taken to the projects page where you'll see a default project.
 
-<img src="/img/docs/oss-default.png" alt="Paralus default project screen" />
-Paralus Default Project Screen
+<img src="/img/docs/oss-default.png" alt="Paralus default project screen" height="75%" width="75%" />
 
 ### Importing Existing Cluster
 
@@ -216,25 +213,21 @@ Everything in Paralus is grouped into `Projects`. Each project will have [cluste
 
 Click on `New Project` to create a new project
 
-<img src="/img/docs/cluster-setup1.png" alt="New Project Creation" />
-New Project Creation
+<img src="/img/docs/cluster-setup1.png" alt="New Project Creation" height="75%" width="75%" />
 
 Click on `clusters` to import a new cluster
 
-<img src="/img/docs/import-cluster.png" alt="Create New Cluster" />
-Create New Cluster
+<img src="/img/docs/import-cluster.png" alt="Create New Cluster" height="75%" width="75%" />
 
 > Note: If Clicking cluster immediately after creating a project doesn't work, please refresh the page.
 
 Click on `New Cluster`, select `Import Existing Kubernetes Cluster` & click Continue.
 
-<img src="/img/docs/import-cluster-1.png" alt="Import Existing Kubernetes Cluster" />
-Import Existing Kubernetes Cluster
+<img src="/img/docs/import-cluster-1.png" alt="Import Existing Kubernetes Cluster" height="75%" width="75%" />
 
 Click `Continue` and download the bootstrap yaml file by clicking `Import Bootstrap YAML`. This will download the YAML file required to connect your cluster with Paralus.
 
-<img src="/img/docs/importcluster-3.png" alt="Download Bootstrap YAML file" />
-Download Bootstrap YAML file
+<img src="/img/docs/importcluster-3.png" alt="Download Bootstrap YAML file" height="75%" width="75%" />
 
 Apply the yaml file to import the cluster into Paralus.
 
@@ -244,15 +237,13 @@ kubectl apply -f mylocalcluster.yaml
 
 Wait for the changes to take place. On the portal you will see that the cluster is imported successfully. *It usually takes 3-5 minutes for the status to update.*
 
-<img src="/img/docs/localcluster-setup.png" alt="Import Cluster Success" />
-Import Cluster Success
+<img src="/img/docs/localcluster-setup.png" alt="Import Cluster Success" height="75%" width="75%" />
 
 Select your newly imported cluster and click on `kubectl` to access the prompt and interact with your cluster from the UI.
 
 A `kubectl` console will open in the bottom half of the screen, enter your kubectl commands to interact with your cluster.
 
-<img src="/img/docs/importcluster-kubectl.png" alt="Accessing imported cluster via kubectl" />
-Accessing imported cluster via kubectl
+<img src="/img/docs/importcluster-kubectl.png" alt="Accessing imported cluster via kubectl" height="75%" width="75%" />
 
 > Note: If you get Connection Error repeatedly, delete the `prompt` pod in your cluster.
 
