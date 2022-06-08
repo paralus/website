@@ -35,7 +35,7 @@ For client identifier & secret, provide the `client-id` & `client-secret` of the
 
 Under **Scopes** provide `openid, profile, email`
 
-For **Issuer URL**, provide the url for your Okta Account. *For example: https://dev-8830220.okta.com*
+For **Issuer URL**, provide the url for your Okta Account. *For example: https://dev-1234567.okta.com/oauth2/default*
 
 <img src="/img/docs/oidc-okta-5.png" alt="Adding new identity provider in Paralus" height="75%" width="75%"/>
 
@@ -49,7 +49,7 @@ On the **Mapper Configuration** screen, provide `https://gist.githubusercontent.
 
 Click Save & Exit.
 
-At this point, you have successfully added Okta as an identify provider for Paralus.
+At this point, you have successfully added Okta as an identity provider for Paralus.
 
 ## Verify Login with Okta
 
@@ -67,6 +67,6 @@ Once authenticated, you'll be redirected to Paralus dashboard.
 
 <img src="/img/docs/oidc-okta-6.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
-> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
-
 Congratulations! You've successfully configured Okta as an identity provider for Paralus.
+
+> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).

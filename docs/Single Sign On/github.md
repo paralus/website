@@ -18,7 +18,7 @@ Login to your GitHub account and navigate to `Profile -> Settings -> Developer S
 
 <img src="/img/docs/oidc-github1.png" alt="Creating New GitHub OAuth App" height="75%" width="75%"/>
 
-Provide details like the Name and Description . For homepage url, provide the url to your Paralus dashboard.
+Provide details like the Name and Description. For homepage url, provide the url to your Paralus dashboard.
 
 Leave the **Application Callback URL** empty for now and Register the application.
 
@@ -44,15 +44,9 @@ Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the callback URL for the GitHub OAuth app created in the earlier step.
 
-<img src="/img/docs/oidc-github4.png" alt="Note down callback URL" height="75%" width="75%"/>
-
 On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/core/main/_kratos/oidc-mappers/github.jsonnet?token=GHSAT0AAAAAABPXWZYZCQN37DNUSACVLA2MYVAFD2Q` as the mapper url. Click Save & Exit.
 
-<img src="/img/docs/oidc-github5.png" alt="Add Mapper URL" height="75%" width="75%"/>
-
-At this point, you have successfully added Github as an identify provider for Paralus.
-
-<img src="/img/docs/oidc-github6.png" alt="GitHub added as Identity Provider" height="75%" width="75%" />
+At this point, you have successfully added Github as an identity provider for Paralus.
 
 ## Verify Login with GitHub
 
@@ -62,7 +56,7 @@ On the login screen, you should now see a `Sign In With GitHub` button. Click on
 
 <img src="/img/docs/oidc-github7.png" alt="Login using GitHub" height="75%" width="75%" />
 
-Enter your GitHub credentials and login to GitHub. All the application to access the respective details and sign in.
+Enter your GitHub credentials and login to GitHub.
 
 <img src="/img/docs/oidc-github8.png" alt="Authenticate on GitHub" height="75%" width="75%"/>
 
@@ -70,6 +64,6 @@ Once authenticated, you'll be redirected to Paralus dashboard.
 
 <img src="/img/docs/oidc-github9.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
-> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
-
 Congratulations! You've successfully configured GitHub as an identity provider for Paralus.
+
+> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).

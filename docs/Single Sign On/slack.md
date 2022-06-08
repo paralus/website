@@ -25,7 +25,7 @@ You also need to configure the scopes for your Slack application. Navigate to `F
 
 > Note: Ensure that you add scopes for **User Token Scopes** & not Bot Token Scopes.
 
-<img src="/img/docs/oidc-slack-2.png" alt="Configuring Scopes" height="75%" width="75%"/>
+<img src="/img/docs/oidc-slack-2.png" alt="Configuring Scopes" height="40%" width="40%"/>
 
 ## Adding an Identity Provider to Paralus
 
@@ -47,7 +47,7 @@ From the next screen copy the `Callback URL` and paste it in the redirect URL fo
 
 On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/core/main/_kratos/oidc-mappers/slack.jsonnet?token=GHSAT0AAAAAABPXWZYZR2EXM74KFPRRQZUCYVAFNPA` as the mapper url. Click Save & Exit.
 
-At this point, you have successfully added Slack as an identify provider for Paralus.
+At this point, you have successfully added Slack as an identity provider for Paralus.
 
 ## Verify Login with Slack
 
@@ -65,6 +65,6 @@ Once authenticated, you'll be redirected to Paralus dashboard.
 
 <img src="/img/docs/oidc-google-8.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
-> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
-
 Congratulations! You've successfully configured Slack as an identity provider for Paralus.
+
+> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).

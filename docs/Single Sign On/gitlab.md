@@ -42,7 +42,7 @@ On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.c
 
 Click Save & Exit.
 
-At this point, you have successfully added GitLab as an identify provider for Paralus.
+At this point, you have successfully added GitLab as an identity provider for Paralus.
 
 ## Verify Login with GitLab
 
@@ -52,7 +52,7 @@ On the login screen, you should now see a `Sign In With GitLab` button. Click on
 
 <img src="/img/docs/oidc-gitlab-4.png" alt="Login using GitLab" height="75%" width="75%"/>
 
-Enter your GitLab credentials and login to GitLab. All the application to access the respective details and sign in.
+Enter your GitLab credentials and login to GitLab.
 
 <img src="/img/docs/oidc-gitlab-5.png" alt="Login using GitLab - providing credentials" height="75%" width="75%"/>
 
@@ -60,6 +60,6 @@ Once authenticated, you'll be redirected to Paralus dashboard.
 
 <img src="/img/docs/oidc-gitlab-7.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
-> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
-
 Congratulations! You've successfully configured GitLab as an identity provider for Paralus.
+
+> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).

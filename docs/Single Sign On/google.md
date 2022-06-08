@@ -66,7 +66,7 @@ On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.c
 
 Click Save & Exit.
 
-At this point, you have successfully added Google as an identify provider for Paralus.
+At this point, you have successfully added Google as an identity provider for Paralus.
 
 ## Verify Login with Google
 
@@ -76,7 +76,7 @@ On the login screen, you should now see a `Sign In With Google` button. Click on
 
 <img src="/img/docs/oidc-google-6.png" alt="Login Using Google" height="75%" width="75%"/>
 
-Enter your Google credentials and login to Google. All the application to access the respective details and sign in.
+Enter your Google credentials and login to Google.
 
 <img src="/img/docs/oidc-google-7.png" alt="Authenticate on Google" height="75%" width="75%"/>
 
@@ -84,6 +84,6 @@ Once authenticated, you'll be redirected to Paralus dashboard.
 
 <img src="/img/docs/oidc-google-8.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
-> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
-
 Congratulations! You've successfully configured Google as an identity provider for Paralus.
+
+> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
