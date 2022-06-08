@@ -14,8 +14,7 @@ In this document, we'll show you how to use GitLab as an Identity provider for P
 
 Login to your GitLab account and navigate to `Profile -> Applications` and **Create a new OAuth App**.
 
-<img src="/img/docs/oidc-gitlab1.png" alt="Creating New GitLab OAuth App" />
-Creating New GitLab OAuth App
+<img src="/img/docs/oidc-gitlab1.png" alt="Creating New GitLab OAuth App" height="75%" width="75%"/>
 
 Leave the **Application Callback URL** empty for now and Register the application.
 
@@ -33,8 +32,7 @@ Under **Scopes** provide `openid, profile, email`
 
 For **Issuer URL**, provide this url: `https://gitlab.com`
 
-<img src="/img/docs/oidc-gitlab-3.png" alt="Adding new identity provider in Paralus" />
-Adding new identity provider in Paralus
+<img src="/img/docs/oidc-gitlab-3.png" alt="Adding new identity provider in Paralus" height="75%" width="75%"/>
 
 Click Save & Continue.
 
@@ -52,18 +50,15 @@ To confirm if the setup was correct, logout from Paralus.
 
 On the login screen, you should now see a `Sign In With GitLab` button. Click on it to begin the login process using GitLab.
 
-<img src="/img/docs/oidc-gitlab-4.png" alt="Login using GitLab" />
-Login using GitLab
+<img src="/img/docs/oidc-gitlab-4.png" alt="Login using GitLab" height="75%" width="75%"/>
 
 Enter your GitLab credentials and login to GitLab. All the application to access the respective details and sign in.
 
-<img src="/img/docs/oidc-gitlab-5.png" alt="Login using GitLab - providing credentials" />
-Login using GitLab - providing credentials
+<img src="/img/docs/oidc-gitlab-5.png" alt="Login using GitLab - providing credentials" height="75%" width="75%"/>
 
 Once authenticated, you'll be redirected to Paralus dashboard.
 
-<img src="/img/docs/oidc-gitlab-7.png" alt="Redirect to Paralus" />
-Redirect to Paralus
+<img src="/img/docs/oidc-gitlab-7.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
 > Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
 

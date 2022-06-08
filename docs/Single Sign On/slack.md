@@ -15,8 +15,7 @@ In this document, we'll show you how to use Slack as an Identity provider for Pa
 
 Login to your Slack account and **Create a new Slack App**. Choose a workspace that will be associated with your app.
 
-<img src="/img/docs/oidc-slack-1.png" alt="Creating New Slack App" />
-Creating New Slack App
+<img src="/img/docs/oidc-slack-1.png" alt="Creating New Slack App" height="75%" width="75%"/>
 
 Leave the **Application Redirect URL** empty for now and create the application.
 
@@ -26,8 +25,7 @@ You also need to configure the scopes for your Slack application. Navigate to `F
 
 > Note: Ensure that you add scopes for **User Token Scopes** & not Bot Token Scopes.
 
-<img src="/img/docs/oidc-slack-2.png" alt="Configuring Scopes" />
-Configuring Slacks
+<img src="/img/docs/oidc-slack-2.png" alt="Configuring Scopes" height="75%" width="75%"/>
 
 ## Adding an Identity Provider to Paralus
 
@@ -41,8 +39,8 @@ Under **Scopes** provide `identity.basic` and `identity.email`
 
 For **Issuer URL**, provide this url: `https://slack.com`
 
-<img src="/img/docs/oidc-slack-3.png" alt="Adding new identity provider in Paralus" />
-Adding new identity provider in Paralus
+<img src="/img/docs/oidc-slack-3.png" alt="Adding new identity provider in Paralus" height="75%" width="75%"/>
+
 Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the redirect URL for the Slack OAuth app created in the earlier step.
@@ -57,18 +55,15 @@ To confirm if the setup was correct, logout from Paralus.
 
 On the login screen, you should now see a `Sign In With Slack` button. Click on it to begin the login process using Slack.
 
-<img src="/img/docs/oidc-slack-4.png" alt="Login using Slack" />
-Login using Slack
+<img src="/img/docs/oidc-slack-4.png" alt="Login using Slack" height="75%" width="75%"/>
 
 Enter your Slack credentials and login to Slack. Allow the application to access the respective permissions/scopes and sign in.
 
-<img src="/img/docs/oidc-slack-5.png" alt="Authenticate on Slack" />
-Authenticate on Slack
+<img src="/img/docs/oidc-slack-5.png" alt="Authenticate on Slack" height="75%" width="75%"/>
 
 Once authenticated, you'll be redirected to Paralus dashboard.
 
-<img src="/img/docs/oidc-google-8.png" alt="Redirect to Paralus" />
-Redirect to Paralus
+<img src="/img/docs/oidc-google-8.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
 > Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
 

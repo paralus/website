@@ -19,8 +19,7 @@ In the dialog that opens, choose **OIDC - Open ID Connect** as the **Sign-in Met
 
 On the next screen provide a name for the application. Under **Assignments -> Controlled Access**, select `Skip Group Assignment For Now`
 
-<img src="/img/docs/oidc-okta-1.png" alt="Creating New Okta OAuth App" />
-Creating New Okta OAuth App
+<img src="/img/docs/oidc-okta-1.png" alt="Creating New Okta OAuth App" height="75%" width="75%"/>
 
 Leave the **Application Callback URL** empty for now and Register the application.
 
@@ -38,12 +37,13 @@ Under **Scopes** provide `openid, profile, email`
 
 For **Issuer URL**, provide the url for your Okta Account. *For example: https://dev-8830220.okta.com*
 
-<img src="/img/docs/oidc-okta-5.png" alt="Adding new identity provider in Paralus" />
-Adding new identity provider in Paralus
+<img src="/img/docs/oidc-okta-5.png" alt="Adding new identity provider in Paralus" height="75%" width="75%"/>
 
 Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the callback URL for the Okta OAuth app created in the earlier step.
+
+The **Mapper Configuration** will be set for Okta, so you don't need to change anything on this screen.
 
 On the **Mapper Configuration** screen, provide `https://gist.githubusercontent.com/akshay196/34a8223622554bfa065800108d6f1a34/raw/3e96e2c211839f170655334e3d69fedbe9cb4857/okta.jsonnet` as the mapper url.
 
@@ -57,18 +57,15 @@ To confirm if the setup was correct, logout from Paralus.
 
 On the login screen, you should now see a `Sign In With Okta` button. Click on it to begin the login process using Okta.
 
-<img src="/img/docs/oidc-okta-3.png" alt="Login using Okta" />
-Login using Okta
+<img src="/img/docs/oidc-okta-3.png" alt="Login using Okta" height="75%" width="75%"/>
 
 Enter your Okta credentials and login. All the application to access the respective details and sign in.
 
-<img src="/img/docs/oidc-okta-4.png" alt="Login using Okta - providing credentials" />
-Login using Okta - providing credentials
+<img src="/img/docs/oidc-okta-4.png" alt="Login using Okta - providing credentials" height="75%" width="75%"/>
 
 Once authenticated, you'll be redirected to Paralus dashboard.
 
-<img src="/img/docs/oidc-okta-6.png" alt="Redirect to Paralus" />
-Redirect to Paralus
+<img src="/img/docs/oidc-okta-6.png" alt="Redirect to Paralus" height="75%" width="75%"/>
 
 > Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
 
