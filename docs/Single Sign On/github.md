@@ -20,7 +20,6 @@ Login to your GitHub account and navigate to `Profile -> Settings -> Developer S
 Creating New GitHub OAuth App
 
 Provide details like the Name and Description . For homepage url, provide the url to your Paralus dashboard.
-> If you are using this on your local Kind cluster, provide http://console.rafay.local as the value
 
 Leave the **Application Callback URL** empty for now and Register the application.
 
