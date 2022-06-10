@@ -13,9 +13,11 @@ Currently, Paralus offers two namespace roles:
 - **Namespace Admin** - Read/write access to resources in the defined namespace.
 - **Namespace Readonly** - Read only access to resource in the defined namespace.
 
+> Note: Users can also create their custom namespace roles as well. Refer to the [Permissions List](../usage/roles#permissions-list) that you can use to create a custom role.
+
 ## Assigning Namespace Role
 
-As an organization admin, you can assign the namespace roles to any user in your organization. [Assign a role](../usage/users#edit-a-user) as you would normally do and choose any of the namespace role. When you select a namespace role, you'll get an option to specify the namespace to which the user will have access to. Provide the name of the namespace to which the user will have access to.
+As an organization admin, you can assign a namespace role to any user or create a group with the namespace role and add a user to that group. [Assign a role](../usage/users#edit-a-user) as you would normally do and choose any of the namespace role. When you select a namespace role, you'll get an option to specify the namespace to which the user will have access to. Provide the name(s) of the namespace to which the user will have access to.
 
  <img src="/img/docs/namespace-1.png" alt="Assigning Namespace Role" height="75%" width="75%"/>
 
