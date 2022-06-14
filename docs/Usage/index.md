@@ -7,9 +7,10 @@ slug: /usage/
 
 Below are the list of all the features of Paralus. Follow the links to learn more about the features of Paralus:
 
+- [Projects](projects)
 - [Clusters](clusters)
 - [Groups](groups)
-- [Audit Logs](audit-logs)
-- [Projects](projects)
+- [Namespace](namespace)
 - [Roles](roles)
 - [Users](users)
+- [Audit Logs](audit-logs)

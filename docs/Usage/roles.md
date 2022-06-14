@@ -29,6 +29,8 @@ In this document, we help you understand how you can create and manage roles.
 | Project Admin | A  privileged role allowed to manage all workload resources in a Project.  Specifically, they have Read + Write access to workloads, certificates,  registries, secret stores, and aggregation endpoints |
 | Project Read Only | A Read Only version of the Project Admin role |
 | Cluster Admin | A  privileged role allowed to build clusters in a Project. Specifically,  Cluster Admins has read only infrastructure access + Cluster CRUD  (Create, Read, Update, and Delete) operations |
+| Namespace Admin | A role allowed to view only the user specified namespaces, and policy violations, but not allowed to create a new namespace. Allowed to perform end-to-end (create, publish/unpublish, edit, delete) actions on workloads with the user selected namespace(s). Specifically, they can view only the Resources that are associated with the selected namespace(s) |
+| Namespace Read Only | A Read Only version of the Namespace Admin role |
 
 > Note: A user can be associated with multpiple roles at the same time. In such scenario, the union of the permissions associated with both roles is applied.
 
@@ -82,9 +84,6 @@ There might be situations where you want to assign a role to a specific user. In
 - Select the desired user
 - Navigate to the Projects Tab
 - Click Assign User To Project button
-
-    <img src="/img/docs/roles-users-new-project.png" alt="Assigning user to project" height="75%" width="75%"/>
-
 - Select a project from the drop down
 - Assign Role(s), click Save & Exit
 

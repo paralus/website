@@ -54,7 +54,7 @@ For a local user, you can edit the following details:
     <img src="/img/docs/user-edit-group.png" alt="Editing user group" height="75%" width="75%"/>
 
 - **Projects**
-  - Manager memberships to users - *add/remove users from projects*
+  - Manage memberships to users - *add/remove users from projects and assign roles*
 
     <img src="/img/docs/user-edit-project.png" alt="Editing user project" height="75%" width="75%"/>
 
