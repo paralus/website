@@ -48,7 +48,7 @@ After you've configured the consent UI, navigate to **Credentials** and create a
 
 Login to your Paralus dashboard and navigate to `System -> Identity Providers` and click on **New Identity Provider**
 
-Provide the name of the identity provider and choose IdP type from the drop down. *Incase your identity provider is not in the list, choose Others.*
+Provide the name of the identity provider and choose IdP type as `Google` from the drop down.
 
 For client identifier & secret, provide the `client-id` & `client-secret` of the Google OAuth app created earlier.
 
@@ -56,15 +56,13 @@ Under **Scope** provide `openid,email,profile`
 
 For **Issuer URL**, provide this url: `https://accounts.google.com`
 
-<img src="/img/docs/oidc-google-5.png" alt="Adding new identity provider in Paralus" height="75%" width="75%"/>
+<img src="/img/docs/paralus-google-idp.png" alt="Adding new identity provider in Paralus" height="75%" width="75%"/>
 
 Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the callback URL for the Google OAuth app created in the earlier step.
 
-On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/core/main/_kratos/oidc-mappers/google.jsonnet?token=GHSAT0AAAAAABPXWZYYYDYHSOMNVI4O4WGQYVAFHKQ` as the mapper url.
-
-Click Save & Exit.
+On the **Mapper Configuration** screen, the mapper url will be pre-filled, click Save & Exit.
 
 At this point, you have successfully added Google as an identity provider for Paralus.
 
@@ -74,16 +72,14 @@ To confirm if the setup was correct, logout from Paralus.
 
 On the login screen, you should now see a `Sign In With Google` button. Click on it to begin the login process using Google.
 
-<img src="/img/docs/oidc-google-6.png" alt="Login Using Google" height="75%" width="75%"/>
+<img src="/img/docs/paralus-google-login-1.png" alt="Login Using Google" height="75%" width="75%"/>
 
 Enter your Google credentials and login to Google.
 
-<img src="/img/docs/oidc-google-7.png" alt="Authenticate on Google" height="75%" width="75%"/>
+<img src="/img/docs/paralus-google-login-2.png" alt="Authenticate on Google" height="75%" width="75%"/>
 
 Once authenticated, you'll be redirected to Paralus dashboard.
 
-<img src="/img/docs/oidc-google-8.png" alt="Redirect to Paralus" height="75%" width="75%"/>
-
 Congratulations! You've successfully configured Google as an identity provider for Paralus.
 
-> Note: Depending on the permission, the user that logs in using GitHub might not see the above screen. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
+> Note: Depending on the permission, the user that logs in using Google might not see any projects on the dashboard. As an admin, you'll have to configure their [group](../usage/groups) and assign them a [project](../usage/projects).
