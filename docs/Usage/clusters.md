@@ -32,7 +32,7 @@ Paralus has the ability to manage full lifecycle management of provisioned clust
 
 Kubernetes clusters that have already been provisioned can be imported into Paralus. Once imported, Paralus will provide deep visibility and insight into all aspects of the Kubernetes cluster.
 
-<img src="/img/docs/import-cluster-1.png" alt="Import Existing Kubernetes Cluster" height="75%" width="75%"/>
+<img src="/img/docs/paralus-import-cluster-1.png" alt="Import Existing Kubernetes Cluster" height="75%" width="75%"/>
 
 ## Deleting Clusters
 
