@@ -29,7 +29,7 @@ Follow the steps mentioned below to add a new user:
 - Click on New User
 - Enter details like first name, last name and a valid email id
 
-    <img src="/img/docs/user-add.png" alt="Adding a new local User" height="75%" width="75%"/>
+    <img src="/img/docs/paralus-user-add.png" alt="Adding a new local User" height="75%" width="75%"/>
 
 > If you have configured a SMTP server, an activation email would have been sent to the specified email address with instructions on how to access the Org.
 But, since the user has not be configured with any roles and permissions, they will not be access anything useful.
