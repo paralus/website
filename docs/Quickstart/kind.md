@@ -47,7 +47,7 @@ docker container inspect kind-control-plane --format '{{ .NetworkSettings.Networ
 
 Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 
-Navigate to the downloaded folder and update the following entries in `values.yaml` present under `/charts/rcloud/`
+Navigate to the downloaded folder and update the following entries in `values.yaml` present under `/charts/ztka/`
 
 - Switch kratos to development mode by setting `kratos.kratos.development` to `true`
 - Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
