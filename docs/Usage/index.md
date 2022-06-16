@@ -14,3 +14,4 @@ Below are the list of all the features of Paralus. Follow the links to learn mor
 - [Roles](roles)
 - [Users](users)
 - [Audit Logs](audit-logs)
+- [CLI](cli)
