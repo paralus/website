@@ -112,7 +112,7 @@ Access the URL in a browser, and provide a new password.
 
 In a new browser window/tab navigate to `http://console.paralus.local` and log in with the following credentials:
 
-- username: `foo@example.com`
+- username: `admin@paralus.local`
 - password: `<The one you entered in the earlier section>`
 
 You'll be taken to the projects page where you'll see a default project.
