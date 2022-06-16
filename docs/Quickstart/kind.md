@@ -56,7 +56,7 @@ Navigate to the downloaded folder and update the following entries in `values.ya
 - [OPTIONAL] Change the host under domain.host to use a different hostname
 - [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
 
-Being in the `rcloud` directory, run the following command to install Paralus
+Being in the `ztka` directory, run the following command to install Paralus
 
 `helm upgrade --install <RELEASE_NAME> .`
 
