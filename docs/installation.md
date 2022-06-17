@@ -69,34 +69,34 @@ An SMTP connection URI to connect to SMTP server. For example, `smtps://foo:bar@
    > You can skip this step if you're doing a fresh install
 
    ```yaml
-   rcloudBase:
-   initialize:
-       partner: "example"
-       partnerDesc: "Partner description"
-       partnerHost: "example.com"
-       org: "exampleorg"
-       orgDesc: "Org description"
-       adminEmail: "foo@example.com"
-       adminFirstName: "Foo"
-       adminLastName: "Bar"
-   deploy:
-   kratos:
-       smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
-   elasticsearch:
-       address: "my-es-host:9200”
-   postgresql:
-       address: "my-pgsql-host:5432"
-       username: "user"
-       password: "pa$$word"
-       database: "dbname"
-   ingress:
-   host: my-host.com
+    paralus:
+    initialize:
+        partner: "example"
+        partnerDesc: "Partner description"
+        partnerHost: "example.com"
+        org: "exampleorg"
+        orgDesc: "Org description"
+        adminEmail: "foo@example.com"
+        adminFirstName: "Foo"
+        adminLastName: "Bar"
+    deploy:
+    kratos:
+        smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
+    elasticsearch:
+        address: "my-es-host:9200”
+    postgresql:
+        address: "my-pgsql-host:5432"
+        username: "user"
+        password: "pa$$word"
+        database: "dbname"
+    domain:
+    host: my-host.com
    ```
 
 4. Install the chart with release name my-release:
 
    ```bash
-   helm install my-release -f myvalues.yaml -n paralus paralus/core
+   helm install my-release -f myvalues.yaml -n paralus paralus/ztka
 
     NAME: my-release
     LAST DEPLOYED: Thu Jun 16 09:35:03 2022
