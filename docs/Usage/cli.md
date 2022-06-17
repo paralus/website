@@ -1,6 +1,6 @@
 ---
 title: "CLI"
-description: "Learn how to use the CLI tool with Paralus."
+description: "Learn how to use the CLI tool, pctl with Paralus."
 slug: /usage/cli
 ---
 
@@ -8,17 +8,17 @@ Apart from using the dashboard, Paralus provides you with a command line utility
 
 ## Downloading and Configuring CLI
 
-To download the CLI, you first need to login to Paralus dashboard. Navigate to **My Tools** and click the **Download CLI** button to download the latest release. Copy the `pctl` executable and place it in your `$PATH` folder and make sure it is executable.
+To download the CLI, you first need to login to Paralus dashboard. Navigate to **My Tools** and click the **Download CLI** button to download the latest release. Copy the pctl executable and place it in your `$PATH` folder and make sure it is executable.
 
 In order to run the CLI tool, you also need to download a configuration file from Paralus dashboard. This config file is unique to every user and hence each user needs to download this. To download the configuration file, navigate to **My Tools** and click **Download CLI Config** button. A json file will be downloaded.
 
 <img src="/img/docs/paralus-cli.png" alt="Download pctl CLI config" height="70%" width="70%"/>
 
-For linux users, copy the downloaded `config.json` file and place it in `$HOME/.paralus/cli` folder. Create the folder if it doesn't exist.
+For linux users, copy the downloaded `config.json` file and place it in `$HOME/.paralus/cli` folder. *Create the folder if it doesn't exist.*
 
 ## Using the CLI
 
-**pctl** allows you to perform various operations through the command line that you can do via the dashboard. Below is the complete list of commands available.
+**pctl** allows you to perform various operations through the command line that you can do via the dashboard. Below is the complete list of available commands:
 
 - **Clusters**
   - Create cluster of type import
@@ -188,3 +188,5 @@ $ pctl get project
 | pctlproject | false   |
 +-------------+---------+
 ```
+
+Read more about [features of Paralus](../usage/).

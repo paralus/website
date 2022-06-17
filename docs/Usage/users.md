@@ -63,3 +63,5 @@ For a local user, you can edit the following details:
 You can delete a user by clicking the delete button in front of their name.
 
 <img src="/img/docs/user-delete.png" alt="Deleting a User" height="75%" width="75%"/>
+
+Read more about [features of Paralus](../usage/).

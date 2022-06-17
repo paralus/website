@@ -32,7 +32,7 @@ In this document, we help you understand how you can create and manage roles.
 | Namespace Admin | A role allowed to view only the user specified namespaces, and policy violations, but not allowed to create a new namespace. Allowed to perform end-to-end (create, publish/unpublish, edit, delete) actions on workloads with the user selected namespace(s). Specifically, they can view only the Resources that are associated with the selected namespace(s) |
 | Namespace Read Only | A Read Only version of the Namespace Admin role |
 
-> Note: A user can be associated with multpiple roles at the same time. In such scenario, the union of the permissions associated with both roles is applied.
+> Note: A user can be associated with multiple roles at the same time. In such a scenario, the union of the permissions associated with both roles is applied.
 
 <img src="/img/docs/role-hierarchy.png" alt="Typical hierarchy of roles in an organization." height="75%" width="75%"/>
 
@@ -59,7 +59,7 @@ Organization admins can determine a users's role be following the below mentione
 
 ## Managing Roles
 
-Assignment and management of roles for users in the organization can be done only by Organization admins. All the changes to roles are logged and can be found in the [Audit Logs](audit-logs).
+Assignment and management of roles for users in the organization can be done only by an Organization admins. All the changes to roles are logged and can be found in the [Audit Logs](audit-logs).
 
 Roles can be assigned to users in one of the two following ways:
 
@@ -174,3 +174,5 @@ Below is the list of permissions that you can choose to assign and create a role
 | project.audit.read | View project kubectl audit information |
 | project.relayAudit.read | View project kubectl audit log information |
 | v2debug.read | read web kubectl |
+
+Read more about [features of Paralus](../usage/).
