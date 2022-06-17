@@ -1,16 +1,16 @@
 ---
 title: Troubleshooting
-description: "Troubleshooting guide for ZTKA"
+description: "Troubleshooting guide for Paralus"
 slug: /references/troubleshooting
 ---
 
-Facing issues deploying or running ZTKA? Our troubleshooting guide can help you over come some of the common issues that you might face.
+Facing issues deploying or running Pralus? Our troubleshooting guide can help you over come some of the common issues that you might face.
 
 For anything else, feel free to reach out to us :)
 
 ## Cluster Import
 
-If you get errors while importing a cluster into ZTKA, it may well be one of the following reasons:
+If you get errors while importing a cluster into Paralus, it may well be one of the following reasons:
 
 - Incompatible, older version of Kubernetes -> *Ensure you have the latest version of Kubernetes installed*
 - Insufficient cluster resources for Kubernetes Management Operator to run -> *Check resources on your node, free up memory or configure your cluster with higher resource limits*
