@@ -10,8 +10,8 @@ Installing Paralus via Helm charts is the preferred way. To successfully install
 - Kubernetes Cluster
 - PostgreSQL
 - Elasticsearch
-- SMTP Server
 - Domain Name
+- SMTP Server [Optional]
 
 If you are installing Paralus for the first time and don't have any of these components, you can [skip to installation](#installation) section as Paralus will install and configure all these components for you.
 
@@ -43,7 +43,9 @@ An Elasticsearch instance that is accessible from a cluster on which you are dep
 
 Keep the elasticsearch address handy. For example, `my-es-host:9200`
 
-### SMTP
+### SMTP - _Optional_
+
+Optionally an SMTP server can also be configured. This will allow Paralus to send out password recovery mails to the users. Without SMTP, the admin will have to manually share it with the users.
 
 An SMTP connection URI to connect to SMTP server. For example, `smtps://foo:bar@my-mailserver:1234/`
 
