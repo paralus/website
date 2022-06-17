@@ -1,10 +1,10 @@
 ---
 title: "Projects"
-description: "Learn how to use Paralus and configure projects."
+description: "Learn how to configure projects on Paralus"
 slug: /usage/projects
 ---
 
-Project in Paralus is a way to organize your infrastructure, user access and resources. Organization Admins can create any number of projects in the organization.
+Project in Paralus is a way to organize your infrastructure, user access and resources. Organization Admins can create any number of projects in the organization. Paralus comes with one default project out of the box.
 
 > Currently only organization admins can create projects.
 
@@ -25,7 +25,7 @@ In this section, we talk about
 
 ## Create Project
 
-Login to the web consle as an organization admin.
+Login to the dashboard as an organization admin.
 
 1. Click on **New Project**
 2. Provide a name and description
@@ -66,8 +66,10 @@ From the Project Settings page, navigate to **Assigned Users** tab. Click on Ass
 
 <img src="/img/docs/project-user.png" alt="Assigning Users to Projects" height="75%" width="75%"/>
 
-To remove a user, navigate to Assigned Users tab and click on the delete icon to remove an assigned user.
+To remove a user, navigate to Assigned Users tab and click on the delete to remove an assigned user.
 
 ## Delete Project
 
 Click the delete icon to delete a project. An organization admin can delete a project as long as there are no resources associated to it. The system will prompt you to first delete any exising resources before deleting the project.
+
+Read more about [features of Paralus](../usage/).

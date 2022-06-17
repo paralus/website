@@ -1,10 +1,10 @@
 ---
 title: "Groups"
-description: "Learn how to use Paralus and configure groups."
+description: "Learn how to configure groups on Paralus."
 slug: /usage/groups
 ---
 
-Groups are a collection of users with same roles. Managing different users with similar roles and permissions one at a time is a tedious. Hence, Paralus allows you to group users with same roles together thus making it easier to manage users.
+Groups are a collection of users with same roles. Managing different users with similar roles and permissions one at a time is tedious. Hence, Paralus allows you to group users with same roles together thus making it easier to manage users.
 
 In this section we talk about:
 
@@ -43,3 +43,5 @@ Instead of assigning users "*one at a time*", we will assign the "Production" Pr
 3. Select "Project Admin" role from the list
 
     <img src="/img/docs/groups-project-add.png" alt="Assigning groups to projects" />
+
+Read more about [features of Paralus](../usage/).
