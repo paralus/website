@@ -1,6 +1,6 @@
 ---
 title: Kind
-description: "Setup Paralus on Kind with this quick start guide."
+description: "Install Paralus on Kind quickstart guide."
 slug: /quickstart/kind
 ---
 
@@ -121,7 +121,7 @@ You'll be taken to the projects page where you'll see a default project.
 
 ### Importing Existing Cluster
 
-Everything in Paralus is grouped into [Projects](../usage/projects). Each project will have [clusters](../usage/clusters), [users](../usage/users) and [groups](../usage/groups) associted with it. Hence the first step it to create a new project.
+Everything in Paralus is grouped into [Projects](../usage/projects). Each project will have [clusters](../usage/clusters), [users](../usage/users) and [groups](../usage/groups) associated with it. Hence the first step it to create a new project.
 
 Click on **New Project** to create a new project and then import a cluster in that project.
 
@@ -176,7 +176,7 @@ ff02::2 ip6-allrouters
 
 ### Accessing Existing Cluster
 
-With all the changes in place, it's time to apply the bootstarp yaml file that we download while [importing an existing cluster](#importing-an-existing-cluster)
+With all the changes in place, it's time to apply the bootstrap yaml file that we download while [importing an existing cluster](#importing-an-existing-cluster)
 
 ```bash
 kubectl apply -f mylocalcluster.yaml
