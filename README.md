@@ -2,7 +2,6 @@
 
 This repo contains the [Paralus website](https://paralus.io), documentation, and blog. The website is built using [Docusaurus 2](https://docusaurus.io/), and styled using [Tailwind CSS](https://tailwindcss.com/).
 
-
 ## Development
 
 `cd` into your cloned repository, and start the server:
