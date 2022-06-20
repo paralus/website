@@ -122,7 +122,7 @@ Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 4. Install Paralus
 
     ```bash
-    helm install myrelease paralus/paralus --devel --version=0.0.1-alpha.1 -f values.domain.yaml -f values.eks.yaml -n paralus --create-namespace
+    helm install myrelease paralus/ztka --devel -f values.domain.yaml -f values.eks.yaml -n paralus --create-namespace
 
     NAME: myrelease
     LAST DEPLOYED: Wed May 25 10:13:48 2022
