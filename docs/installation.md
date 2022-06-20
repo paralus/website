@@ -72,27 +72,27 @@ An SMTP connection URI to connect to SMTP server. For example, `smtps://foo:bar@
 
    ```yaml
     paralus:
-    initialize:
-        partner: "example"
-        partnerDesc: "Partner description"
-        partnerHost: "example.com"
-        org: "exampleorg"
-        orgDesc: "Org description"
-        adminEmail: "foo@example.com"
-        adminFirstName: "Foo"
-        adminLastName: "Bar"
+        initialize:
+            partner: "example"
+            partnerDesc: "Partner description"
+            partnerHost: "example.com"
+            org: "exampleorg"
+            orgDesc: "Org description"
+            adminEmail: "foo@example.com"
+            adminFirstName: "Foo"
+            adminLastName: "Bar"
     deploy:
-    kratos:
-        smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
-    elasticsearch:
-        address: "my-es-host:9200”
-    postgresql:
-        address: "my-pgsql-host:5432"
-        username: "user"
-        password: "pa$$word"
-        database: "dbname"
+        kratos:
+            smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
+        elasticsearch:
+            address: "my-es-host:9200”
+        postgresql:
+            address: "my-pgsql-host:5432"
+            username: "user"
+            password: "pa$$word"
+            database: "dbname"
     domain:
-    host: my-host.com
+        host: my-host.com
    ```
 
 4. Install the chart with release name my-release:
