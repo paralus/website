@@ -1,38 +1,53 @@
 ---
-title: Installing using Helm
-description: "Quickly setup Parakus using HELM charts"
+title: Installing Paralus Using Helm
+description: "Quickly install Paralus using HELM charts"
 sidebar_position: 2
 sidebar_label: "Installation"
 ---
 
-Installing Paralus using helm charts is the preferred way. This installation guide assumes that you have a fresh environment and want to install all the components that are required to run Paralus - _PostgreSQL, Elasticsearch & SMTP_.
+Installing Paralus via Helm charts is the preferred way. To successfully install and run Paralus in your environment, following components need to be present:
 
-If you already have any/all of these components installed, refer to the prerequisites section below. If you're installing this on a fresh environment, feel free to [skip to installation](#installation).
+- Kubernetes Cluster
+- PostgreSQL
+- Elasticsearch
+- Domain Name
+- SMTP Server [Optional]
+
+If you are installing Paralus for the first time and don't have any of these components, you can [skip to installation](#installation) section as Paralus will install and configure all these components for you.
+
+If you already have these set up in your environment, you will have to configure Paralus to work with them. To know more about the configuration changes, proceed to the [prerequisites](#prerequisites) section.
+
+> If you want to test out Paralus first on a local setup first, we suggest you to read our [Kind Quickstart](../docs/quickstart/kind) guide.
 
 ## Prerequisites
 
-You need to have Helm CLI installed, Kubernetes cluster and kubeconfig to be configured to access the cluster.
+### Kubernetes & Helm
+
+You need to have Helm CLI installed, a Kubernetes cluster and kubeconfig configured to access the cluster.
 
 - Kubernetes 1.18+
 - Helm 3.0.0+
 
-**PostgreSQL** database that can be accessible from a cluster on which you are deploying core. Ready with following details of postgreSQL database:
+### PostgreSQL
+
+You need a PostgreSQL database instance that is accessible from the cluster on which you are deploying Paralus. Please keep the following details of your PostgreSQL setup handy:
 
 - Database address _(eg: my-pgsql-host:5432)_
 - Database username _(eg: user)_
 - Database password _(eg: pa$$word)_
 - Database name _(eg: dbname)_
 
-**Elasticsearch** that can be accessible from a cluster on which you are deploying core. Be ready with an elasticsearch address. For example, `my-es-host:9200`
+### Elasticsearch
 
-**SMTP** connection URI to connect to SMTP server. For example, `smtps://foo:bar@my-mailserver:1234/`
+An Elasticsearch instance that is accessible from a cluster on which you are deploying Paralus.
 
-The hostname of a domain that can be used to access core applications. For example, my-host.com.
-You need to add 3 DNS records like following,
+Keep the elasticsearch address handy. For example, `my-es-host:9200`
 
-- console.my-host.com resolve to ingress-ip
-- \*.user.paralus.my-host.com resolve to ingress-ip
-- \*.core-connector.paralus.my-host.com resolve to ingres-ip
+### SMTP - _Optional_
+
+Optionally an SMTP server can also be configured. This will allow Paralus to send out password recovery mails to the users. Without SMTP, the admin will have to manually share it with the users.
+
+An SMTP connection URI to connect to SMTP server. For example, `smtps://foo:bar@my-mailserver:1234/`
 
 ## Installation
 
@@ -56,32 +71,74 @@ You need to add 3 DNS records like following,
    > You can skip this step if you're doing a fresh install
 
    ```yaml
-   rcloudBase:
-   initialize:
-       partner: "example"
-       partnerDesc: "Partner description"
-       partnerHost: "example.com"
-       org: "exampleorg"
-       orgDesc: "Org description"
-       adminEmail: "foo@example.com"
-       adminFirstName: "Foo"
-       adminLastName: "Bar"
-   deploy:
-   kratos:
-       smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
-   elasticsearch:
-       address: "my-es-host:9200”
-   postgresql:
-       address: "my-pgsql-host:5432"
-       username: "user"
-       password: "pa$$word"
-       database: "dbname"
-   ingress:
-   host: my-host.com
+    paralus:
+        initialize:
+            partner: "example"
+            partnerDesc: "Partner description"
+            partnerHost: "example.com"
+            org: "exampleorg"
+            orgDesc: "Org description"
+            adminEmail: "foo@example.com"
+            adminFirstName: "Foo"
+            adminLastName: "Bar"
+    deploy:
+        kratos:
+            smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
+        elasticsearch:
+            address: "my-es-host:9200”
+        postgresql:
+            address: "my-pgsql-host:5432"
+            username: "user"
+            password: "pa$$word"
+            database: "dbname"
+    domain:
+        host: my-host.com
    ```
 
 4. Install the chart with release name my-release:
 
    ```bash
-   helm install my-release -f myvalues.yaml -n paralus paralus/core
+   helm install my-release -f myvalues.yaml -n paralus paralus/ztka
+
+    NAME: my-release
+    LAST DEPLOYED: Thu Jun 16 09:35:03 2022
+    NAMESPACE: paralus
+    STATUS: deployed
+    REVISION: 1
+    NOTES:
+    1. Access the application URL by running these commands:
+    Open http://my-host.com in browser.
+
+    You can view the recovery link for admin user by running the following command once all the pods are running:
+
+    kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+
    ```
+
+## Domain Name Setup
+
+Paralus also requires a domain name where the dashboard and other components will be accessed. It is a mandatory requirement to run Paralus. Further, you'll also need to configure DNS records for that domain to point to the ingress-ip for your cluster.
+
+Based on your domain provider, you can login to your domain's control panel and add three `CNAME` DNS records with the details provided as shown below:
+
+| Type | Address | Resolves To | TTL |
+|---|---|---|---|
+| CNAME | console.my-host.com | 192.168.0.1 | 1 Hour |
+| CNAME | *.user.paralus.my-host.com  | 198.168.0.1 | 1 Hour |
+| CNAME | *.core-connector.paralus.my-host.com | 192.168.0.1 | 1 Hour |
+
+## First Run
+
+Paralus is installed with a default organization and an admin user. Hence, after installation, you need to set a password for the user. To do so, execute the command that you get after installting Paralus.
+
+```bash
+kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+
+Org Admin signup URL:  http://my-host.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
+```
+
+Open the above url in a browser and provide a new password. Once changed you can login with the `adminEmail` provided in `myvalues.yaml` along with the password set in the last step.
+
+Congratulations, you have successfully installated Paralus.
+
+It's now time to learn more about [Paralus features](../docs/usage/)!
