@@ -8,7 +8,8 @@ export default function Cta() {
     >
       <h1 className="text-5xl">Get started </h1>
       <p className="text-base leading-relaxed">
-        Installing Paralus in your Kubernetes environment takes minutes.
+        Installing Paralus in your Kubernetes environment takes less than
+        brewing a cup of coffee.
       </p>
       <div className="text-center justify-center flex">
         <a href="/docs" className="hover:no-underline">
