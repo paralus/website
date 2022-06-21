@@ -48,7 +48,9 @@ docker container inspect kind-control-plane --format '{{ .NetworkSettings.Networ
 
 ### Installing Paralus
 
-Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
+Add the [paralus helm repository](https://github.com/paralus/helm-charts)
+
+`helm repo add paralus https://paralus.github.io/helm-charts`
 
 Navigate to the downloaded folder and update the following entries in `values.yaml` present under `/charts/ztka/`
 
