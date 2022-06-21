@@ -40,6 +40,9 @@ Note down the IP address of the control plane by running the following command
 
 ```bash
 docker container inspect kind-control-plane --format '{{ .NetworkSettings.Networks.kind.IPAddress }}'
+```
+
+```bash
 172.20.0.2
 ```
 
@@ -53,6 +56,8 @@ Navigate to the downloaded folder and update the following entries in `values.ya
 - Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
 - [OPTIONAL] Change the host under domain.host to use a different hostname
 - [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
+
+> You can also refer to [this values file](https://github.com/paralus/helm-charts/blob/main/examples/values.kind.yaml)
 
 Being in the `ztka` directory, run the following command to install Paralus
 
@@ -82,7 +87,7 @@ kubectl logs -f --namespace default $(kubectl get pods --namespace default -l ap
 ### Configuring etc/hosts
 
 Since we are deploying Paralus on local cluster, we need to update the `/etc/hosts` file with the IP Address/Ingress Host name to access the dashboard.
-In order to do that, edit the `/etc/hosts` file using your favourite editor and add the following line at the end of it and save it
+In order to do that, edit the `/etc/hosts` file using your favourite editor and add the following line at the end of it along with the IP address obtained and save it.
 
 ```bash
 172.20.0.2 console.paralus.local
@@ -141,7 +146,7 @@ data:
   relays: '[{"token":"cakmpdvjd030q1q53p9g","addr":"console.paralus.local:80","endpoint":"*.core-connector.paralus.local:443","name":"paralus-core-relay-agent","templateToken":"cakl93fjd030q1q53p5g"}]'
 ```
 
-With the `clusterID` identified, the hosts will be as follows:
+With the `clusterID` identified, we need to update the hosts file. This becuase we are using hostname to route traffic.
 
 ```bash
 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
@@ -150,7 +155,7 @@ With the `clusterID` identified, the hosts will be as follows:
 
 ##### Updating /etc/hosts
 
-Add two new lines in `/etc/hosts` file
+Add two new lines in `/etc/hosts` file along with the IP address obtained
 
 ```bash
 172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
@@ -160,13 +165,6 @@ Add two new lines in `/etc/hosts` file
 Your final `/etc/hosts` file should be something like the following
 
 ```bash
-
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
 172.20.0.2 console.paralus.local
 172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
 172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.paralus.local
@@ -181,6 +179,8 @@ kubectl apply -f mylocalcluster.yaml
 ```
 
 Wait for the changes to take place. On the dashboard you will see that the cluster is imported successfully. It usually takes 3-5 minutes for the status to update.
+
+> *You can also execute `kubectl get pods` to check the status.*
 
 <img src="/img/docs/paralus-import-cluster-3.png" alt="Import Cluster Success" height="70%" width="70%"/>
 
