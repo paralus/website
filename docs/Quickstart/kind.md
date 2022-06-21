@@ -1,23 +1,21 @@
 ---
 title: Kind
-description: "Setup ZTKA on Kind with this quick start guide."
+description: "Install Paralus on Kind quickstart guide."
 slug: /quickstart/kind
 ---
 
-Welcome to this quickstart guide to install ZTKA.
+Paralus can be installed on your local cluster using `Kind` to experience the product before taking it to production.
 
-ZTKA can be installed on your local cluster using `Kind` to experience the product before taking it to production.
-
-The quickstart guide can be followed to setup ZTKA on a Kind cluster.
+The quickstart guide can be followed to setup Paralus on a Kind cluster.
 
 **Table Of Content:**
 
 - [Kind](#kind)
   - [Installing and Configuring Kind](#installing-and-configuring-kind)
-  - [Installing ZTKA](#installing-ztka)
+  - [Installing Paralus](#installing-paralus)
   - [Configuring etc/hosts](#configuring-etchosts)
   - [Resetting Default Password](#resetting-default-password)
-  - [Accessing ZTKA Web UI](#accessing-ztka-web-ui)
+  - [Accessing Paralus Dashboard](#accessing-paralus-dashboard)
   - [Importing Existing Cluster](#importing-existing-cluster)
     - [Configuring Network](#configuring-network)
       - [Getting Cluster ID and Hostname](#getting-cluster-id-and-hostname)
@@ -26,219 +24,179 @@ The quickstart guide can be followed to setup ZTKA on a Kind cluster.
 
 ## Kind
 
-The following section talks about installing ZTKA in a Kind cluster. Kind is a tool used to run local Kubernetes clusters using Docker containers nodes. Learn more about [Kind](https://kind.sigs.k8s.io/).
+The following section talks about installing Paralus in a Kind cluster. Kind is a tool used to run local Kubernetes clusters using Docker container nodes. Learn more about [Kind](https://kind.sigs.k8s.io/).
 
 ### Installing and Configuring Kind
 
 If you don't already have Kind installed on your local system, you can do so by following the [Kind Quickstart Documentation](https://kind.sigs.k8s.io/docs/user/quick-start/). The default settings are good enough to get you started.
 
-The next step is to **create a Kind cluster**. To do that you can create the following yaml file:
-
-```yaml
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-nodes:
-  - role: control-plane
-    kubeadmConfigPatches:
-      - |
-        kind: InitConfiguration
-        nodeRegistration:
-          kubeletExtraArgs:
-            node-labels: "ingress-ready=true"
-    extraPortMappings:
-      - containerPort: 80
-        hostPort: 80
-        protocol: TCP
-      - containerPort: 443
-        hostPort: 443
-        protocol: TCP
-```
+The next step is to **create a Kind cluster**. To do that you can create a copy of [this configuration file](https://github.com/paralus/helm-charts/blob/main/docs/kind.config.yaml) and use that to create a cluster.
 
 ```bash
 kind create cluster --config cluster.yaml
 ```
 
-Note down the IP address on the control plane by running the following command
+Note down the IP address of the control plane by running the following command
 
 ```bash
 docker container inspect kind-control-plane --format '{{ .NetworkSettings.Networks.kind.IPAddress }}'
+```
+
+```bash
 172.20.0.2
 ```
 
-### Installing ZTKA
+### Installing Paralus
 
-Clone the [rcloud-helm repository](https://github.com/RafayLabs/rcloud-helm)
+Add the [paralus helm repository](https://github.com/paralus/helm-charts)
 
-Navigate to the downloaded folder and update the following entries in `values.yaml` present under `/charts/rcloud/`
+```bash
+helm repo add paralus https://paralus.github.io/helm-charts
+helm repo update
+```
+
+Create a new [values.yaml](https://github.com/paralus/helm-charts/blob/main/examples/values.kind.yaml) file with the following changes:
 
 - Switch kratos to development mode by setting `kratos.kratos.development` to `true`
 - Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
-- Disable ingress by setting `ingress.enabled` to `false`
-- Enable contour by setting `contour.enabled` to `true`
-- [OPTIONAL] Change the host under ingress.host to use a different hostname
+- [OPTIONAL] Change the host under domain.host to use a different hostname
 - [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
 
-Being in the `rcloud` directory, run the following command to install ZTKA
+Create a namespace
 
-`helm upgrade --install <RELEASE_NAME> .`
+`kubectl create ns paralus`
+
+Install Paralus
+
+`helm install ztkarelease -f myvalues.yaml -n paralus paralus/ztka`
 
 > Note: In case you get an error, run `helm dependency build` to build the dependencies.
 
-You'll see the following output if the installation succeeds
+You'll see the following output if the installation succeeds:
 
 ```bash
 NAME: ztkarelease
-LAST DEPLOYED: Thu Apr 28 11:19:28 2022
-NAMESPACE: default
+LAST DEPLOYED: Wed Jun 15 09:05:49 2022
+NAMESPACE: paralus
 STATUS: deployed
 REVISION: 1
 NOTES:
 1. Access the application URL by running these commands:
-  Open http://console.rafay.local in browser.
+  Open http://console.paralus.local in browser.
 
 You can view the recovery link for admin user by running the following command once all the pods are running:
 
-kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='rcloud-base' -o jsonpath='{ .items[0].metadata.name }') initialize-rcloud-base | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 ```
 
-> Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
+> Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
 
 ### Configuring etc/hosts
 
-Since we are deploying ZTKA on local cluster, we need to update the `/etc/hosts` file with the IP Address/Ingress Host name to access the Web UI.
-In order to do that, edit the `/etc/hosts` file using your favourite editor and add the following line at the end of it and save it
+Since we are deploying Paralus on local cluster, we need to update the `/etc/hosts` file with the IP Address/Ingress Host name to access the dashboard.
+In order to do that, edit the `/etc/hosts` file using your favourite editor and add the following line at the end of it along with the IP address obtained and save it.
 
 ```bash
-172.20.0.2 console.rafay.local
+172.20.0.2 console.paralus.local
 ```
 
-*When running locally use rafay.local as your host. This is what will be set by default for the value of ingress.host in your [values.yaml](https://github.com/RafayLabs/rcloud-helm/blob/main/charts/rcloud/values.yaml) file
-*
+*Refer to the value of `domain.host` in your [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml#L145) file to find the default host.*
 
-Open your favorite web browser and navigate to `http://console.rafay.local`, you will be see the web UI with the login screen
+Open your favorite web browser and navigate to `http://console.paralus.local`, you will be see the dashboard with the login screen
 
 ### Resetting Default Password
 
-ZTKA comes configured with default credentials that allow you to access the web UI.
+Paralus comes configured with default credentials that allow you to access the dashboard.
 
 In order to get the `Password Reset URL`, copy the command displayed after helm install and execute it
 
 ```bash
-kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='rcloud-base' -o jsonpath='{ .items[0].metadata.name }') initialize-rcloud-base | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 
-Org Admin signup URL:  http://console.rafay.local/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
-
+Org Admin signup URL:  http://console.paralus.local/self-service/recovery?flow=9ec13c6f-414e-4cb5-bf4c-def35973118f&token=ge6bi6zmyzUlQrHlYTOCDeItV82hT08Y
 ```
+
 Access the URL in a browser, and provide a new password.
 
-<img src="/img/docs/oss-password-reset.png" alt="ztka password reset" />
-Password Reset Screen
+### Accessing Paralus Dashboard
 
-### Accessing ZTKA Web UI
+In a new browser window/tab navigate to `http://console.paralus.local` and log in with the following credentials:
 
-In a new browser window/tab navigate to `http://console.rafay.local` and log in with the following credentials:
-
-- username: `foo@example.com`
+- username: `admin@paralus.local`
 - password: `<The one you entered in the earlier section>`
 
 You'll be taken to the projects page where you'll see a default project.
 
-<img src="/img/docs/oss-default.png" alt="ztka default project screen" />
-ZTKA Default Project Screen
+<img src="/img/docs/paralus-dashboard.png" alt="Paralus default project screen" height="70%" width="70%"/>
 
 ### Importing Existing Cluster
 
-Everything in ZTKA is group into `Projects`. Each project will have clusters, users and groups associted with it. Hence the first step it to create a new Project.
+Everything in Paralus is grouped into [Projects](../usage/projects). Each project will have [clusters](../usage/clusters), [users](../usage/users) and [groups](../usage/groups) associated with it. Hence the first step it to create a new project.
 
-Click on `New Project` to create a new project
+Click on **New Project** to create a new project and then import a cluster in that project.
 
-<img src="/img/docs/cluster-setup1.png" alt="New Project Creation" />
-New Project Creation
+<img src="/img/docs/paralus-import-cluster-1.png" alt="Create New Cluster" height="70%" width="70%"/>
 
-Click on `clusters` to import a new cluster
+Click **Continue** and download the bootstrap yaml file by clicking **Import Bootstrap YAML**. This will download the YAML file that is required to connect your cluster with Paralus.
 
-<img src="/img/docs/import-cluster.png" alt="Create New Cluster" />
-Create New Cluster
-
-> Note: If Clicking cluster immediately after creating a project doesn't work, please refresh the page.
-
-Click on `New Cluster`, select `Import Existing Kubernetes Cluster` & click Continue.
-
-<img src="/img/docs/import-cluster-1.png" alt="Import Existing Kubernetes Cluster" />
-Import Existing Kubernetes Cluster
-
-Click `Continue` and download the bootstrap yaml file by clicking `Import Bootstrap YAML`. This will download the YAML file required to connect your cluster with ZTKA.
-
-<img src="/img/docs/importcluster-3.png" alt="Download Bootstrap YAML file" />
-Download Bootstrap YAML file
+<img src="/img/docs/paralus-import-cluster-2.png" alt="Download Bootstrap YAML file" height="70%" width="70%"/>
 
 #### Configuring Network
 
 ##### Getting Cluster ID and Hostname
 
-Open the download yaml file in a text editor and look for `clusterID`
+Open the downloaded yaml file in a text editor and look for `clusterID`
 
 ```yaml
 data:
   clusterID: 5dceca49-c6cd-4a2b-b65a-f193c4fa001f
-  relays: '[{"token":"c9l5g6c2ntuqhae3pt5g","addr":"console.rafay.local:80","endpoint":"*.core-connector.rafay.local:443","name":"rafay-core-relay-agent","templateToken":"c9l2omc2ntuqhae3pt0g"}]'
+  relays: '[{"token":"cakmpdvjd030q1q53p9g","addr":"console.paralus.local:80","endpoint":"*.core-connector.paralus.local:443","name":"paralus-core-relay-agent","templateToken":"cakl93fjd030q1q53p5g"}]'
 ```
 
-With the `clusterID` identified, your new hosts would be as follows
+With the `clusterID` identified, we need to update the hosts file. This becuase we are using hostname to route traffic.
 
 ```bash
-5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.rafay.local
-5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.rafay.local
+5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
+5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.paralus.local
 ```
 
 ##### Updating /etc/hosts
 
-Add two new lines in `/etc/hosts` file
+Add two new lines in `/etc/hosts` file along with the IP address obtained
 
 ```bash
-172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.rafay.local
-172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.rafay.local
+172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
+172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.paralus.local
 ```
 
 Your final `/etc/hosts` file should be something like the following
 
 ```bash
-
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-172.20.0.2 console.rafay.local
-172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.rafay.local
-172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.rafay.local
+172.20.0.2 console.paralus.local
+172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
+172.20.0.2 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.paralus.local
 ```
 
 ### Accessing Existing Cluster
 
-With all the changes in place, it's time to apply the bootstarp yaml file that we download while [importing an existing cluster](#importing-an-existing-cluster)
+With all the changes in place, it's time to apply the bootstrap yaml file that we download while [importing an existing cluster](#importing-an-existing-cluster)
 
 ```bash
 kubectl apply -f mylocalcluster.yaml
 ```
 
-Wait for the changes to take place. On the portal you will see that the cluster is imported successfully. It usually takes 3-5 minutes for the status to update.
+Wait for the changes to take place. On the dashboard you will see that the cluster is imported successfully. It usually takes 3-5 minutes for the status to update.
 
-<img src="/img/docs/localcluster-setup.png" alt="Import Cluster Success" />
-Import Cluster Success
+> *You can also execute `kubectl get pods` to check the status.*
 
+<img src="/img/docs/paralus-import-cluster-3.png" alt="Import Cluster Success" height="70%" width="70%"/>
 
-Select your newly imported cluster and click on `kubectl` to access the prompt and interact with your cluster from the UI.
+Select your newly imported cluster and click on `kubectl` to access the prompt and interact with your cluster from the dashboard.
 
 A `kubectl` console will open in the bottom half of the screen, enter your kubectl commands to interact with your cluster.
 
-<img src="/img/docs/importcluster-kubectl.png" alt="Accessing imported cluster via kubectl" />
-Accessing imported cluster via kubectl
+<img src="/img/docs/paralus-import-cluster-4.png" alt="Accessing imported cluster via kubectl" height="70%" width="70%"/>
 
+Congratulations! You've successfully deployed Paralus and imported a local cluster.
 
-> Note: If you get Connection Error repeatedly, delete the `prompt` pod in your cluster.
-
-Congratulations! You've successfully deployed ZTKA and imported a local cluster.
-
-Refer to our documentation to learn about various configurations and how you can use ZTKA.
+Refer to our documentation to learn about various [feautres of Paralus](../usage/).
