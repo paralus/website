@@ -12,6 +12,7 @@ Installing Paralus via Helm charts is the preferred way. To successfully install
 - Elasticsearch
 - Domain Name
 - SMTP Server [Optional]
+- HTTPS [Optional]
 
 If you are installing Paralus for the first time and don't have any of these components, you can [skip to installation](#installation) section as Paralus will install and configure all these components for you.
 
@@ -48,6 +49,25 @@ Keep the elasticsearch address handy. For example, `my-es-host:9200`
 Optionally an SMTP server can also be configured. This will allow Paralus to send out password recovery mails to the users. Without SMTP, the admin will have to manually share it with the users.
 
 An SMTP connection URI to connect to SMTP server. For example, `smtps://foo:bar@my-mailserver:1234/`
+
+### HTTPS - _Optional_
+
+We also advise users to enable HTTPS while using Paralus as it is more secure. In order to use HTTPS, there are three things you need to do:
+
+1. Generate a SSL certificate to be used with the domain name. You can use [OpenSSL](https://github.com/openssl/openssl), [Let's Encrypt](https://github.com/letsencrypt), [cert-manager](https://github.com/cert-manager/cert-manager) or similar tools to generate SSL certificates. You can also use an existing one that you might already have.
+
+2. Create a secret to store the generated SSL. Kubernetes provides a built in secrect type `kubernetes.io/tls` for storing certificates. You can follow [this guide](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets) to store the certificate as a secret.
+
+> _If you've generated a certificate using cert-manager, the secret will be created for you._
+
+3. Refer to the secret in [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml#L231-L237) file and provide the name of the secret created as shown below:
+
+```yaml
+contour:
+    enable: true
+    tls:
+      secretName: ic-oss-paralus-tls # Name of your secret
+```
 
 ## Installation
 
