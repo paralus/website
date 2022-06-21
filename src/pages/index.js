@@ -5,6 +5,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Features from "@site/src/components/Features";
 import Hero from "@site/src/components/Hero";
+import Cta from "../components/Cta";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -22,6 +23,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <Features />
+        <Cta />
       </main>
     </Layout>
   );

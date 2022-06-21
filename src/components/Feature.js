@@ -7,6 +7,37 @@ export default function Feature({
   bullets,
   reverse = false,
 }) {
+  if (!image) {
+    return (
+      <div className="space-y-6">
+        <div className="text-center text-3xl font-semibold">{title}</div>
+        <div className="flex justify-center">
+          <p
+            style={{ maxWidth: "510px" }}
+            className="text-center text-base font-light"
+          >
+            {description}
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <ul
+            role="list"
+            className="list-disc gap-2 pl-5 text-base font-semibold marker:text-teal-400"
+          >
+            {bullets.map((bullet, index) => (
+              <li key={index} className="list-none flex items-center">
+                <span className="inline-block h-15 w-15 flex basis-1/6">
+                  <img src="/img/checkmark.svg" />
+                </span>
+                <span className="flex basis-5/6">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={
@@ -17,7 +48,7 @@ export default function Feature({
     >
       <div
         className="space-y-6 pb-5 lg:w-1/2 lg:pb-0 "
-        style={{ maxWidth: "650px" }}
+        style={{ maxWidth: "510px" }}
       >
         <div className="text-center text-3xl font-semibold lg:text-left">
           {title}
@@ -30,7 +61,12 @@ export default function Feature({
           className="list-disc gap-2 pl-5 text-base font-semibold marker:text-teal-400"
         >
           {bullets.map((bullet, index) => (
-            <li key={index}>{bullet}</li>
+            <li key={index} className="list-none flex items-center">
+              <span className="inline-block h-15 w-15 flex basis-1/6">
+                <img src="/img/checkmark.svg" />
+              </span>
+              <span className="flex basis-5/6">{bullet}</span>
+            </li>
           ))}
         </ul>
       </div>

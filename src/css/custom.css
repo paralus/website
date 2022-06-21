@@ -25,7 +25,7 @@ html {
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-family-base: "Noto Sans";
-  --ifm-background-color: #f9f9f9;
+  --ifm-background-color: #ffffff;
   --ifm-color-primary: #09b09c;
   --ifm-color-primary-dark: #0a9b9a;
   --ifm-color-primary-darker: #0a8b8a;

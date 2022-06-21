@@ -7,7 +7,7 @@ category: ""
 
 Eliminate the burden of having to configure and manage Kubernetes Role Based Access Control cluster by cluster. Streamline and consolidate access control for your fleet of clusters spanning different operating environments, different clouds (EKS, AKS, etc.), and on-premises data centers operating behind firewalls. A single login gives authorized users (e.g., developers, operations, contractors, etc.) seamless and secure access to all clusters with a native and familiar kubectl experience.
 
-![ok](/img/hero.png)
+![ok](/img/hero.svg)
 
 Comply with security policies with completely private datapaths. Reduce complexity and eliminate the risk of security breaches and loss in productivity.
 

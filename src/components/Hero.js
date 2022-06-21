@@ -17,7 +17,7 @@ export default function Hero() {
         </p>
         <div className="text-center justify-center flex">
           <a href="/docs" className="hover:no-underline">
-            <div className="text-white w-fit py-2 px-4 rounded-md bg-green-600 hover:bg-green-900 transition-colors duration-200">
+            <div className="text-white w-fit py-2 px-4 rounded-md bg-teal-500 hover:bg-teal-900 transition-colors duration-200">
               <FaDownload className="inline-block mr-2" />
               <span>Install</span>
             </div>
@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="flex flex-col w-full lg:w-1/2 mb-10">
-        <img className="w-full" src="/img/hero.png" alt="Paralus" />
+        <img className="w-full" src="/img/hero.svg" alt="Paralus" />
       </div>
     </div>
   );
