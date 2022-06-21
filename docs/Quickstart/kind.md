@@ -50,20 +50,25 @@ docker container inspect kind-control-plane --format '{{ .NetworkSettings.Networ
 
 Add the [paralus helm repository](https://github.com/paralus/helm-charts)
 
-`helm repo add paralus https://paralus.github.io/helm-charts`
+```bash
+helm repo add paralus https://paralus.github.io/helm-charts
+helm repo update
+```
 
-Navigate to the downloaded folder and update the following entries in `values.yaml` present under `/charts/ztka/`
+Create a new [values.yaml](https://github.com/paralus/helm-charts/blob/main/examples/values.kind.yaml) file with the following changes:
 
 - Switch kratos to development mode by setting `kratos.kratos.development` to `true`
 - Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
 - [OPTIONAL] Change the host under domain.host to use a different hostname
 - [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
 
-> You can also refer to [this values file](https://github.com/paralus/helm-charts/blob/main/examples/values.kind.yaml)
+Create a namespace
 
-Being in the `ztka` directory, run the following command to install Paralus
+`kubectl create ns paralus`
 
-`helm upgrade --install <RELEASE_NAME> .`
+Install Paralus
+
+`helm install ztkarelease -f myvalues.yaml -n paralus paralus/ztka`
 
 > Note: In case you get an error, run `helm dependency build` to build the dependencies.
 
@@ -72,7 +77,7 @@ You'll see the following output if the installation succeeds:
 ```bash
 NAME: ztkarelease
 LAST DEPLOYED: Wed Jun 15 09:05:49 2022
-NAMESPACE: default
+NAMESPACE: paralus
 STATUS: deployed
 REVISION: 1
 NOTES:
@@ -81,7 +86,7 @@ NOTES:
 
 You can view the recovery link for admin user by running the following command once all the pods are running:
 
-kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 ```
 
 > Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
