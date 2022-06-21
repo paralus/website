@@ -1,5 +1,5 @@
 ---
-title: Zero-Trust Access Kubernetes
+title: Paralus Kubernetes Access Manager
 description: ""
 sidebar_position: 1
 category: ""
