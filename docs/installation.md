@@ -131,7 +131,7 @@ contour:
 
     You can view the recovery link for admin user by running the following command once all the pods are running:
 
-    kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 
    ```
 
@@ -152,7 +152,7 @@ Based on your domain provider, you can login to your domain's control panel and 
 Paralus is installed with a default organization and an admin user. Hence, after installation, you need to set a password for the user. To do so, execute the command that you get after installting Paralus.
 
 ```bash
-kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 
 Org Admin signup URL:  http://my-host.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
 ```
