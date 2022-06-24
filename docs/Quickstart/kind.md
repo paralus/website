@@ -111,7 +111,7 @@ Paralus comes configured with default credentials that allow you to access the d
 In order to get the `Password Reset URL`, copy the command displayed after helm install and execute it
 
 ```bash
-kubectl logs -f --namespace default $(kubectl get pods --namespace default -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 
 Org Admin signup URL:  http://console.paralus.local/self-service/recovery?flow=9ec13c6f-414e-4cb5-bf4c-def35973118f&token=ge6bi6zmyzUlQrHlYTOCDeItV82hT08Y
 ```
