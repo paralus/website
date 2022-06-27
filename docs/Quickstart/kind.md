@@ -59,7 +59,7 @@ Create a new [values.yaml](https://github.com/paralus/helm-charts/blob/main/exam
 
 - Switch kratos to development mode by setting `kratos.kratos.development` to `true`
 - Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
-- [OPTIONAL] Change the host under domain.host to use a different hostname
+- [OPTIONAL] Change the host under fqdn.domain to use a different hostname
 - [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
 
 Create a namespace
