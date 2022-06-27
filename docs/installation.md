@@ -111,8 +111,8 @@ contour:
             username: "user"
             password: "pa$$word"
             database: "dbname"
-    domain:
-        host: my-host.com
+    fqdn:
+        domain: my-host.com
    ```
 
 4. Install the chart with release name my-release:

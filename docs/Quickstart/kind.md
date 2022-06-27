@@ -59,7 +59,7 @@ Create a new [values.yaml](https://github.com/paralus/helm-charts/blob/main/exam
 
 - Switch kratos to development mode by setting `kratos.kratos.development` to `true`
 - Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
-- [OPTIONAL] Change the host under domain.host to use a different hostname
+- [OPTIONAL] Change the host under fqdn.domain to use a different hostname
 - [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
 
 Create a namespace
@@ -100,7 +100,7 @@ In order to do that, edit the `/etc/hosts` file using your favourite editor and 
 172.20.0.2 console.paralus.local
 ```
 
-*Refer to the value of `domain.host` in your [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml#L145) file to find the default host.*
+*Refer to the value of `fqdn.domain` in your [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml#L145) file to find the default host.*
 
 Open your favorite web browser and navigate to `http://console.paralus.local`, you will be see the dashboard with the login screen
 
