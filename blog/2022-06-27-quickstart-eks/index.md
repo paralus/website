@@ -1,14 +1,13 @@
 ---
-title: Elastic Kubernetes Service (EKS) on AWS  
-description: "Install Paralus on Amazon Elastic Kubernetes Service EKS quickstart guide."
-sidebar_position: 3
-sidebar_label: "EKS"
-slug: /quickstart/eks
+slug: eks-quickstart
+title: "Tutorial: how to set up Paralus on Amazon EKS"
+authors: [atul]
+tags: [aws, eks, tutorial]
 ---
 
-Welcome to this quickstart guide to install Paralus on Amazon Elastic Kubernetes Service (EKS)
-
 With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes Service (EKS) cluster on a custom domain and deploy Paralus on it.
+
+<!--truncate-->
 
 **Table Of Content:**
 
@@ -80,72 +79,72 @@ Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 
 1. Add helm repo
 
-    `helm repo add paralus https://paralus.github.io/helm-charts`
+   `helm repo add paralus https://paralus.github.io/helm-charts`
 
 2. Create `values.eks.yaml`
 
-    ```yaml
-    ingress:
-      enabled: false
+   ```yaml
+   ingress:
+     enabled: false
 
-    deploy:
-      elasticsearch:
-        enable: true
-      postgresql:
-        enable: true
-      contour:
-        enable: true
+   deploy:
+     elasticsearch:
+       enable: true
+     postgresql:
+       enable: true
+     contour:
+       enable: true
 
-    kratos:
-      kratos:
-        development: true
+   kratos:
+     kratos:
+       development: true
 
-    contour:
-      envoy:
-        service:
-          annotations:
-            service.beta.kubernetes.io/aws-load-balancer-type: nlb
-    ```
+   contour:
+     envoy:
+       service:
+         annotations:
+           service.beta.kubernetes.io/aws-load-balancer-type: nlb
+   ```
 
-    > Note: When deploying this in production, set `kratos.development: false`
+   > Note: When deploying this in production, set `kratos.development: false`
 
 3. Create `values.domain.yaml`
 
-    ```yaml
-    fqdn:
-        domain: "chartexample.com"
-        hostname: "console-eks-oss"
-        coreConnectorSubdomain: "*.core-connector.eks-oss"
-        userSubdomain: "*.user.eks-oss"
-    ```
+   ```yaml
+   fqdn:
+     domain: "chartexample.com"
+     hostname: "console-eks-oss"
+     coreConnectorSubdomain: "*.core-connector.eks-oss"
+     userSubdomain: "*.user.eks-oss"
+   ```
 
 4. Install Paralus
 
-    ```bash
-    helm install myrelease paralus/ztka --devel -f values.domain.yaml -f values.eks.yaml -n paralus --create-namespace
+   ```bash
+   helm install myrelease paralus/ztka --devel -f values.domain.yaml -f values.eks.yaml -n paralus --create-namespace
 
-    NAME: myrelease
-    LAST DEPLOYED: Wed May 25 10:13:48 2022
-    NAMESPACE: paralus
-    STATUS: deployed
-    REVISION: 1
-    NOTES:
-    1. Access the application URL by running these commands:
-      Get load balancer address via:
-      kubectl get service envoy --namespace paralus -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+   NAME: myrelease
+   LAST DEPLOYED: Wed May 25 10:13:48 2022
+   NAMESPACE: paralus
+   STATUS: deployed
+   REVISION: 1
+   NOTES:
+   1. Access the application URL by running these commands:
+     Get load balancer address via:
+     kubectl get service envoy --namespace paralus -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
 
-      Add DNS records of following domains such that it resolves to above address:
-      - console-eks-oss.chartexample.com
-      - *.core-connector.eks-oss.chartexample.com
-      - *.user.eks-oss.chartexample.com
-      Open http://console-eks-oss.chartexample.com in browser.
+     Add DNS records of following domains such that it resolves to above address:
+     - console-eks-oss.chartexample.com
+     - *.core-connector.eks-oss.chartexample.com
+     - *.user.eks-oss.chartexample.com
+     Open http://console-eks-oss.chartexample.com in browser.
 
-    You can view the recovery link for admin user by running the following command once all the pods are running:
+   You can view the recovery link for admin user by running the following command once all the pods are running:
 
-    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize-paralus | grep 'Org Admin signup URL:'
-    ```
+   kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize-paralus | grep 'Org Admin signup URL:'
+   ```
 
-    > Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
+   > Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
 
 ## Configuring DNS Settings
 
@@ -198,7 +197,7 @@ You'll be taken to the projects page where you'll see a default project.
 
 ### Importing Existing Cluster
 
-Everything in Paralus is grouped into [Projects](../usage/projects). Each project will have [clusters](../usage/clusters), [users](../usage/users) and [groups](../usage/groups) associated with it. Hence the first step it to create a new project.
+Everything in Paralus is grouped into [Projects](/docs/usage/projects). Each project will have [clusters](/docs/usage/clusters), [users](/docs/usage/users) and [groups](/docs/usage/groups) associated with it. Hence the first step it to create a new project.
 
 Click on **New Project** to create a new project and then import a cluster in that project.
 
@@ -226,4 +225,4 @@ A `kubectl` console will open in the bottom half of the screen, enter your kubec
 
 Congratulations! You've successfully deployed Paralus on EKS and imported a local cluster.
 
-Refer to our documentation to learn about various [feautres of Paralus](../usage/).
+Refer to our documentation to learn about various [feautres of Paralus](/docs/usage/).

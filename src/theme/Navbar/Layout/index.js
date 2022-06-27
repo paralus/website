@@ -29,7 +29,7 @@ export default function NavbarLayout({ children }) {
       ref={navbarRef}
       className={clsx(
         "px-5 md:px-20 xl:px-60",
-        "navbar",
+        "navbar text-sm",
         "navbar--fixed-top",
         hideOnScroll && [
           styles.navbarHideable,
