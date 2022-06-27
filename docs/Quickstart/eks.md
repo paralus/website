@@ -112,9 +112,9 @@ Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 3. Create `values.domain.yaml`
 
     ```yaml
-    domain:
-        host: "chartexample.com"
-        consoleSubdomain: "console-eks-oss"
+    fqdn:
+        domain: "chartexample.com"
+        hostname: "console-eks-oss"
         coreConnectorSubdomain: "*.core-connector.eks-oss"
         userSubdomain: "*.user.eks-oss"
     ```
