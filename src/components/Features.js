@@ -43,7 +43,7 @@ export default function Features() {
           />
           <Feature
             title="Access through the web or CLI"
-            reverse={true}
+            image="terminal.svg"
             description="Paralus can be installed using Helm, and ships with a browser-based GUI as well as traditional command-line tooling"
             bullets={[
               "pctl tool to manage kubeconfigs directly from terminal",
