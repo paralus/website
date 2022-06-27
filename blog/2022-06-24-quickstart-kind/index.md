@@ -1,10 +1,13 @@
 ---
-title: Kind
-description: "Install Paralus on Kind quickstart guide."
-slug: /quickstart/kind
+slug: kind-quickstart
+title: "Tutorial: How to set up Paralus on Kind"
+authors: [atul]
+tags: [helloworld, kind, tutorial]
 ---
 
 Paralus can be installed on your local cluster using `Kind` to experience the product before taking it to production.
+
+<!--truncate-->
 
 The quickstart guide can be followed to setup Paralus on a Kind cluster.
 
@@ -100,7 +103,7 @@ In order to do that, edit the `/etc/hosts` file using your favourite editor and 
 172.20.0.2 console.paralus.local
 ```
 
-*Refer to the value of `fqdn.domain` in your [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml#L145) file to find the default host.*
+_Refer to the value of `fqdn.domain` in your [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml#L145) file to find the default host._
 
 Open your favorite web browser and navigate to `http://console.paralus.local`, you will be see the dashboard with the login screen
 
@@ -187,7 +190,7 @@ kubectl apply -f mylocalcluster.yaml
 
 Wait for the changes to take place. On the dashboard you will see that the cluster is imported successfully. It usually takes 3-5 minutes for the status to update.
 
-> *You can also execute `kubectl get pods` to check the status.*
+> _You can also execute `kubectl get pods` to check the status._
 
 <img src="/img/docs/paralus-import-cluster-3.png" alt="Import Cluster Success" height="70%" width="70%"/>
 
