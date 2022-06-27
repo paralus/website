@@ -197,7 +197,7 @@ You'll be taken to the projects page where you'll see a default project.
 
 ### Importing Existing Cluster
 
-Everything in Paralus is grouped into [Projects](../usage/projects). Each project will have [clusters](../usage/clusters), [users](../usage/users) and [groups](../usage/groups) associated with it. Hence the first step it to create a new project.
+Everything in Paralus is grouped into [Projects](/docs/usage/projects). Each project will have [clusters](/docs/usage/clusters), [users](/docs/usage/users) and [groups](/docs/usage/groups) associated with it. Hence the first step it to create a new project.
 
 Click on **New Project** to create a new project and then import a cluster in that project.
 
@@ -225,4 +225,4 @@ A `kubectl` console will open in the bottom half of the screen, enter your kubec
 
 Congratulations! You've successfully deployed Paralus on EKS and imported a local cluster.
 
-Refer to our documentation to learn about various [feautres of Paralus](../usage/).
+Refer to our documentation to learn about various [feautres of Paralus](/docs/usage/).

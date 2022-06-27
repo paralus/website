@@ -18,7 +18,7 @@ If you are installing Paralus for the first time and don't have any of these com
 
 If you already have these set up in your environment, you will have to configure Paralus to work with them. To know more about the configuration changes, proceed to the [prerequisites](#prerequisites) section.
 
-> If you want to test out Paralus first on a local setup first, we suggest you to read our [Kind Quickstart](../docs/quickstart/kind) guide.
+> If you want to test out Paralus first on a local setup first, we suggest you to read our [Kind Quickstart](/blog/kind-quickstart) guide.
 
 ## Prerequisites
 
@@ -64,9 +64,9 @@ We also advise users to enable HTTPS while using Paralus as it is more secure. I
 
 ```yaml
 contour:
-    enable: true
-    tls:
-      secretName: ic-oss-paralus-tls # Name of your secret
+  enable: true
+  tls:
+    secretName: ic-oss-paralus-tls # Name of your secret
 ```
 
 ## Installation
@@ -141,11 +141,11 @@ Paralus also requires a domain name where the dashboard and other components wil
 
 Based on your domain provider, you can login to your domain's control panel and add three `CNAME` DNS records with the details provided as shown below:
 
-| Type | Address | Resolves To | TTL |
-|---|---|---|---|
-| CNAME | console.my-host.com | 192.168.0.1 | 1 Hour |
-| CNAME | *.user.paralus.my-host.com  | 198.168.0.1 | 1 Hour |
-| CNAME | *.core-connector.paralus.my-host.com | 192.168.0.1 | 1 Hour |
+| Type  | Address                               | Resolves To | TTL    |
+| ----- | ------------------------------------- | ----------- | ------ |
+| CNAME | console.my-host.com                   | 192.168.0.1 | 1 Hour |
+| CNAME | \*.user.paralus.my-host.com           | 198.168.0.1 | 1 Hour |
+| CNAME | \*.core-connector.paralus.my-host.com | 192.168.0.1 | 1 Hour |
 
 ## First Run
 

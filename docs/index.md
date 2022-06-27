@@ -31,4 +31,4 @@ The concept of Zero Trust is governed by 3 principles:
 
 As a developer, you should adopt Zero Trust principles to keep the users safe and applications secured on your Kubernetes clusters. Paralus is a handy tool for you to manage access to your Kubernetes clusters. It allows you to configure kubectl access for your teams at organization, project and namespace level. It works seamlessly with Kubernetes’s native RBAC support and integrates seamlessly with SSO. You can configure these settings using an intuitive UI or use our command line utility pctl.
 
-Wondering where to start? Refer our [Quickstart Guide](../docs/quickstart) to quickly understand Paralus and secure your applications.
+Wondering where to start? Check out our [Installation docs](/docs/installation) to get started in minutes.
