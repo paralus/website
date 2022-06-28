@@ -83,7 +83,11 @@ const config = {
         },
         items: [
           { to: "/blog", label: "Blog", position: "right" },
-          { to: "/docs/installation", label: "Download", position: "left" },
+          {
+            to: "https://join.slack.com/t/paralus/shared_invite/zt-1a9x6y729-ySmAq~I3tjclEG7nDoXB0A",
+            label: "Slack",
+            position: "right",
+          },
           {
             type: "doc",
             docId: "index",
@@ -91,7 +95,7 @@ const config = {
             label: "Documentation",
           },
           {
-            to: "https://github.com/paralus",
+            to: "https://github.com/paralus/paralus",
             label: "GitHub",
             position: "right",
           },

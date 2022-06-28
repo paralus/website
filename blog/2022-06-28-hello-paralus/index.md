@@ -20,7 +20,7 @@ Paralus helps everyone with multi-cluster environments on the scale of one to th
 
 In addition to the robust features that Paralus has inherited from the Rafay Zero-Trust Access Service, Paralus offers several added improvements, namely IdP support, custom roles, and dynamically changing permissions.
 
-![access diagram](./img/lockup.png)
+![access diagram](./img/diagram.png)
 
 ## Main features of Paralus
 
