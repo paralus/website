@@ -143,9 +143,9 @@ Based on your domain provider, you can login to your domain's control panel and 
 
 | Type  | Address                               | Resolves To | TTL    |
 | ----- | ------------------------------------- | ----------- | ------ |
-| CNAME | console.my-host.com                   | 192.168.0.1 | 1 Hour |
-| CNAME | \*.user.paralus.my-host.com           | 198.168.0.1 | 1 Hour |
-| CNAME | \*.core-connector.paralus.my-host.com | 192.168.0.1 | 1 Hour |
+| CNAME | console.my-host.com                   | `<your server IP>` | 1 Hour |
+| CNAME | \*.user.paralus.my-host.com           | `<your server IP>` | 1 Hour |
+| CNAME | \*.core-connector.paralus.my-host.com | `<your server IP>` | 1 Hour |
 
 ## First Run
 
