@@ -158,7 +158,7 @@ Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flo
 
 Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
 
-- username: `admin@paralus.local` - *or the one you specified in `values.yaml`*
+- username: `admin@paralus.local` - _or the one you specified in `values.yaml`_
 - password: `<The one you entered above>`
 
 You'll be taken to the projects page where you'll see a default project.
