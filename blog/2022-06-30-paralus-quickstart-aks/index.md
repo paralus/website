@@ -135,7 +135,7 @@ prompt                          ClusterIP      10.0.50.46     <none>         700
 relay-server      
 ```
 
-Note down the IP address for the service type `LoadBalancer`
+Note down the `EXTERNAL-IP` address for the `<releasename>-contour-envoy` service.
 
 Navigate to your domain's DNS setting page. _The steps for changing DNS settings will vary based on your domain name provider._
 
