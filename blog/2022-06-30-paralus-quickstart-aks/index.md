@@ -118,7 +118,7 @@ NAME                            TYPE           CLUSTER-IP     EXTERNAL-IP    POR
 myrelease-contour-envoy         LoadBalancer   10.0.33.6      13.71.51.105   80:30193/TCP,443:30873/TCP      3m13s   
 ```
 
-Note down the IP address for the service type `LoadBalancer`
+Note down the `EXTERNAL-IP` address for the `<releasename>-contour-envoy` service.
 
 Navigate to your domain's DNS setting page. _The steps for changing DNS settings will vary based on your domain name provider._
 
