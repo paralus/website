@@ -9,6 +9,8 @@ The [previous blog post](/blog/eks-quickstart), was about deploying Paralus to A
 
 In this blog post, we'll take you through the steps to setup an Azure Kubernetes Services (AKS) cluster on a custom domain and deploy Paralus on it.
 
+<!--truncate-->
+
 **Table Of Content:**
 
 - [Pre Requisites](#pre-requisites)

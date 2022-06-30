@@ -7,6 +7,8 @@ tags: [aws, eks, tutorial]
 
 With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes Service (EKS) cluster on a custom domain and deploy Paralus on it.
 
+<!--truncate-->
+
 **Table Of Content:**
 
 - [Pre Requisites](#pre-requisites)
