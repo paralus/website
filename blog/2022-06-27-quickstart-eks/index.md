@@ -75,8 +75,6 @@ Added new context arn:aws:eks:us-west-2:645114859692:cluster/ferocious-gopher-16
 
 ## Installing Paralus
 
-Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
-
 1. Add helm repo
 
    `helm repo add paralus https://paralus.github.io/helm-charts`
@@ -84,9 +82,6 @@ Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 2. Create `values.eks.yaml`
 
    ```yaml
-   ingress:
-     enabled: false
-
    deploy:
      elasticsearch:
        enable: true

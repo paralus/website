@@ -1,6 +1,6 @@
 ---
 slug: paralus-quickstart-aks
-title: "Tutorial: How to set up Paralus on Azure Kubernetes Service - AKS"
+title: "Tutorial: How to set up Paralus on Azure Kubernetes Service (AKS)"
 authors: [atul]
 tags: [azure, aks, tutorial]
 ---
@@ -47,8 +47,6 @@ After the cluster is created, start the cluster and connect to it. If you've cre
 
 ## Installing Paralus
 
-Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
-
 1. Add helm repo
 
    `helm repo add paralus https://paralus.github.io/helm-charts`
@@ -56,9 +54,6 @@ Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 2. Create `values.aks.yaml`
 
    ```yaml
-   ingress:
-     enabled: false
-
    deploy:
      elasticsearch:
        enable: true
@@ -117,22 +112,10 @@ Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 Once the installation is complete, you need to first get the external IP address provided by Azure loadbalancer. You can do so by executing the following command:
 
 ```bash
-kubectl get svc -n paralus
+kubectl get svc myrelease-contour-envoy -n paralus
 
 NAME                            TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)                         AGE
-dashboard                       ClusterIP      10.0.134.169   <none>         80/TCP                          3m13s
-elasticsearch-master            ClusterIP      10.0.125.222   <none>         9200/TCP,9300/TCP               3m13s
-elasticsearch-master-headless   ClusterIP      None           <none>         9200/TCP,9300/TCP               3m13s
-myrelease-contour               ClusterIP      10.0.151.61    <none>         8001/TCP                        3m13s
-myrelease-contour-envoy         LoadBalancer   10.0.33.6      13.71.51.105   80:30193/TCP,443:30873/TCP      3m13s
-myrelease-kratos-admin          ClusterIP      10.0.16.90     <none>         80/TCP                          3m13s
-myrelease-kratos-courier        ClusterIP      None           <none>         80/TCP                          3m13s
-myrelease-kratos-public         ClusterIP      10.0.234.235   <none>         80/TCP                          3m13s
-myrelease-postgresql            ClusterIP      10.0.114.76    <none>         5432/TCP                        3m13s
-myrelease-postgresql-hl         ClusterIP      None           <none>         5432/TCP                        3m13s
-paralus                         ClusterIP      10.0.12.103    <none>         11000/TCP,10000/TCP,10001/TCP   3m13s
-prompt                          ClusterIP      10.0.50.46     <none>         7009/TCP                        3m13s
-relay-server      
+myrelease-contour-envoy         LoadBalancer   10.0.33.6      13.71.51.105   80:30193/TCP,443:30873/TCP      3m13s   
 ```
 
 Note down the IP address for the service type `LoadBalancer`
