@@ -7,8 +7,6 @@ tags: [aws, eks, tutorial]
 
 With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes Service (EKS) cluster on a custom domain and deploy Paralus on it.
 
-<!--truncate-->
-
 **Table Of Content:**
 
 - [Pre Requisites](#pre-requisites)
@@ -188,7 +186,7 @@ Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flo
 
 Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
 
-- username: `foo@example.com`
+- username: `admin@paralus.local` - _or the one you specified in `values.yaml`_
 - password: `<The one you entered above>`
 
 You'll be taken to the projects page where you'll see a default project.
