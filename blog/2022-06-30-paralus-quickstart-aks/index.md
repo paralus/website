@@ -106,9 +106,9 @@ While you are on your DNS Setting page, for the selected domain name, you need t
 
 | Type | Address | Resolves To | TTL |
 |---|---|---|---|
-| A | console-aks-oss.chartexample.com | 13.71.51.105 | 1 Hour |
-| A | *.core-connector.aks-oss.chartexample.com | 13.71.51.105 | 1 Hour |
-| A | *.user.aks-oss.chartexample.com | 13.71.51.105 | 1 Hour |
+| A | console.chartexample.com | 13.71.51.105 | 1 Hour |
+| A | *.core-connector.chartexample.com | 13.71.51.105 | 1 Hour |
+| A | *.user.chartexample.com | 13.71.51.105 | 1 Hour |
 
 ### Accessing The Dashboard
 
