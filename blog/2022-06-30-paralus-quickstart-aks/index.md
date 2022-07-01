@@ -51,39 +51,19 @@ After the cluster is created, start the cluster and connect to it. If you've cre
 
    `helm repo add paralus https://paralus.github.io/helm-charts`
 
-2. Create `values.aks.yaml`
+2. Install Paralus
 
-   ```yaml
-   deploy:
-     elasticsearch:
-       enable: true
-     postgresql:
-       enable: true
-     contour:
-       enable: true
+  ```bash
+   helm install myrelease paralus/ztka \
+    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.aks.yaml \
+    -set fqdn.domain="chartexample.com" \
+    -n paralus \
+    --create-namespace
+  ```
 
-   kratos:
-     kratos:
-       development: true
-   ```
+  >Note: If you plan to use Paralus without a `https` enabled domain, you'll need to set the `kratos.development` flas as `true`
 
-   > Note: When deploying this in production, set `kratos.development: false`
-
-3. Create `values.domain.yaml`
-
-   ```yaml
-   fqdn:
-     domain: "chartexample.com"
-     hostname: "console-aks-oss"
-     coreConnectorSubdomain: "*.core-connector.aks-oss"
-     userSubdomain: "*.user.aks-oss"
-   ```
-
-4. Install Paralus
-
-   ```bash
-   helm install myrelease paralus/ztka --devel -f values.domain.yaml -f values.aks.yaml -n paralus --create-namespace
-
+  ```bash
    NAME: myrelease
    LAST DEPLOYED: Wed Jun 29 10:13:48 2022
    NAMESPACE: paralus
@@ -103,9 +83,9 @@ After the cluster is created, start the cluster and connect to it. If you've cre
    You can view the recovery link for admin user by running the following command once all the pods are running:
 
    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize-paralus | grep 'Org Admin signup URL:'
-   ```
+  ```
 
-   > Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
+> Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
 
 ## Configuring DNS Settings
 
