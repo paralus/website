@@ -61,7 +61,7 @@ After the cluster is created, start the cluster and connect to it. If you've cre
     --create-namespace
   ```
 
-  >Note: If you plan to use Paralus without a `https` enabled domain, you'll need to set the `kratos.development` flas as `true`
+  >Note: If you plan to use Paralus without a `https` enabled domain, you'll need to set `kratos.development` in `values.yaml` as `true`
 
   ```bash
    NAME: myrelease
