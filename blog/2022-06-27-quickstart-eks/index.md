@@ -75,8 +75,6 @@ Added new context arn:aws:eks:us-west-2:645114859692:cluster/ferocious-gopher-16
 
 ## Installing Paralus
 
-Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
-
 1. Add helm repo
 
    `helm repo add paralus https://paralus.github.io/helm-charts`
@@ -84,9 +82,6 @@ Clone the [paralus helm repository](https://github.com/paralus/helm-charts)
 2. Create `values.eks.yaml`
 
    ```yaml
-   ingress:
-     enabled: false
-
    deploy:
      elasticsearch:
        enable: true
@@ -188,7 +183,7 @@ Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flo
 
 Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
 
-- username: `foo@example.com`
+- username: `admin@paralus.local` - _or the one you specified in `values.yaml`_
 - password: `<The one you entered above>`
 
 You'll be taken to the projects page where you'll see a default project.
