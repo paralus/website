@@ -75,14 +75,14 @@ After the cluster is created, start the cluster and connect to it. If you've cre
      kubectl get service envoy --namespace paralus -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
 
      Add DNS records of following domains such that it resolves to above address:
-     - console-aks-oss.chartexample.com
-     - *.core-connector.aks-oss.chartexample.com
-     - *.user.aks-oss.chartexample.com
-     Open http://console-aks-oss.chartexample.com in browser.
+     - console.chartexample.com
+     - *.core-connector.chartexample.com
+     - *.user.chartexample.com
+     Open http://console.chartexample.com in browser.
 
    You can view the recovery link for admin user by running the following command once all the pods are running:
 
-   kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize-paralus | grep 'Org Admin signup URL:'
+   kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
   ```
 
 > Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
