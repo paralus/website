@@ -5,9 +5,9 @@ authors: [atul]
 tags: [google cloud, gke, tutorial]
 ---
 
-Setting up Paralus is quite simple irrespecitve of the infrastructure you're deploying it on. You've seen in the [previous blog post](/blog/paralus-quickstart-aks), where we showed how to deploy Paralus to Azure's Kubernetes Service (AKS)
+Setting up Paralus is quite simple irrespective of the infrastructure you're deploying it on. You've seen in the [previous blog post](/blog/paralus-quickstart-aks), where we showed how to deploy Paralus to Azure's Kubernetes Service (AKS)
 
-In this blog post, we'll take you through the steps to setup an Paralus on Google Kubernetes Engine (GKE) using a custom domain and import a local cluster into it. Let's get started!
+In this blog post, we'll take you through the steps to setup Paralus on Google Kubernetes Engine (GKE) using a custom domain and import a local cluster into it. Let's get started!
 
 <!--truncate-->
 
