@@ -18,3 +18,4 @@ We also have some tutorials that you can follow to configure Paralus.
 - [Setup Paralus on a Local Cluster Using Kind](/blog/kind-quickstart)
 - [Deploy Paralus to Elastic Kubernetes Service (EKS) on AWS](/blog/eks-quickstart)
 - [Setup Paralus on Azure Kubernetes Service (AKS) on Azure](/blog/paralus-quickstart-aks)
+- [Paralus on Google Kubernetes Engine (GKE) on Google Cloud](/blog/paralus-quickstart-gke)

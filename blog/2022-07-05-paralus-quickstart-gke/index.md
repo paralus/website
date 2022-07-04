@@ -1,20 +1,20 @@
 ---
-slug: paralus-quickstart-aks
-title: "Tutorial: How to set up Paralus on Azure Kubernetes Service (AKS)"
+slug: paralus-quickstart-gke
+title: "Tutorial: How to set up Paralus on Google Kubernetes Engine (GKE)"
 authors: [atul]
-tags: [azure, aks, tutorial]
+tags: [google cloud, gke, tutorial]
 ---
 
-The [previous blog post](/blog/eks-quickstart), was about deploying Paralus to Amazon's Elastic Kubernetes Service (EKS).
+Setting up Paralus is quite simple irrespecitve of the infrastructure you're deploying it on. You've seen in the [previous blog post](/blog/paralus-quickstart-aks), where we showed how to deploy Paralus to Azure's Kubernetes Service (AKS)
 
-In this blog post, we'll take you through the steps to setup an Azure Kubernetes Services (AKS) cluster on a custom domain and deploy Paralus on it.
+In this blog post, we'll take you through the steps to setup an Paralus on Google Kubernetes Engine (GKE) using a custom domain and import a local cluster into it. Let's get started!
 
 <!--truncate-->
 
 **Table Of Content:**
 
 - [Pre Requisites](#pre-requisites)
-- [Creating AKS Cluster](#creating-aks-cluster)
+- [Creating GKE Cluster](#creating-gke-cluster)
 - [Installing Paralus](#installing-paralus)
 - [Configuring DNS Settings](#configuring-dns-settings)
   - [Accessing The Dashboard](#accessing-the-dashboard)
@@ -22,28 +22,21 @@ In this blog post, we'll take you through the steps to setup an Azure Kubernetes
 
 ## Pre Requisites
 
-To setup Paralus on Azure Kubernetes Service (AKS) there are a few prerequisites:
+To setup Paralus on Google Kubernetes Engine (GKE) there are a few prerequisites:
 
-- An Azure Account - _you can [register for a Free Azure account](https://azure.microsoft.com/en-in/free/) if you don't have one_
+- A Google Cloud account - _you can [register for a Free Google Cloud account](https://console.cloud.google.com/freetrial) if you don't have one_
 - A Domain Name - _with permission to manage DNS settings._
 - Helm
 
-The logical steps would start with setting up a Kubernetes cluster on AKS. Deploying Paralus via helm charts followed by configuring DNS for your domain to work with Paralus. Lastly, logging into Paralus and importing a Kubernetes cluster.
+We'll start with setting up a cluster on GKE, followed by deploying Paralus to it using helm charts. Once the installation is done, we'll configure the DNS settings for the domain for Paralus to work. After that we'll login to the Paralus dashboard and import a Kubernetes cluster that is running on a local laptop.
 
-## Creating AKS Cluster
+## Creating GKE Cluster
 
-One of the good things when it comes to creating an AKS cluster is the various options it gives you to create a cluster:
+GKE provides you with options to create various types of clusters ranging from zonal, regional, autopilot, private and alpha cluster. However, we create a simple standard Kubernetes cluster using the cloud portal. For this tutorial you can also follow the [GKE quickstart guide](https://cloud.google.com/kubernetes-engine/docs/deploy-app-cluster) to setup a cluster.
 
-- [Using the Azure CLI](https://docs.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-cli)
-- [Using the Azure PowerShell](https://docs.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-powershell)
-- [Using the Azure Portal](https://docs.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-powershell)
-- [Using the ARM template](https://docs.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-rm-template)
+> Note: GKE also provides you with multiple VM instances that you can use as your node machine. You can refer to the [full list of GKE machine family](https://cloud.google.com/compute/docs/machine-types) for more details. By default it will create a cluster with 3 node machines with a total of 6 vCPUs and 12 GB RAM.
 
-You are free to choose any option that you want, we used the Azure Portal to create one.
-
-> Note: Choose a virtual machine with atleast 4 vCPUs and 16 GB of RAM. Refer to the list of [Azure VMs](https://azure.microsoft.com/en-in/pricing/details/virtual-machines/linux/).
-
-After the cluster is created, start the cluster and connect to it. If you've created a cluster using the Azure portal, you can use the Azure Cloud Shell to connect to the cluster.
+After the cluster is created, start the cluster and connect to it. You can connect to your cluster using the cloud shell provided.
 
 ## Installing Paralus
 
@@ -65,7 +58,7 @@ After the cluster is created, start the cluster and connect to it. If you've cre
 
   ```bash
    NAME: myrelease
-   LAST DEPLOYED: Wed Jun 29 10:13:48 2022
+   LAST DEPLOYED: Fri Jul 01 17:13:48 2022
    NAMESPACE: paralus
    STATUS: deployed
    REVISION: 1
@@ -89,13 +82,13 @@ After the cluster is created, start the cluster and connect to it. If you've cre
 
 ## Configuring DNS Settings
 
-Once the installation is complete, you need to first get the external IP address provided by Azure loadbalancer. You can do so by executing the following command:
+Once the installation is complete, you need to first get the external IP address provided by GKE loadbalancer. You can do so by executing the following command:
 
 ```bash
 kubectl get svc myrelease-contour-envoy -n paralus
 
 NAME                            TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)                         AGE
-myrelease-contour-envoy         LoadBalancer   10.0.33.6      13.71.51.105   80:30193/TCP,443:30873/TCP      3m13s   
+myrelease-contour-envoy         LoadBalancer   10.0.33.6      34.121.64.88   80:30193/TCP,443:30873/TCP      3m13s   
 ```
 
 Note down the `EXTERNAL-IP` address for the `<releasename>-contour-envoy` service.
@@ -106,9 +99,9 @@ While you are on your DNS Setting page, for the selected domain name, you need t
 
 | Type | Address | Resolves To | TTL |
 |---|---|---|---|
-| A | console.chartexample.com | 13.71.51.105 | 1 Hour |
-| A | *.core-connector.chartexample.com | 13.71.51.105 | 1 Hour |
-| A | *.user.chartexample.com | 13.71.51.105 | 1 Hour |
+| A | console.chartexample.com | 34.121.64.88 | 1 Hour |
+| A | *.core-connector.chartexample.com | 34.121.64.88 | 1 Hour |
+| A | *.user.chartexample.com | 34.121.64.88 | 1 Hour |
 
 ### Accessing The Dashboard
 
@@ -158,6 +151,6 @@ A `kubectl` console will open in the bottom half of the screen, enter your kubec
 
 <img src="/img/docs/paralus-import-cluster-4.png" alt="Accessing imported cluster via kubectl" height="70%" width="70%"/>
 
-Congratulations! You've successfully deployed Paralus on Azure Kubernetes Service (AKS) and imported a local cluster.
+Congratulations! You've successfully deployed Paralus on Google Kubernetes Engine (GKE) and imported a local cluster.
 
 Refer to our documentation to learn about various [feautres of Paralus](/docs/usage/).
