@@ -16,7 +16,7 @@ The quickstart guide can be followed to setup Paralus on a Kind cluster.
 - [Kind](#kind)
   - [Installing and Configuring Kind](#installing-and-configuring-kind)
   - [Installing Paralus](#installing-paralus)
-  - [Configuring etc/hosts](#configuring-etchosts)
+  - [Configuring /etc/hosts](#configuring-etchosts)
   - [Resetting Default Password](#resetting-default-password)
   - [Accessing Paralus Dashboard](#accessing-paralus-dashboard)
   - [Importing Existing Cluster](#importing-existing-cluster)
@@ -94,7 +94,7 @@ kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l ap
 
 > Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
 
-### Configuring etc/hosts
+### Configuring /etc/hosts
 
 Since we are deploying Paralus on local cluster, we need to update the `/etc/hosts` file with the IP Address/Ingress Host name to access the dashboard.
 In order to do that, edit the `/etc/hosts` file using your favourite editor and add the following line at the end of it along with the IP address obtained and save it.
