@@ -49,7 +49,7 @@ After the cluster is created, start the cluster and connect to it. You can conne
   ```bash
    helm install myrelease paralus/ztka \
     -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.generic.yaml \
-    -set fqdn.domain="chartexample.com" \
+    --set fqdn.domain="chartexample.com" \
     -n paralus \
     --create-namespace
   ```
