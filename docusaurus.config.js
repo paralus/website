@@ -75,6 +75,7 @@ const config = {
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
+      image: 'img/paralus-thumbnail.png',
       navbar: {
         title: "",
         logo: {
