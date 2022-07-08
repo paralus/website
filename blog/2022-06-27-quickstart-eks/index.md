@@ -17,6 +17,7 @@ With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes
 - [Installing Paralus](#installing-paralus)
 - [Configuring DNS Settings](#configuring-dns-settings)
   - [Accessing The Dashboard](#accessing-the-dashboard)
+    - [Recovering Password Reset Link](#recovering-password-reset-link)
   - [Importing Existing Cluster](#importing-existing-cluster)
 
 ## Pre Requisites
@@ -79,45 +80,19 @@ Added new context arn:aws:eks:us-west-2:645114859692:cluster/ferocious-gopher-16
 
    `helm repo add paralus https://paralus.github.io/helm-charts`
 
-2. Create `values.eks.yaml`
+2. Install Paralus
 
-   ```yaml
-   deploy:
-     elasticsearch:
-       enable: true
-     postgresql:
-       enable: true
-     contour:
-       enable: true
+  ```bash
+   helm install myrelease paralus/ztka \
+    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-eks.yaml \
+    --set fqdn.domain="chartexample.com" \
+    -n paralus \
+    --create-namespace
+  ```
 
-   kratos:
-     kratos:
-       development: true
-
-   contour:
-     envoy:
-       service:
-         annotations:
-           service.beta.kubernetes.io/aws-load-balancer-type: nlb
-   ```
-
-   > Note: When deploying this in production, set `kratos.development: false`
-
-3. Create `values.domain.yaml`
-
-   ```yaml
-   fqdn:
-     domain: "chartexample.com"
-     hostname: "console-eks-oss"
-     coreConnectorSubdomain: "*.core-connector.eks-oss"
-     userSubdomain: "*.user.eks-oss"
-   ```
-
-4. Install Paralus
+  >**Note:** If you're installing this in a **production environment**, please use [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml) and configure the values mentioned [here](https://github.com/paralus/helm-charts/tree/main/charts/ztka#values) as required.
 
    ```bash
-   helm install myrelease paralus/ztka --devel -f values.domain.yaml -f values.eks.yaml -n paralus --create-namespace
-
    NAME: myrelease
    LAST DEPLOYED: Wed May 25 10:13:48 2022
    NAMESPACE: paralus
@@ -139,29 +114,17 @@ Added new context arn:aws:eks:us-west-2:645114859692:cluster/ferocious-gopher-16
    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize-paralus | grep 'Org Admin signup URL:'
    ```
 
-   > Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
+> Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
 
 ## Configuring DNS Settings
 
 Once the installation is complete, you need to first get the external IP address provided by AWS. You can do so by executing the following command:
 
 ```bash
-kubectl get service -n paralus
+kubectl get svc myrelease-contour-envoy -n paralus
 
 NAME                            TYPE           CLUSTER-IP       EXTERNAL-IP                                                                     PORT(S)                         AGE
-elasticsearch-master            ClusterIP      10.100.67.190    <none>                                                                          9200/TCP,9300/TCP               10m
-elasticsearch-master-headless   ClusterIP      None             <none>                                                                          9200/TCP,9300/TCP               10m
-myrelease-contour               ClusterIP      10.100.219.236   <none>                                                                          8001/TCP                        10m
 myrelease-contour-envoy         LoadBalancer   10.100.101.216   a814da526d40d4661bf9f04d66ca53b5-65bfb655b5662d24.elb.us-west-2.amazonaws.com   80:31810/TCP,443:30292/TCP      10m
-myrelease-kratos-admin          ClusterIP      10.100.196.205   <none>                                                                          80/TCP                          10m
-myrelease-kratos-courier        ClusterIP      None             <none>                                                                          80/TCP                          10m
-myrelease-kratos-public         ClusterIP      10.100.54.172    <none>                                                                          80/TCP                          10m
-myrelease-postgresql            ClusterIP      10.100.56.9      <none>                                                                          5432/TCP                        10m
-myrelease-postgresql-hl         ClusterIP      None             <none>                                                                          5432/TCP                        10m
-prompt                          ClusterIP      10.100.207.42    <none>                                                                          7009/TCP                        10m
-paralus                     ClusterIP      10.100.174.106   <none>                                                                          11000/TCP,10000/TCP,10001/TCP   10m
-dashboard              ClusterIP      10.100.58.152    <none>                                                                          80/TCP                          10m
-relay-server                    ClusterIP      10.100.114.237   <none>                                                                          443/TCP                         10m
 ```
 
 Navigate to your domain's DNS setting page. _The steps for changing DNS settings will vary based on your domain name provider._
@@ -179,6 +142,31 @@ Paralus is installed with a default organization and an admin user. Hence, after
 
 Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
 
+```
+
+#### Recovering Password Reset Link
+
+The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is expired, you can use the following code snippet to generate the recovery link for any user.
+
+> **Note:** Provide the email id of the user whose password you wish to retrieve. Further, if you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
+
+```bash
+export RELEASE_NAME=<HELM_RELEASE_NAME>
+export RUSER=<USER_ADMIN_EMAIL>
+export RNAMESPCE=<NAMESPCE>
+
+kubectl exec -it "$RELEASE_NAME-postgresql-0" -n "$RNAMESPACE" -- bash \
+  -c "PGPASSWORD=admindbpassword psql -h localhost -U admindbuser admindb \
+-c \"select id from identities where traits->>'email' = '$RUSER' limit 1;\" -tA \
+| xargs -I{} curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{\"expires_in\":\"10m\",\"identity_id\":\"{}\"}'"
+```
+
+If you have deployed a postgreSQL instance that was **NOT** bundled with Paralus, you can use the following snippet to extract the recovery link **after you have extracted the user id**.
+
+```bash
+curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{"expires_in":"10m","identity_id":"<ADMIN_USER_ID>"}'
 ```
 
 Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:

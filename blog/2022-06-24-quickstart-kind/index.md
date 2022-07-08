@@ -18,6 +18,7 @@ The quickstart guide can be followed to setup Paralus on a Kind cluster.
   - [Installing Paralus](#installing-paralus)
   - [Configuring /etc/hosts](#configuring-etchosts)
   - [Resetting Default Password](#resetting-default-password)
+    - [Recovering Password Reset Link](#recovering-password-reset-link)
   - [Accessing Paralus Dashboard](#accessing-paralus-dashboard)
   - [Importing Existing Cluster](#importing-existing-cluster)
     - [Configuring Network](#configuring-network)
@@ -58,20 +59,13 @@ helm repo add paralus https://paralus.github.io/helm-charts
 helm repo update
 ```
 
-Create a new [values.yaml](https://github.com/paralus/helm-charts/blob/main/examples/values.kind.yaml) file with the following changes:
-
-- Switch kratos to development mode by setting `kratos.kratos.development` to `true`
-- Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
-- [OPTIONAL] Change the host under fqdn.domain to use a different hostname
-- [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
-
-Create a namespace
-
-`kubectl create ns paralus`
-
-Install Paralus
-
-`helm install ztkarelease -f myvalues.yaml -n paralus paralus/ztka`
+```bash
+   helm install myrelease paralus/ztka \
+    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-generic.yaml \
+    --set fqdn.domain="paralus.local" \
+    -n paralus \
+    --create-namespace
+```
 
 > Note: In case you get an error, run `helm dependency build` to build the dependencies.
 
@@ -117,6 +111,31 @@ In order to get the `Password Reset URL`, copy the command displayed after helm 
 kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 
 Org Admin signup URL:  http://console.paralus.local/self-service/recovery?flow=9ec13c6f-414e-4cb5-bf4c-def35973118f&token=ge6bi6zmyzUlQrHlYTOCDeItV82hT08Y
+```
+
+#### Recovering Password Reset Link
+
+The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is expired, you can use the following code snippet to generate the recovery link for any user.
+
+> **Note:** Provide the email id of the user whose password you wish to retrieve. Further, if you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
+
+```bash
+export RELEASE_NAME=<HELM_RELEASE_NAME>
+export RUSER=<USER_ADMIN_EMAIL>
+export RNAMESPCE=<NAMESPCE>
+
+kubectl exec -it "$RELEASE_NAME-postgresql-0" -n "$RNAMESPACE" -- bash \
+  -c "PGPASSWORD=admindbpassword psql -h localhost -U admindbuser admindb \
+-c \"select id from identities where traits->>'email' = '$RUSER' limit 1;\" -tA \
+| xargs -I{} curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{\"expires_in\":\"10m\",\"identity_id\":\"{}\"}'"
+```
+
+If you have deployed a postgreSQL instance that was **NOT** bundled with Paralus, you can use the following snippet to extract the recovery link **after you have extracted the user id**.
+
+```bash
+curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{"expires_in":"10m","identity_id":"<ADMIN_USER_ID>"}'
 ```
 
 Access the URL in a browser, and provide a new password.

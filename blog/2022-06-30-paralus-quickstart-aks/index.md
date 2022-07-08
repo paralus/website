@@ -18,6 +18,7 @@ In this blog post, we'll take you through the steps to setup an Azure Kubernetes
 - [Installing Paralus](#installing-paralus)
 - [Configuring DNS Settings](#configuring-dns-settings)
   - [Accessing The Dashboard](#accessing-the-dashboard)
+    - [Recovering Password Reset Link](#recovering-password-reset-link)
   - [Importing Existing Cluster](#importing-existing-cluster)
 
 ## Pre Requisites
@@ -55,13 +56,13 @@ After the cluster is created, start the cluster and connect to it. If you've cre
 
   ```bash
    helm install myrelease paralus/ztka \
-    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.generic.yaml \
+    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-generic.yaml \
     --set fqdn.domain="chartexample.com" \
     -n paralus \
     --create-namespace
   ```
 
-  >Note: If you plan to use Paralus without a `https` enabled domain, you'll need to set `kratos.development` in `values.yaml` as `true`
+  >**Note:** If you're installing this in a **production environment**, please use [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml) and configure the values mentioned [here](https://github.com/paralus/helm-charts/tree/main/charts/ztka#values) as required.
 
   ```bash
    NAME: myrelease
@@ -119,6 +120,31 @@ kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l ap
 
 Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
 
+```
+
+#### Recovering Password Reset Link
+
+The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is expired, you can use the following code snippet to generate the recovery link for any user.
+
+> **Note:** Provide the email id of the user whose password you wish to retrieve. Further, if you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
+
+```bash
+export RELEASE_NAME=<HELM_RELEASE_NAME>
+export RUSER=<USER_ADMIN_EMAIL>
+export RNAMESPCE=<NAMESPCE>
+
+kubectl exec -it "$RELEASE_NAME-postgresql-0" -n "$RNAMESPACE" -- bash \
+  -c "PGPASSWORD=admindbpassword psql -h localhost -U admindbuser admindb \
+-c \"select id from identities where traits->>'email' = '$RUSER' limit 1;\" -tA \
+| xargs -I{} curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{\"expires_in\":\"10m\",\"identity_id\":\"{}\"}'"
+```
+
+If you have deployed a postgreSQL instance that was **NOT** bundled with Paralus, you can use the following snippet to extract the recovery link **after you have extracted the user id**.
+
+```bash
+curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{"expires_in":"10m","identity_id":"<ADMIN_USER_ID>"}'
 ```
 
 Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:

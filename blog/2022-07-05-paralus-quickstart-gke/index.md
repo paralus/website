@@ -49,7 +49,7 @@ After the cluster is created, start the cluster and connect to it. You can conne
 
   ```bash
    helm install myrelease paralus/ztka \
-    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values-dev-generic.yaml \
+    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-generic.yaml \
     --set fqdn.domain="chartexample.com" \
     -n paralus \
     --create-namespace
@@ -119,7 +119,7 @@ Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flo
 
 The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is expired, you can use the following code snippet to generate the recovery link for any user.
 
-> **Note:** Provide the email id of the user whose password you wish to retrieve. If you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
+> **Note:** Provide the email id of the user whose password you wish to retrieve. Further, if you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
 
 ```bash
 export RELEASE_NAME=<HELM_RELEASE_NAME>
