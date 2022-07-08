@@ -18,6 +18,7 @@ In this blog post, we'll take you through the steps to setup Paralus on Google K
 - [Installing Paralus](#installing-paralus)
 - [Configuring DNS Settings](#configuring-dns-settings)
   - [Accessing The Dashboard](#accessing-the-dashboard)
+    - [Recovering Password Reset Link](#recovering-password-reset-link)
   - [Importing Existing Cluster](#importing-existing-cluster)
 
 ## Pre Requisites
@@ -48,13 +49,13 @@ After the cluster is created, start the cluster and connect to it. You can conne
 
   ```bash
    helm install myrelease paralus/ztka \
-    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.generic.yaml \
+    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values-dev-generic.yaml \
     --set fqdn.domain="chartexample.com" \
     -n paralus \
     --create-namespace
   ```
 
-  >Note: If you plan to use Paralus without a `https` enabled domain, you'll need to set `kratos.development` in `values.yaml` as `true`
+  >**Note:** If you're installing this in a **production environment**, please use [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml) and configure the values mentioned [here](https://github.com/paralus/helm-charts/tree/main/charts/ztka#values) as required.
 
   ```bash
    NAME: myrelease
@@ -112,6 +113,23 @@ kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l ap
 
 Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
 
+```
+
+#### Recovering Password Reset Link
+
+The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is experied, you can use the following code snippet to generate the recovery link for any user.
+
+> **Note:** Provide the email id of the user whose password you wish to retrieve. If you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
+
+```bash
+export RELEASE_NAME=<HELM_RELEASE_NAME>
+export RUSER=<USER_ADMIN_EMAIL>
+
+kubectl exec -it "$RELEASE_NAME-postgresql-0" -- bash \
+  -c "PGPASSWORD=admindbpassword psql -h localhost -U admindbuser admindb \
+-c \"select id from identities where traits->>'email' = '$RUSER' limit 1;\" -tA \
+| xargs -I{} curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{\"expires_in\":\"10m\",\"identity_id\":\"{}\"}'"
 ```
 
 Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
