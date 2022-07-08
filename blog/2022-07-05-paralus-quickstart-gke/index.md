@@ -117,7 +117,7 @@ Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flo
 
 #### Recovering Password Reset Link
 
-The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is experied, you can use the following code snippet to generate the recovery link for any user.
+The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is expired, you can use the following code snippet to generate the recovery link for any user.
 
 > **Note:** Provide the email id of the user whose password you wish to retrieve. If you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
 
