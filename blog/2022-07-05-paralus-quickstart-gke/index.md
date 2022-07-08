@@ -124,12 +124,20 @@ The password recovery link generated while deploying Paralus is valid for `10 mi
 ```bash
 export RELEASE_NAME=<HELM_RELEASE_NAME>
 export RUSER=<USER_ADMIN_EMAIL>
+export RNAMESPCE=<NAMESPCE>
 
-kubectl exec -it "$RELEASE_NAME-postgresql-0" -- bash \
+kubectl exec -it "$RELEASE_NAME-postgresql-0" -n "$RNAMESPACE" -- bash \
   -c "PGPASSWORD=admindbpassword psql -h localhost -U admindbuser admindb \
 -c \"select id from identities where traits->>'email' = '$RUSER' limit 1;\" -tA \
 | xargs -I{} curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
 -H 'Content-Type: application/json' -d '{\"expires_in\":\"10m\",\"identity_id\":\"{}\"}'"
+```
+
+If you have deployed a postgreSQL instance that was **NOT** bundled with Paralus, you can use the following snippet to extract the recovery link **after you have extracted the user id**.
+
+```bash
+curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
+-H 'Content-Type: application/json' -d '{"expires_in":"10m","identity_id":"<ADMIN_USER_ID>"}'
 ```
 
 Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
