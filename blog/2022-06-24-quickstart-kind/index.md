@@ -18,7 +18,6 @@ The quickstart guide can be followed to setup Paralus on a Kind cluster.
   - [Installing Paralus](#installing-paralus)
   - [Configuring /etc/hosts](#configuring-etchosts)
   - [Resetting Default Password](#resetting-default-password)
-    - [Recovering Password Reset Link](#recovering-password-reset-link)
   - [Accessing Paralus Dashboard](#accessing-paralus-dashboard)
   - [Importing Existing Cluster](#importing-existing-cluster)
     - [Configuring Network](#configuring-network)
@@ -113,30 +112,7 @@ kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l ap
 Org Admin signup URL:  http://console.paralus.local/self-service/recovery?flow=9ec13c6f-414e-4cb5-bf4c-def35973118f&token=ge6bi6zmyzUlQrHlYTOCDeItV82hT08Y
 ```
 
-#### Recovering Password Reset Link
-
-The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is expired, you can use the following code snippet to generate the recovery link for any user.
-
-> **Note:** Provide the email id of the user whose password you wish to retrieve. Further, if you've set a username and password for the postgresql database, please replace `admindbpassword` and `admindbuser` with your values.
-
-```bash
-export RELEASE_NAME=<HELM_RELEASE_NAME>
-export RUSER=<USER_ADMIN_EMAIL>
-export RNAMESPCE=<NAMESPCE>
-
-kubectl exec -it "$RELEASE_NAME-postgresql-0" -n "$RNAMESPACE" -- bash \
-  -c "PGPASSWORD=admindbpassword psql -h localhost -U admindbuser admindb \
--c \"select id from identities where traits->>'email' = '$RUSER' limit 1;\" -tA \
-| xargs -I{} curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
--H 'Content-Type: application/json' -d '{\"expires_in\":\"10m\",\"identity_id\":\"{}\"}'"
-```
-
-If you have deployed a postgreSQL instance that was **NOT** bundled with Paralus, you can use the following snippet to extract the recovery link **after you have extracted the user id**.
-
-```bash
-curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
--H 'Content-Type: application/json' -d '{"expires_in":"10m","identity_id":"<ADMIN_USER_ID>"}'
-```
+> **Note:** The password recovery link generated while deploying Paralus is valid only for `10 minutes`. For any reason if the link is expired, refer to our [troubleshooting guide](../docs/references/troubleshooting) to re-generate the password reset link.
 
 Access the URL in a browser, and provide a new password.
 
