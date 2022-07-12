@@ -58,20 +58,13 @@ helm repo add paralus https://paralus.github.io/helm-charts
 helm repo update
 ```
 
-Create a new [values.yaml](https://github.com/paralus/helm-charts/blob/main/examples/values.kind.yaml) file with the following changes:
-
-- Switch kratos to development mode by setting `kratos.kratos.development` to `true`
-- Enable postgresql and elasticsearch by setting `deploy.postgres.enable` and `deploy.elasticsearch.enable` to `true`
-- [OPTIONAL] Change the host under fqdn.domain to use a different hostname
-- [OPTIONAL] Change the images under images to a custom image if you want to try with your custom images
-
-Create a namespace
-
-`kubectl create ns paralus`
-
-Install Paralus
-
-`helm install ztkarelease -f myvalues.yaml -n paralus paralus/ztka`
+```bash
+   helm install myrelease paralus/ztka \
+    -f https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-generic.yaml \
+    --set fqdn.domain="paralus.local" \
+    -n paralus \
+    --create-namespace
+```
 
 > Note: In case you get an error, run `helm dependency build` to build the dependencies.
 
@@ -118,6 +111,8 @@ kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l ap
 
 Org Admin signup URL:  http://console.paralus.local/self-service/recovery?flow=9ec13c6f-414e-4cb5-bf4c-def35973118f&token=ge6bi6zmyzUlQrHlYTOCDeItV82hT08Y
 ```
+
+> **Note:** The password recovery link generated while deploying Paralus is valid only for `10 minutes`. For any reason if the link is expired, refer to our [troubleshooting guide](../docs/references/troubleshooting) to re-generate the password reset link.
 
 Access the URL in a browser, and provide a new password.
 
