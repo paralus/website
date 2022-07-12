@@ -17,7 +17,7 @@ In this section we talk about:
 All organizations come with one default project and two default groups:
 
 - All Local Users - *All users that are managed locally belong this group. This group has the least privileges in the platform.*
-- Organization Admins - *Users that belong to this group have access to all projects and is the most priviledged role.*
+- Organization Admins - *Users that belong to this group have access to all projects and is the most privileged role.*
 
     <img src="/img/docs/groups.png" alt="Default Groups" height="75%" width="75%"/>
 

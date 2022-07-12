@@ -9,7 +9,7 @@ jobs:
     - name: Checkout Actions Repository
       uses: actions/checkout@v2
 
-    - name: Check spelling of file.txt
+    - name: Check spelling
       uses: crate-ci/typos@master
       with: 
         config: ./.github/configs/_typos.toml

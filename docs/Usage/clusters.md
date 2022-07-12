@@ -4,7 +4,7 @@ description: "Learn how to use Paralus and configure clusters."
 slug: /usage/clusters
 ---
 
-A Kubernetes cluster consists of nodes (*worker machines*) that run containerized applications. Paralus allows you to add, modify and manage acces to your Kubernetes clusters. In this document, you'll learn about all the actions that you can perform on your clusters using Paralus.
+A Kubernetes cluster consists of nodes (*worker machines*) that run containerized applications. Paralus allows you to add, modify and manage access to your Kubernetes clusters. In this document, you'll learn about all the actions that you can perform on your clusters using Paralus.
 
 - [Adding Clusters](#adding-clusters)
   - [Provisioned Clusters](#provisioned-clusters)
