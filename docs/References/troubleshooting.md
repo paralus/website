@@ -4,11 +4,11 @@ description: "Troubleshooting guide for Paralus"
 slug: /references/troubleshooting
 ---
 
-Facing issues deploying or running Pralus? Our troubleshooting guide can help you over come some of the common issues that you might face.
+Facing issues deploying or running Paralus? Our troubleshooting guide can help you over come some of the common issues that you might face.
 
 For anything else, feel free to reach out to us :)
 
-## Password Rest Link Expired
+## Password Reset Link Expired
 
 The password recovery link generated while deploying Paralus is valid for `10 minutes`. For any reason if the link is expired, you can use the following code snippet to generate the recovery link for any user.
 
