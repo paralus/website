@@ -9,6 +9,8 @@ tags: [tutorial, paralus]
 
 In most modern day scenarios, there are multiple users who are accessing various clusters. This makes it all more important to ensure that every user or group has access to only those resources that they are allowed to. Few ways to achieve this is using namespaces and role based access control. While these are good, most enterprise grade application deployments require something more robust.
 
+<!--truncate-->
+
 <img src="/img/diagram.png" alt="Configuring Centralized Kubectl Access To Clusters With Paralus" height="70%" width="70%"/>
 
 That’s where [Paralus](https://github.com/paralus) comes in. It allows you to configure centralized kubectl access to multiple clusters all from a single dashboard. It allows you to create groups, assign projects and users and provide access. In this blog post, we’ll show you how to import different clusters to Paralus and configure access to them. All of this with zero trust principles built in.
