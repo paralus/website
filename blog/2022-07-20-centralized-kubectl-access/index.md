@@ -61,7 +61,7 @@ Once imported, you can navigate to the project and view the clusters. You can te
 
 The next step is to create a new Group and assign this project to the group. It’s easier to manage permissions and roles via groups rather than doing it for every individual user.  
 
-So [create a group](../docs/usage/groups), [add the project](../docs/usage/projects#create-project) and choose the permissions. We can choose `project_readonly` to provide only read only permissions or anything else based on your use case.
+So [create a group](/docs/usage/groups), [add the project](/docs/usage/projects#create-project) and choose the permissions. We can choose `project_readonly` to provide only read only permissions or anything else based on your use case.
 
 <img src="/img/docs/groups-users-add.png" alt="Adding user to the group" height="70%" width="70%"/>
 
