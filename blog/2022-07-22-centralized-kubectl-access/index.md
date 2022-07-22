@@ -5,7 +5,7 @@ authors: [atul]
 tags: [tutorial, paralus]
 ---
 
-Kubectl is one of the most widely used tools to work with Kubernetes. The command line tool allows you to deploy applications, inspect and manage resources. It basically authenticates with the control plane for your cluster and makes API calls to the Kubernetes API. In short if you are working with Kubernetes - you will use kubectl the most.
+[Kubectl](https://kubernetes.io/docs/reference/kubectl/) is one of the most widely used tools to work with Kubernetes. The command line tool allows you to deploy applications, inspect and manage resources. It basically authenticates with the control plane for your cluster and makes API calls to the Kubernetes API. In short if you are working with Kubernetes - you will use kubectl the most.
 
 In most modern day scenarios, there are multiple users who are accessing various clusters. This makes it all more important to ensure that every user or group has access to only those resources that they are allowed to. Few ways to achieve this is using namespaces and role based access control. While these are good, most enterprise grade application deployments require something more robust.
 
