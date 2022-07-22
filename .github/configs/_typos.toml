@@ -1,0 +1,3 @@
+[default.extend-words]
+aks = "aks"  # azure-kubernetes-service
+ons = "ons" # add-ons

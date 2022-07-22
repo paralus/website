@@ -15,7 +15,7 @@ In this document, we'll show you how to use Okta as an Identity provider for Par
 
 Login to your Okta account as an admin and navigate to `Applications -> Applications` and **Create a new App Integration**.
 
-In the dialog that opens, choose **OIDC - Open ID Connect** as the **Sign-in Method** and **Web Application** as the **Applicaton Type.**
+In the dialog that opens, choose **OIDC - Open ID Connect** as the **Sign-in Method** and **Web Application** as the **Application Type.**
 
 On the next screen provide a name for the application. Under **Assignments -> Controlled Access**, select `Skip Group Assignment For Now`
 

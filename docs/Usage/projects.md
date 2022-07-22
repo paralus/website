@@ -70,6 +70,6 @@ To remove a user, navigate to Assigned Users tab and click on the delete to remo
 
 ## Delete Project
 
-Click the delete icon to delete a project. An organization admin can delete a project as long as there are no resources associated to it. The system will prompt you to first delete any exising resources before deleting the project.
+Click the delete icon to delete a project. An organization admin can delete a project as long as there are no resources associated to it. The system will prompt you to first delete any existing resources before deleting the project.
 
 Read more about [features of Paralus](../usage/).
