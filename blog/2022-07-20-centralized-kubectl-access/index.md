@@ -5,7 +5,7 @@ authors: [atul]
 tags: [tutorial, paralus]
 ---
 
-Kubectl is one of the most widely used tools to work with Kubernetes. The command line tool allows you to deploy applications, inspect and manage resources. It basically authenticates with the master node for your cluster and makes API calls to the Kubernetes API. In short if you are working with Kubernetes - you will use kubectl the most.
+Kubectl is one of the most widely used tools to work with Kubernetes. The command line tool allows you to deploy applications, inspect and manage resources. It basically authenticates with the control plane for your cluster and makes API calls to the Kubernetes API. In short if you are working with Kubernetes - you will use kubectl the most.
 
 In most modern day scenarios, there are multiple users who are accessing various clusters. This makes it all more important to ensure that every user or group has access to only those resources that they are allowed to. Few ways to achieve this is using namespaces and role based access control. While these are good, most enterprise grade application deployments require something more robust.
 
@@ -37,15 +37,15 @@ Make sure to update the `fqdn.domain` value with the actual domain that you’d 
 
 ### Importing A Cluster
 
-Once you are within the dashboard, you can start by creating a new project. Within the project, you can import a new cluster. You can follow the below steps to import an existing on prem cluster or any other cloud cluster:
+Once you are within the dashboard, you can start by creating a new project or use the existing `default` project. Within the project, you can import a new cluster. You can follow the below steps to import an existing on prem cluster or any other cloud cluster:
 
 - Click on Import Cluster
 - In the new dialog,
-  - choose `Data Center/Edge` as the environment and `Other` as Kubernetes distribution. Use this for importing a cluster from your onPrem or local host
+  - Choose `Data Center/Edge` as the environment and `Other` as Kubernetes distribution. Use this for importing a cluster from your onPrem or local host
 
     <img src="/img/docs/kind-import.gif" alt="Importing a local/onprem Cluster" height="70%" width="70%"/>
 
-  - choose `Public Cloud` as the environment and `GKE` as Kubernetes distribution
+  - Choose `Public Cloud` as the environment and `GKE` as Kubernetes distribution
 
     <img src="/img/docs/gke-import.gif" alt="Importing a GKE Cluster" height="70%" width="70%"/>
 
@@ -53,7 +53,7 @@ Once you are within the dashboard, you can start by creating a new project. With
 - Leave the general and advanced settings as is and move to the final stage
 - Download the generated `bootstrap.yaml` file
 - Apply this file in the cluster that you want to import to Paralus `kubectl apply -f bootstrap.yaml`
-- After the relay agent is up and running, your cluster will be successfully imported to Paralus.
+- After Paralus is up and running in your target cluster, it will be successfully imported to Paralus.
 
 Once imported, you can navigate to the project and view the clusters. You can test if the clusters are configured correctly or not, you can execute kubectl commands from the prompt.
 
@@ -61,15 +61,19 @@ Once imported, you can navigate to the project and view the clusters. You can te
 
 The next step is to create a new Group and assign this project to the group. It’s easier to manage permissions and roles via groups rather than doing it for every individual user.  
 
-So create a group, add the project and choose the permissions. We can choose `project_readonly` to provide only read only permissions or anything else based on your use case.
+So [create a group](../docs/usage/groups), [add the project](../docs/usage/projects#create-project) and choose the permissions. We can choose `project_readonly` to provide only read only permissions or anything else based on your use case.
 
 <img src="/img/docs/groups-users-add.png" alt="Adding user to the group" height="70%" width="70%"/>
 
 Once configured, you can ask the users to re login to verify the access. The users assigned to the project will be able to access the clusters in read only mode and will not be able to create, edit or delete any resource in the cluster.
 
-<img src="/img/docs/roles-new-user-project-final.png" alt="Adding user to the group" height="70%" width="70%"/>
+<img src="/img/docs/project-permission.png" alt="Assining permissions to the project" height="70%" width="70%"/>
 
-Since the project we created had both the clusters that we imported - *GKE & local on-prem* - readonly permission is configured to both of them. Thus allowing an admin to configure centralized kubectl access to multiple clusters from a single dashboard.
+Since the project we created had both the clusters that we imported - *GKE, local & on-prem kind cluster* - `readonly` permission is configured to all of them. Thus allowing an admin to configure centralized kubectl access to multiple clusters from a single dashboard.
+
+Below is how your cluster list within the project will look like.
+
+<img src="/img/docs/cluster-import-list.png" alt="List of imported clusters." height="70%" width="70%"/>
 
 ## Next Steps
 
