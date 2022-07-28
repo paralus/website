@@ -5,7 +5,7 @@ authors: [atul]
 tags: [microk8s, tutorial]
 ---
 
-In the previous blog posts we showed how you can set up Paralus on various cloud based Kubernetes clusters like [Azure](../blog/paralus-quickstart-aks/), [AWS](../blog/eks-quickstart) and [GCP](../blog/paralus-quickstart-gke). We also shared a tutorial on setting up Paralus on a [Kind](../blog/kind-quickstart) cluster.
+In the previous blog posts we showed how you can set up Paralus on various cloud based Kubernetes clusters like [Azure](/blog/paralus-quickstart-aks/), [AWS](/blog/eks-quickstart) and [GCP](/blog/paralus-quickstart-gke). We also shared a tutorial on setting up Paralus on a [Kind](/blog/kind-quickstart) cluster.
 
 All these posts have helped people get started with Paralus. However, there have been requests for a details on **how to set up Paralus on MicroK8s cluster**. In this blog post, we do exactly that.
 
@@ -29,7 +29,7 @@ In this tutorial we'll show you how to setup Paralus on a local Microk8s cluster
 
 ## MicroK8s
 
-MicroK8s is a light weight Kubernetes offering for developers, software vendors and DevOps folks. It can run on any system including laptops, servers and IoT devices like Raspberry Pi. It is one of the smallest, fastest & easily configurable Kuberenetes offering out there. Refer to [MicroK8s documentation](https://microk8s.io/docs) to know more about it.
+MicroK8s is a light weight Kubernetes offering for developers, software vendors and DevOps folks. It can run on any system including laptops, servers and IoT devices like Raspberry Pi. It is one of the smallest, fastest & easily configurable Kubernetes offering out there. Refer to [MicroK8s documentation](https://microk8s.io/docs) to know more about it.
 
 ### Installing and Configuring MicroK8s
 
