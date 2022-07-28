@@ -2,7 +2,7 @@
 slug: kind-quickstart
 title: "Tutorial: How to set up Paralus on Kind"
 authors: [atul]
-tags: [helloworld, kind, tutorial]
+tags: [kind, tutorial]
 ---
 
 Paralus can be installed on your local cluster using `Kind` to experience the product before taking it to production.

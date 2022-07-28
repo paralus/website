@@ -19,3 +19,4 @@ We also have some tutorials that you can follow to configure Paralus.
 - [Deploy Paralus to Elastic Kubernetes Service (EKS) on AWS](/blog/eks-quickstart)
 - [Setup Paralus on Azure Kubernetes Service (AKS) on Azure](/blog/paralus-quickstart-aks)
 - [Paralus on Google Kubernetes Engine (GKE) on Google Cloud](/blog/paralus-quickstart-gke)
+- [Install Paralus on a local MicroK8s cluster](/blog/paralus-quickstart-microk8s)
