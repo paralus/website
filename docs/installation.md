@@ -18,6 +18,8 @@ If you are installing Paralus for the first time and don't have any of these com
 
 If you already have these set up in your environment, you will have to configure Paralus to work with them. To know more about the configuration changes, proceed to the [prerequisites](#prerequisites) section.
 
+Paralus runs on most of the Kubernetes platforms including MicroK8s, Kind, Minikube, AKS, EKS & GKE. Refer to our [tutorial](/docs/quickstart) section to understand how to setup Paralus of different platforms.
+
 > If you want to test out Paralus first on a local setup first, we suggest you to read our [Kind Quickstart](/blog/kind-quickstart) guide.
 
 ## Prerequisites
