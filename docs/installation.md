@@ -68,7 +68,7 @@ We also advise users to enable HTTPS while using Paralus as it is more secure. I
 contour:
   enable: true
   tls:
-    secretName: ic-oss-paralus-tls # Name of your secret
+    secretName: paralus-tls # Name of your secret
 ```
 
 ## Installation
@@ -146,8 +146,8 @@ Based on your domain provider, you can login to your domain's control panel and 
 | Type  | Address                               | Resolves To | TTL    |
 | ----- | ------------------------------------- | ----------- | ------ |
 | CNAME | console.my-host.com                   | `<your server IP>` | 1 Hour |
-| CNAME | \*.user.paralus.my-host.com           | `<your server IP>` | 1 Hour |
-| CNAME | \*.core-connector.paralus.my-host.com | `<your server IP>` | 1 Hour |
+| CNAME | \*.user.my-host.com                   | `<your server IP>` | 1 Hour |
+| CNAME | \*.core-connector.my-host.com         | `<your server IP>` | 1 Hour |
 
 ## First Run
 
