@@ -8,7 +8,7 @@ slug: /release-notes/2022
 
 ### August 09, 2022
 
-We have a new release `v0.1.1`. You can the latest code from [Paralus GitHub repo](https://github.com/paralus)
+We have a new release `v0.1.1`. You can get the latest code from [Paralus GitHub repo](https://github.com/paralus)
 
 Below is the list of changes done, issues fixed and features added in various repos. You can also check out the individual repos for more details.
 
