@@ -4,9 +4,23 @@ description: "Paralus release history with release notes for 2022"
 slug: /release-notes/2022
 ---
 
+## v0.1.2
+
+### August 12, 2022
+
+### paralus/paralus
+
+**Fixed**
+
+- Fixed init failing with db validation error from [meain](https://github.com/meain)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+
 ## v0.1.1
 
 ### August 09, 2022
+
+**SKIP THIS RELEASE:** There was a bug in this release which caused db initialization to fail and has been fixed in v0.1.2.
 
 We have a new release `v0.1.1`. You can get the latest code from [Paralus GitHub repo](https://github.com/paralus)
 
