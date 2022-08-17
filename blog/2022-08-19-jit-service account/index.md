@@ -65,7 +65,7 @@ An organization admin can choose a role and tag permissions to it and can then a
 
 ## Secure your Kubernetes Infrastructure with Paralus
 
-Paralus comes with Zero Trust out of the box. As a user you don't need to install any additional modules to enable this. It provides admins with granular control over user access. With custom roles, it becomes much easier for administrators to manage access for their teams. Similarly, just in time service account creation too is baked into Paralus. It adds an addtional security measure for your infrastructure.
+Paralus comes with Zero Trust out of the box. As a user you don't need to install any additional modules to enable this. It provides admins with granular control over user access. With custom roles, it becomes much easier for administrators to manage access for their teams. Similarly, just in time service account creation too is baked into Paralus. It adds an additional security measure for your infrastructure.
 
 To experience Paralus in action, install Paralus on a local Kubernetes cluster like [Kind](https://www.paralus.io/blog/kind-quickstart) or [MicroK8s](https://www.paralus.io/blog/paralus-quickstart-microk8s) and see it for yourself.
 
