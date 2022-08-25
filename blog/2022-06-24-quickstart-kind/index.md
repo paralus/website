@@ -197,4 +197,4 @@ A `kubectl` console will open in the bottom half of the screen, enter your kubec
 
 Congratulations! You've successfully deployed Paralus and imported a local cluster.
 
-Refer to our documentation to learn about various [feautres of Paralus](/docs/usage/).
+Refer to our documentation to learn about various [features of Paralus](/docs/usage/).
