@@ -1,6 +1,6 @@
 ---
 slug: paralus-jit-access-service-account
-title: "Understanding Just-in-time (JIT) access with service accounts in Paralus"
+title: "Understanding Just-in-time (JIT) Access with Service Accounts in Paralus"
 authors: [atul]
 tags: [paralus]
 ---
