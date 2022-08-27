@@ -12,7 +12,7 @@ A Kubernetes cluster consists of nodes (*worker machines*) that run containerize
 
 ## Adding Clusters
 
-Paralus supports addition and management of two types of Kubernetes clusters:
+Paralus supports addition and management of the following types of Kubernetes clusters:
 
 1. Imported Clusters
 
