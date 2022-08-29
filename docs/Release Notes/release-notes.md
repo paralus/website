@@ -10,7 +10,7 @@ slug: /release-notes/2022
 
 **August 26,2022**
 
-### paralus/paralus
+**paralus/paralus**
 
 **Added**
 
@@ -23,7 +23,9 @@ slug: /release-notes/2022
 
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
-### paralus/relay
+<br />
+
+**paralus/relay**
 
 **Changed**
 
@@ -32,7 +34,9 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 Find more details in [paralus/relay](https://github.com/paralus/relay).
 
-### paralus/prompt
+<br />
+
+**paralus/prompt**
 
 **Changed**
 
@@ -47,7 +51,7 @@ Find more details in [paralus/prompt](https://github.com/paralus/prompt).
 
 **August 12, 2022**
 
-### paralus/paralus
+**paralus/paralus**
 
 **Fixed**
 
@@ -67,7 +71,7 @@ We have a new release `v0.1.1`. You can get the latest code from [Paralus GitHub
 
 Below is the list of changes done, issues fixed and features added in various repos. You can also check out the individual repos for more details.
 
-### paralus/paralus
+**paralus/paralus**
 
 **Fixed**
 
@@ -75,7 +79,9 @@ Below is the list of changes done, issues fixed and features added in various re
 
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
-### paralus/dashboard
+<br />
+
+**paralus/dashboard**
 
 **Changed**
 
@@ -92,7 +98,9 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
-### paralus/helm-charts
+<br />
+
+**paralus/helm-charts**
 
 **Added**
 
