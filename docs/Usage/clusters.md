@@ -17,7 +17,7 @@ To Add a cluster, simply click on **New Cluster**, choose the environment and Ku
 
 <img src="/img/docs/paralus-import-cluster-1.png" alt="Import Existing Kubernetes Cluster" height="75%" width="75%"/>
 
-On the next screen, click **Continue** and download the bootstrap yaml file by clicking **Import Bootstrap YAML**. This will download the YAML file that is required to connect your cluster with Paralus.
+On the next screen, click **Continue** and download the bootstrap yaml file by clicking **Download Bootstrap YAML**. This will download the YAML file that is required to connect your cluster with Paralus.
 
 <img src="/img/docs/paralus-import-cluster-2.png" alt="Download YAML configuration file" height="75%" width="75%"/>
 
