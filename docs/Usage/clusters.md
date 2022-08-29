@@ -11,7 +11,7 @@ A Kubernetes cluster consists of nodes (*worker machines*) that run containerize
 
 ## Adding Clusters
 
-Paralus allows you to add clusters that are running either on your on-prem environment or on a public/private cloud. Once imported, Paralus will provide deep visibility and insight into all aspects of the Kubernetes cluster. It provides you with a centralized management dashboard to control access across all your clusters irrespective of where they are hosted.
+Paralus allows you to add clusters that are running either on your on-prem environment or on a public/private cloud. Once added, Paralus will provide deep visibility and insight into all aspects of the Kubernetes cluster. It provides you with a centralized management dashboard to control access across all your clusters irrespective of where they are hosted.
 
 To Add a cluster, simply click on **New Cluster**, choose the environment and Kubernetes distribution. Provide a name and a description for the cluster and proceed.
 
