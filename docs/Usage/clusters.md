@@ -25,7 +25,7 @@ Once the file is downloaded, apply this configuration to your cluster using `kub
 
 <img src="/img/docs/paralus-import-cluster-3.png" alt="Successful cluster import" height="75%" width="75%"/>
 
-Wait for the changes to take place. On the dashboard you will see that the cluster is imported successfully. It usually takes 3-5 minutes for the status to update.
+Wait for the changes to take place. On the dashboard you will see that the cluster is added successfully. It usually takes 3-5 minutes for the status to update.
 
 <img src="/img/docs/cluster-import-list.png" alt="Successful cluster import" height="75%" width="75%"/>
 
@@ -37,6 +37,6 @@ To delete a cluster, click on the Settings Icon next to the cluster and select D
 
 <img src="/img/docs/cluster-delete-1.png" alt="Deleting a Cluster" height="75%" width="75%"/>
 
-Simply Deleting/Removing an imported cluster in the Web Console does not automatically remove all artifacts associated with the Kubernetes Managemet Operator on imported clusters. We provide a tool that can be used to force remove/delete all remaining resources provisioned on imported clusters.
+Simply Deleting/Removing a cluster in the Web Console does not automatically remove all artifacts associated with the Kubernetes Managemet Operator on the clusters. We provide a tool that can be used to force remove/delete all remaining resources provisioned on these clusters.
 
 > Note: This utility will not delete user deployed resources because these are managed by the customer. This utility uses kubectl, helm cli to remove the operator on the cluster.
