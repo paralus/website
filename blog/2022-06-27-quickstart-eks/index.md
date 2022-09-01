@@ -19,6 +19,8 @@ With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes
   - [Accessing The Dashboard](#accessing-the-dashboard)
   - [Importing Existing Cluster](#importing-existing-cluster)
 
+**Note:** Before you start the installation process, do check out the [pre-requisites for installing Paralus](/docs/installation#prerequisites).
+
 ## Pre Requisites
 
 To setup Paralus on Amazon Elastic Kubernetes Service (EKS) there are a few prerequisites:
@@ -113,7 +115,7 @@ Added new context arn:aws:eks:us-west-2:645114859692:cluster/ferocious-gopher-16
    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize-paralus | grep 'Org Admin signup URL:'
    ```
 
-> Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
+> Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods -n paralus`
 
 ## Configuring DNS Settings
 
