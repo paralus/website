@@ -25,8 +25,6 @@ The quickstart guide can be followed to setup Paralus on a Kind cluster.
       - [Updating /etc/hosts](#updating-etchosts)
   - [Accessing Existing Cluster](#accessing-existing-cluster)
 
-**Note:** Before you start the installation process, do check out the [pre-requisites for installing Paralus](/docs/installation#prerequisites).
-
 ## Kind
 
 The following section talks about installing Paralus in a Kind cluster. Kind is a tool used to run local Kubernetes clusters using Docker container nodes. Learn more about [Kind](https://kind.sigs.k8s.io/).
@@ -87,7 +85,7 @@ You can view the recovery link for admin user by running the following command o
 kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 ```
 
-> Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods -n paralus`
+> Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
 
 ### Configuring /etc/hosts
 
