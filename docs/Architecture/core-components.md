@@ -29,6 +29,8 @@ It exposes APIs that allows you to create and manage organization, projects, clu
 
 To know more about Paralus, check out the [Paralus GitHub Repo](https://github.com/paralus/paralus).
 
+<img src="/img/docs/paralus_architecture_diagram.jpg" alt="Paralus Architecture diagram" height="75%" width="75%"/>
+
 ## Relay
 
 Relay is comprised of two parts, a Relay Server and a Relay Agent. Both of these work together allow the execution of kubectl commands on the target cluster.
@@ -60,3 +62,5 @@ Check out the [Dashboard GitHub Repo](https://github.com/paralus/dashboard).
 Paralus also provides a web based CLI tool called prompt. It allows the user to execute kubectl commands on designated clusters from the dashboard itself. It makes use of [kubeprompt](https://github.com/c-bata/kube-prompt), an open source library which is an interactive kubernetes client featuring auto-complete.
 
 Check out the [Prompt Repo](https://github.com/paralus/prompt).
+
+Read more about the [miscellaneous components](/docs/architecture/miscellaneous-components) of Paralus.
