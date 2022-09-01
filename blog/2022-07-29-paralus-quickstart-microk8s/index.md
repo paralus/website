@@ -27,6 +27,8 @@ In this tutorial we'll show you how to setup Paralus on a local Microk8s cluster
       - [Updating /etc/hosts](#updating-etchosts)
   - [Accessing Existing Cluster](#accessing-existing-cluster)
 
+**Note:** Before you start the installation process, do check out the [pre-requisites for installing Paralus](/docs/installation#prerequisites).
+
 ## MicroK8s
 
 MicroK8s is a light weight Kubernetes offering for developers, software vendors and DevOps folks. It can run on any system including laptops, servers and IoT devices like Raspberry Pi. It is one of the smallest, fastest & easily configurable Kubernetes offering out there. Refer to [MicroK8s documentation](https://microk8s.io/docs) to know more about it.
@@ -167,7 +169,7 @@ You can view the recovery link for admin user by running the following command o
 kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
 ```
 
-> Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
+> Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods -n paralus`
 
 ### Configuring /etc/hosts
 
