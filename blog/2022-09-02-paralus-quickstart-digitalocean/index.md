@@ -5,7 +5,7 @@ authors: [atul]
 tags: [digital ocean, tutorial]
 ---
 
-One of the best things that comes with Paralus is that it can be easily deployed to virtually any Kubernetes cluster. We have shown that in our previous blog posts where we deployed Paralus on [GKE](/blog/paralus-quickstart-gke/), [Kind](/blog/paralus-quickstart-kind/) and even [MicroK8s](/blog/paralus-quickstart-microk8s/).
+One of the best things that comes with Paralus is that it can be easily deployed to virtually any Kubernetes cluster. We have shown that in our previous blog posts where we deployed Paralus on [GKE](/blog/paralus-quickstart-gke/), [Kind](/blog/kind-quickstart/) and even [MicroK8s](/blog/paralus-quickstart-microk8s/).
 
 In this blog post, we'll take you through the steps to setup Paralus on Digital Ocean (DO) using a custom domain and import a local cluster into it. Let's get started!
 
