@@ -33,6 +33,12 @@ curl -X POST http://$RELEASE_NAME-kratos-admin/recovery/link \
 -H 'Content-Type: application/json' -d '{"expires_in":"10m","identity_id":"<ADMIN_USER_ID>"}'
 ```
 
+## Accessing Paralus Dashboard on MacOS
+
+If you are using a Mac based machine, you might have issues accessing the Paralus dashboard. The reason is that Docker-for-Mac does not expose container networks directly on the macOS host & hence you cannot access the Paralus dashboard.
+
+Wsuggest using [docker-mac-net-connect](https://github.com/chipmk/docker-mac-net-connect) utility to overcome this issue. This utility creates a minimal network tunnel between macOS and the Docker Desktop Linux VM.
+
 ## Cluster Import
 
 If you get errors while importing a cluster into Paralus, it may well be one of the following reasons:
