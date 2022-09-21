@@ -100,6 +100,8 @@ _Refer to the value of `fqdn.domain` in your [values.yaml](https://github.com/pa
 
 Open your favorite web browser and navigate to `http://console.paralus.local`, you will be see the dashboard with the login screen
 
+> **Note:** Docker-for-Mac does not expose container networks directly on the macOS host & hence you will not be able to access Paralus dashboard if you're on a Mac machine. We suggest using [docker-mac-net-connect](https://github.com/chipmk/docker-mac-net-connect) utility to overcome this issue.
+
 ### Resetting Default Password
 
 Paralus comes configured with default credentials that allow you to access the dashboard.
