@@ -6,6 +6,47 @@ slug: /release-notes/2022
 
 ---
 
+## v0.1.4
+​
+**September 30,2022**
+
+**paralus/paralus**
+
+**Fixed**
+
+- Fixed issue where relay server is not coming up in arm64 (Mac M1) from [sandeep540](https://github.com/sandeep540)
+- Fixed cluster lister and set group created at property [niravparikh05](https://github.com/niravparikh05)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+
+<br />
+
+**paralus/relay**
+
+​
+**Added**
+
+- Added arm builds from [meain](https://github.com/meain)
+
+Find more details in [paralus/relay](https://github.com/paralus/relay).
+
+<br />
+
+**paralus/dashboard**
+
+​
+**Fixed**
+
+- Fix download kubeconfig file name issue from [akshay196](https://github.com/akshay196)
+- Ui cleanups in cluster lister, import and config screens from [niravparikh05](https://github.com/niravparikh05)
+- Fixed login failing right after logout from [meain](https://github.com/meain)
+- Cluster tabular list view set to default and added user recovery link copy icon [niravparikh05](https://github.com/niravparikh05)
+
+
+Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
+
+---
+
 ## v0.1.3
 
 **August 26,2022**
