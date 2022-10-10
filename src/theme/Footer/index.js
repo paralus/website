@@ -19,20 +19,6 @@ function Footer() {
         <div className="flex justify-center md:justify-start">
           <img className="w-40" src="/img/logo-white.png" alt="Paralus" />
         </div>
-        <div className="flex flex-row justify-center md:justify-start font-light text-sm items-center">
-          made with 💖 by folks at
-          <a
-            href="https://www.rafay.co"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="h-10 ml-2"
-              src="/img/rafay-logo-light.png"
-              alt="Rafay"
-            />
-          </a>
-        </div>
       </div>
       <div>
         <div className="flex flex-row justify-center md:justify-end items-start gap-x-3 md:gap-x-16 font-light">
