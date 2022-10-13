@@ -37,6 +37,4 @@ To delete a cluster, click on the Settings Icon next to the cluster and select D
 
 <img src="/img/docs/cluster-delete-1.png" alt="Deleting a Cluster" height="75%" width="75%"/>
 
-Simply Deleting/Removing a cluster in the Web Console does not automatically remove all artifacts associated with the Kubernetes Management Operator on the clusters. We provide a tool that can be used to force remove/delete all remaining resources provisioned on these clusters.
-
-> Note: This utility will not delete user deployed resources because these are managed by the customer. This utility uses kubectl, helm cli to remove the operator on the cluster.
+> Note: In addition to this, you can also run a `kubectl delete ns paralus-system` on the target cluster to remove all instances of Paralus components from it.
