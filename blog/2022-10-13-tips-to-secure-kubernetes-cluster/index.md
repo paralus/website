@@ -79,7 +79,7 @@ Administrators can also create groups with their identity providers and map them
 
 <img src="/img/docs/paralus-google-login-2.png" alt="Authenticate on Google" height="75%" width="75%"/>
 
-To understand how this would work, you can implement a custom access management solution integrating identity providers with Kubernetes, using open source tools like [Dex and Kubelogin](https://rafay.co/the-kubernetes-current/diy-access-management-using-dex-and-kubelogin/). This is something you can do to understand how things work, but it isn’t something that we recommend as this isn’t a fool proof solution and not recommnded for an enterprise setup.
+To understand how this would work, you can implement a custom access management solution integrating identity providers with Kubernetes, using open source tools like [Dex and Kubelogin](https://rafay.co/the-kubernetes-current/diy-access-management-using-dex-and-kubelogin/). This is something you can do to understand how things work, but it isn’t something that we recommend as this isn’t a fool proof solution and not recommended for an enterprise setup.
 
 ### Enable Audit Logs
 
