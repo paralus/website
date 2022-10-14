@@ -44,7 +44,7 @@ You can create such roles based on the permissions you need. However, as the  nu
 
 When you have multiple teams working on different applications in your organizations. One way to limit their access is by creating different clusters for each application/team. But since organizations have multiple applications and teams, this isn’t the right way to isolate access.
 
-Namespaces were made just for such use cases. These in a way **allow you to create multiple sub clusters within a cluster**. That way you’re able to isolate workloads as well as limit access of users to a particular namespace without creating multiple clusters.
+Namespaces were made just for such use cases. These in a way **allow you to isolate group of resources within a single cluster**. That way you’re able to isolate workloads as well as limit access of users to a particular namespace without creating multiple clusters.
 
 You can create a namespace for every team, deploy their workload within the namespace & configure access. Administrators can create any number of namespaces and configure access to each one of them. By using namespace you also enhance RBAC as you have finer access control. Since you have multiple namespaces on a single cluster, you can share resources using resource quotas.
 
@@ -69,7 +69,7 @@ To prevent such attacks, you need to implement least privilege access. The best 
 
 By enabling least privilege access, you **reduce the attack surface as it limits privileged access exploits**. Malware attacks that require elevated access to move within the system, are also prevented by implementing least privilege access.  
 
-One of the crucial things for implementing least privileged access is to centrally manage access & credentials. Enabling just in time access allows users/systems to have temporary access on need basis only. This further makes implementing and managing least privilege access easier.
+One of the crucial things for implementing least privileged access is to correctly configure user, privileged and service accounts. It is also advisable to create groups for managing privileges along with configuring just-in-time access to further strengthen the security of your cluster.
 
 ### Using 3rd Party Identity Providers
 
@@ -79,7 +79,7 @@ Administrators can also create groups with their identity providers and map them
 
 <img src="/img/docs/paralus-google-login-2.png" alt="Authenticate on Google" height="75%" width="75%"/>
 
-To understand how this would work, you can implement a custom access management solution integrating identity providers with Kubernetes, using open source tools like [Dex and Kubelogin](https://rafay.co/the-kubernetes-current/diy-access-management-using-dex-and-kubelogin/). This is something you can do to understand how things work, but it isn’t something that we recommend as this isn’t a fool proof solution and not recommended for an enterprise setup.
+To understand how this would work, you can implement a custom access management solution integrating identity providers with Kubernetes, using open source tools like [Dex and Kubelogin](https://rafay.co/the-kubernetes-current/diy-access-management-using-dex-and-kubelogin/). This is something you can do to understand how things work. However, this isn’t recommended for an enterprise setup as it isn't scale friendly and there's room for error when dealing with multiple clusters.
 
 ### Enable Audit Logs
 
