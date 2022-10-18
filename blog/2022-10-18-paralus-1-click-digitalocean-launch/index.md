@@ -7,7 +7,7 @@ image: /img/docs/Launch-blogpost-image-v1.png
 ---
 
 
-It’s a great day for all of us in the Paralus community as Paralus is now listed as a [1-click app on the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/paralus). You’ve seen in the past how easy it is to install Paralus on various environments, right from public cloud platforms like Amazon [EKS](https://www.paralus.io/blog/eks-quickstart), Microsoft [AKS](https://www.paralus.io/blog/paralus-quickstart-aks), [GKE](https://www.paralus.io/blog/paralus-quickstart-gke) to your own laptop using [Micro K8s](https://www.paralus.io/blog/paralus-quickstart-microk8s) and [Kind](https://www.paralus.io/blog/kind-quickstart).
+It’s a great day for all of us in the Paralus community as Paralus is now listed as a [1-click app on the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/paralus). You’ve seen in the past how easy it is to install Paralus on various environments, right from public cloud platforms like Amazon [EKS](https://www.paralus.io/blog/eks-quickstart), Microsoft [AKS](https://www.paralus.io/blog/paralus-quickstart-aks), Google [GKE](https://www.paralus.io/blog/paralus-quickstart-gke) to your own laptop using [Micro K8s](https://www.paralus.io/blog/paralus-quickstart-microk8s) and [Kind](https://www.paralus.io/blog/kind-quickstart).
 
 However, with the launch of Paralus 1-click app on DigitalOcean marketplace, it’s even easier for you to try Paralus. In fact, **we recommend using this 1-click offering to try Paralus** quickly. So how does it work? Read on to learn more.
 
