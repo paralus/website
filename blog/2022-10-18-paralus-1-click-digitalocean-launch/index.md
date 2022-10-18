@@ -33,7 +33,7 @@ However, there are a few minor configurations that need to be done before access
 
 ## Configuring Paralus For First Run
 
-The first step is to configure connection to the DigitalOcean cluster where Paralus is installed. The easiest way to do this is using their `doctl` utility. You can follow the steps mentioned in our DigitalOcean deployment blog post.
+The first step is to configure connection to the DigitalOcean cluster where Paralus is installed. The easiest way to do this is using their `doctl` utility. You can follow the steps mentioned in our [DigitalOcean deployment blog post](https://www.paralus.io/blog/paralus-quickstart-digital-ocean#connecting-to-digital-ocean-cluster).
 
 After you have established a connection with the cluster, follow the steps mentioned below:
 
