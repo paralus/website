@@ -40,6 +40,8 @@ Below are the global parameters that are supported by pctl
     pctl create project pctlproject
     ```
 
+  - List projects:
+  
     ```sh
     $ pctl get project
     +-------------+---------+
@@ -399,7 +401,7 @@ Below are the global parameters that are supported by pctl
 
     ```sh
     pctl kubeconfig download --cluster sample-imported-cluster
-    
+
     apiVersion: v1
     clusters: null
     contexts: null
