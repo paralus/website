@@ -3,6 +3,7 @@ title: Enabling SSL in Paralus
 description: "Enable SSL in Paralus"
 sidebar_position: 3
 sidebar_label: "Enabling SSL"
+slug: /ssl-setup/
 ---
 
 Paralus uses domain based routing for zero trust kubectl access (ZTKA) and hence a domain name is required to access the Paralus dashboard. This document lists the steps to enable SSL for Paralus.
