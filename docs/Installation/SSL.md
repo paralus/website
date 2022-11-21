@@ -70,9 +70,9 @@ cert-manager supports two different CRDs for configuration:
 * `Issuer`, which is scoped to a single namespace
 * `ClusterIssuer` which is scoped to an entire cluster
 
-Since Paralus uses contour, for it to be able to serve HTTPS traffic for an Ingress in any namespace, use `ClusterIssuer`.
+Paralus is installed in a separate namespace, if you want to create a single `Issuer` that can be consumed in multiple namespaces, you should consider creating a `ClusterIssuer` resource. This is almost identical to the Issuer resource, however this is non-namespaced so it can be used to issue certificates across all namespaces
 
-> Note: Our default Paralus installation assumes that it is the only deployed application on a cluster and there are no other ingress, cert-issuers etc. present. In case you have multiple other ingresses present, you should use `Issuer` instead.
+> Note: Our default Paralus installation assumes that it is the only deployed application on a cluster and there are no other ingress, cert-issuers etc. present. In case you have multiple other ingresses present, you should use `Issuer` instead and deploy it on the same namespace as Paralus. Read more: [Difference between Issuer and ClusterIssuer](https://cert-manager.io/docs/concepts/issuer/#namespaces)
 
 Create a file called `letsencrypt-prod.yaml` with the following contents:
 
