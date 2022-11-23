@@ -163,4 +163,6 @@ Open the above url in a browser and provide a new password. Once changed you can
 
 Congratulations, you have successfully installated Paralus.
 
-It's now time to learn more about [Paralus features](../docs/usage/)!
+We also recommend enabling SSL for Paralus. Read our [SSL documentation](../ssl-setup/) for more.
+
+It's now time to learn more about [Paralus features](../usage/)!
