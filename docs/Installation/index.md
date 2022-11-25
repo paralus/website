@@ -93,6 +93,9 @@ contour:
    > You can skip this step if you're doing a fresh install
 
    ```yaml
+   auditLogs:
+        storage: "elasticsearch"
+
     paralus:
         initialize:
             partner: "example"
@@ -107,12 +110,16 @@ contour:
         kratos:
             smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
         elasticsearch:
-            address: "my-es-host:9200”
+            address: "my-es-host:9200"
         postgresql:
             address: "my-pgsql-host:5432"
             username: "user"
             password: "pa$$word"
             database: "dbname"
+        filebeat:
+            enable: true
+        fluentbit:
+            enable: false
     fqdn:
         domain: my-host.com
    ```
