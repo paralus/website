@@ -18,6 +18,8 @@ PostgreSQL is an open source object-relational database system. Paralus uses Pos
 
 Elastic search is an open source distributed, search and analytics engine for various types of data. Paralus uses elastic search to store all the system and kubectl logs that are generate. These logs persist in the database even after the pod is killed or restarts.
 
+> Note: This is now an optional component from release 0.1.9.
+
 ## Filebeat
 
 Filebeat is a lightweight tool that collects all the logs from various components of Paralus. It is used to collect the logs from Paralus components and forwards it to to elasticsearch server.
