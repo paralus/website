@@ -117,7 +117,7 @@ contour:
         domain: my-host.com
    ```
 
-    > Note: Since v0.1.9, elasticsearch is an optional component. By default, Paralus will install with Postgres. If you're doing a fresh install, below are the values.yaml file that you must pass during installation:
+    > Note: Since v0.1.9, elasticsearch is an optional component. By default, Paralus will use database (Postgres) as the auditlog storage component. If you're doing a fresh install, below are the values.yaml file that you must pass during installation:
 
     - Postgres (_default_): https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-generic.yaml
     - Elasticsearch: https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.elasticsearch.yaml

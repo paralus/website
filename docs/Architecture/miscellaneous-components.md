@@ -24,6 +24,8 @@ Elastic search is an open source distributed, search and analytics engine for va
 
 Filebeat is a lightweight tool that collects all the logs from various components of Paralus. It is used to collect the logs from Paralus components and forwards it to to elasticsearch server.
 
+> Note: This is now an optional component from release 0.1.9.
+
 ## Contour
 
 Contour is an open source Kubernetes ingress controller that provides a control plane for the Envoy edge and service proxy. It is used as Nginx replacement as Paralus makes use of domain based routing.
