@@ -6,7 +6,88 @@ slug: /release-notes/2022
 
 ---
 
-## v0.1.4
+## v0.1.9
+
+**November 25, 2022**
+
+**paralus/paralus**
+
+**Added**
+
+- Added database auditlog storage option [niravparikh05](https://github.com/niravparikh05)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+
+---
+
+## v0.1.8
+
+**November 04, 2022**
+
+**paralus/paralus**
+
+**Added**
+
+- Added last login field to user spec from [akshay196](https://github.com/akshay196)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+​
+**paralus/dashboard**
+
+**Added**
+
+- Show last access time in users list page from [akshay196](https://github.com/akshay196)
+
+**Fixed**
+
+- Fix for IdP users unable to login from [niravparikh05](https://github.com/niravparikh05)
+- Fix wrong cluster delete success message for non-priviledged users from [niravparikh05](https://github.com/niravparikh05)
+
+Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
+
+---
+​
+## v0.1.7
+
+**October 14, 2022**
+
+​
+**paralus/paralus**
+
+**Fixed**
+
+- Fixed creating project scoped role failed from cli [niravparikh05](https://github.com/niravparikh05)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+​
+**paralus/dashboard**
+
+**Changed**
+
+- Hide copy button in user reset screen for non https webpages from [niravparikh05](https://github.com/niravparikh05)
+- Default to kubectl tab view in audit logs from [niravparikh05](https://github.com/niravparikh05)
+- Remove groups and client column from audit logs system and kubectl commands tab from [niravparikh05](https://github.com/niravparikh05)
+- Make user clickable in auditlogs kubectl commands tab to view user details like group from [niravparikh05](https://github.com/niravparikh05)
+​
+Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
+
+---
+​
+## v0.1.6 
+
+**October 10, 2022**
+
+**​paralus/paralus**
+
+**Fixed**
+
+- Fixed issue where relay server is not coming up in arm64 (Mac M1) from [niravparikh05](https://github.com/niravparikh05)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+
+---
+
+## v0.1.5
 ​
 **September 30,2022**
 
@@ -47,7 +128,7 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 ---
 
-## v0.1.3
+## v0.1.4
 
 **August 26,2022**
 
