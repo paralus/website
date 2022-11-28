@@ -14,9 +14,19 @@ slug: /release-notes/2022
 
 **Added**
 
-- Added database auditlog storage option [niravparikh05](https://github.com/niravparikh05)
+- Added database auditlog storage option - [niravparikh05](https://github.com/niravparikh05)
+
 
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+
+**paralus/helm-charts**
+
+**Added**
+
+- Support database as a backend for audit logs - [akshay196](https://github.com/akshay196)
+
+
+Find more details in [paralus/helm-charts](https://github.com/paralus/helm-charts).
 
 ---
 
@@ -28,7 +38,7 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 **Added**
 
-- Added last login field to user spec from [akshay196](https://github.com/akshay196)
+- Added last login field to user spec - [akshay196](https://github.com/akshay196)
 
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 ​
@@ -36,17 +46,18 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 **Added**
 
-- Show last access time in users list page from [akshay196](https://github.com/akshay196)
+- Show last access time in users list page - [akshay196](https://github.com/akshay196)
 
 **Fixed**
 
-- Fix for IdP users unable to login from [niravparikh05](https://github.com/niravparikh05)
-- Fix wrong cluster delete success message for non-priviledged users from [niravparikh05](https://github.com/niravparikh05)
+- Fix for IdP users unable to login - [niravparikh05](https://github.com/niravparikh05)
+- Fix wrong cluster delete success message for non-priviledged users - [niravparikh05](https://github.com/niravparikh05)
+  
 
 Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 ---
-​
+
 ## v0.1.7
 
 **October 14, 2022**
@@ -56,23 +67,25 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 **Fixed**
 
-- Fixed creating project scoped role failed from cli [niravparikh05](https://github.com/niravparikh05)
-
+- Fixed creating project scoped role failed from cli - [niravparikh05](https://github.com/niravparikh05)
+  
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+
 ​
 **paralus/dashboard**
 
 **Changed**
 
-- Hide copy button in user reset screen for non https webpages from [niravparikh05](https://github.com/niravparikh05)
-- Default to kubectl tab view in audit logs from [niravparikh05](https://github.com/niravparikh05)
-- Remove groups and client column from audit logs system and kubectl commands tab from [niravparikh05](https://github.com/niravparikh05)
-- Make user clickable in auditlogs kubectl commands tab to view user details like group from [niravparikh05](https://github.com/niravparikh05)
+- Hide copy button in user reset screen for non https webpages - [niravparikh05](https://github.com/niravparikh05)
+- Default to kubectl tab view in audit logs - [niravparikh05](https://github.com/niravparikh05)
+- Remove groups and client column from audit logs system and kubectl commands tab - [niravparikh05](https://github.com/niravparikh05)
+- Make user clickable in auditlogs kubectl commands tab to view user details like group - [niravparikh05](https://github.com/niravparikh05)
 ​
+
 Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 ---
-​
+
 ## v0.1.6 
 
 **October 10, 2022**
@@ -81,7 +94,7 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 **Fixed**
 
-- Fixed issue where relay server is not coming up in arm64 (Mac M1) from [niravparikh05](https://github.com/niravparikh05)
+- Fixed issue where relay server is not coming up in arm64 (Mac M1) - [niravparikh05](https://github.com/niravparikh05)
 
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
@@ -95,8 +108,8 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 **Fixed**
 
-- Fixed issue where relay server is not coming up in arm64 (Mac M1) from [sandeep540](https://github.com/sandeep540)
-- Fixed cluster lister and set group created at property [niravparikh05](https://github.com/niravparikh05)
+- Fixed issue where relay server is not coming up in arm64 (Mac M1) - [sandeep540](https://github.com/sandeep540)
+- Fixed cluster lister and set group created at property - [niravparikh05](https://github.com/niravparikh05)
 
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
@@ -107,7 +120,7 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 ​
 **Added**
 
-- Added arm builds from [meain](https://github.com/meain)
+- Added arm builds - [meain](https://github.com/meain)
 
 Find more details in [paralus/relay](https://github.com/paralus/relay).
 
@@ -118,11 +131,10 @@ Find more details in [paralus/relay](https://github.com/paralus/relay).
 ​
 **Fixed**
 
-- Fix download kubeconfig file name issue from [akshay196](https://github.com/akshay196)
-- Ui cleanups in cluster lister, import and config screens from [niravparikh05](https://github.com/niravparikh05)
-- Fixed login failing right after logout from [meain](https://github.com/meain)
-- Cluster tabular list view set to default and added user recovery link copy icon [niravparikh05](https://github.com/niravparikh05)
-
+- Fix download kubeconfig file name issue - [akshay196](https://github.com/akshay196)
+- Ui cleanups in cluster lister, import and config screens - [niravparikh05](https://github.com/niravparikh05)
+- Fixed login failing right after logout - [meain](https://github.com/meain)
+- Cluster tabular list view set to default and added user recovery link copy icon - [niravparikh05](https://github.com/niravparikh05)
 
 Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
@@ -130,14 +142,29 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 ## v0.1.4
 
-**August 26,2022**
+**Spetember 20,2022**
+
+**paralus/helm-charts**
+
+**Fixed**
+
+- Cleanup pods for kratos restart on success - [meain](https://github.com/meain)
+
+Find more details in [paralus/helm-charts](https://github.com/paralus/helm-charts).
+
+---
+
+## v0.1.3
+
+**August 29,2022**
 
 **paralus/paralus**
 
 **Added**
 
-- Added more audit points for better visibility - [vivekhiwarkar](https://github.com/vivekhiwarkar)
-- Added audit point for kubeconfig download - [meain](https://github.com/meain)
+- Added audit points - [vivekhiwarkar](https://github.com/vivekhiwarkar)
+- Switched to using codecov for coverage - [meain](https://github.com/meain)
+- Add audit log for kubeconfig download [meain](https://github.com/meain)
 
 **Fixed**
 
