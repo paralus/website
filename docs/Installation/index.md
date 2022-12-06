@@ -9,8 +9,8 @@ Installing Paralus via Helm charts is the preferred way. To successfully install
 
 - Kubernetes Cluster
 - PostgreSQL
-- Elasticsearch
 - Domain Name
+- Elasticsearch [Optional]
 - SMTP Server [Optional]
 - HTTPS [Optional]
 
@@ -40,7 +40,7 @@ You need a PostgreSQL database instance that is accessible from the cluster on w
 - Database password _(eg: pa$$word)_
 - Database name _(eg: dbname)_
 
-### Elasticsearch
+### Elasticsearch - _Optional_
 
 An Elasticsearch instance that is accessible from a cluster on which you are deploying Paralus.
 
@@ -93,6 +93,9 @@ contour:
    > You can skip this step if you're doing a fresh install
 
    ```yaml
+   auditLogs:
+        storage: "elasticsearch"
+
     paralus:
         initialize:
             partner: "example"
@@ -107,15 +110,24 @@ contour:
         kratos:
             smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
         elasticsearch:
-            address: "my-es-host:9200”
+            address: "my-es-host:9200"
         postgresql:
             address: "my-pgsql-host:5432"
             username: "user"
             password: "pa$$word"
             database: "dbname"
+        filebeat:
+            enable: true
+        fluentbit:
+            enable: false
     fqdn:
         domain: my-host.com
    ```
+
+    > Note: Since v0.1.9, elasticsearch is an optional component. By default, Paralus will use database (Postgres) as the auditlog storage component. If you're doing a fresh install, below are the values.yaml file that you must pass during installation:
+
+    - Postgres (_default_): https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-generic.yaml
+    - Elasticsearch: https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.elasticsearch.yaml
 
 4. Install the chart with release name my-release:
 
@@ -163,6 +175,6 @@ Open the above url in a browser and provide a new password. Once changed you can
 
 Congratulations, you have successfully installated Paralus.
 
-We also recommend enabling SSL for Paralus. Read our [SSL documentation](../ssl-setup/) for more.
+We also recommend enabling SSL for Paralus on a production environment. Read our [SSL documentation](../ssl-setup/) for more.
 
 It's now time to learn more about [Paralus features](../usage/)!

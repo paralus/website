@@ -150,6 +150,11 @@ helm repo update
 
 > Note: In case you get an `Error: INSTALLATION FAILED: Kubernetes cluster unreachable` error, you need to set your `kubeconfig` context right. You can do so be running `sudo microk8s.kubectl config view --raw > ~/.kube/config`.
 
+> Note: Since v0.1.9, elasticsearch is an optional component. By default, Paralus will use database (Postgres) as the auditlog storage component. If you're doing a fresh install, below are the values.yaml file that you must pass during installation:
+
+  - Postgres (_default_): https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.dev-generic.yaml
+  - Elasticsearch: https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.elasticsearch.yaml
+
 You'll see the following output if the installation succeeds:
 
 ```bash
