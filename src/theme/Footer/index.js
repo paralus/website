@@ -17,8 +17,10 @@ function Footer() {
     >
       <div className="space-y-3">
         <div className="flex justify-center md:justify-start">
-          <img className="w-40" src="/img/logo-white.png" alt="Paralus" />
+            <img className="w-80" src="/img/cncf-white.png" alt="CNCF" />
         </div>
+        <p>We are a Cloud Native Computing Foundation sandbox project.</p>
+        <p className="footer-trademark-text">The Linux Foundation® (TLF) has registered trademarks and uses trademarks. For a list of TLF trademarks, see <a href="https://www.linuxfoundation.org/trademark-usage/" target="_blank">Trademark Usage</a>.</p>
       </div>
       <div>
         <div className="flex flex-row justify-center md:justify-end items-start gap-x-3 md:gap-x-16 font-light">
