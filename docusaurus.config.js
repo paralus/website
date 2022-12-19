@@ -141,7 +141,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Rafay Systems, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Paralus contributors.`,
       },
       prism: {
         theme: lightCodeTheme,
