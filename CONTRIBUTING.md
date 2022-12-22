@@ -14,7 +14,7 @@ If you’re looking to add a new feature, [raise a new issue](https://github.com
 
 You'll need to perform the following tasks in order to submit your changes:
 
-- Fork the Paralus repository.
+- Fork the Website repository.
 - Create a branch for your changes.
 - Add commits to that branch.
 - Open a PR to share your contribution.
