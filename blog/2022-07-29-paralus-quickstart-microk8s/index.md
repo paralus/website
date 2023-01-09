@@ -24,8 +24,10 @@ In this tutorial we'll show you how to setup Paralus on a local Microk8s cluster
   - [Importing Existing Cluster](#importing-existing-cluster)
     - [Configuring Network](#configuring-network)
       - [Getting Cluster ID and Hostname](#getting-cluster-id-and-hostname)
+    - [Configuring HostAliases](#configuring-hostaliases)
       - [Updating /etc/hosts](#updating-etchosts)
   - [Accessing Existing Cluster](#accessing-existing-cluster)
+    - [Using Web Kubectl](#using-web-kubectl)
 
 ## MicroK8s
 
@@ -184,7 +186,7 @@ In order to do that, we need the IP address of the loadbalancer service that we 
 kubectl get service myrelease-contour-envoy -n paralus
 
 NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                      AGE
-myrelease-contour-envoy   LoadBalancer   10.152.183.49   192.168.0.200   80:31644/TCP,443:31126/TCP   2m38s
+myrelease-contour-envoy   LoadBalancer   10.152.183.106   192.168.0.200   80:31644/TCP,443:31126/TCP   2m38s
 
 ```
 
@@ -249,16 +251,54 @@ data:
   relays: '[{"token":"cakmpdvjd030q1q53p9g","addr":"console.paralus.local:80","endpoint":"*.core-connector.paralus.local:443","name":"paralus-core-relay-agent","templateToken":"cakl93fjd030q1q53p5g"}]'
 ```
 
-With the `clusterID` identified, we need to update the hosts file. This becuase we are using hostname to route traffic.
+Note down the `clusterID`
+
+#### Configuring HostAliases
+
+As this setup is being done on a local system, a public IP address or a domain is missing. Hence, there's a need to configure `spec.hostAliases` for the relay agent pod in the downloaded yaml file present in the cluster being imported.
+
+To make the configuration changes, you need the `CLUSTER-IP` address of Loadbalancer
+
+Use the command `kubectl get svc -A` and note down the IP address of `<releasename>-contour-envoy`
 
 ```bash
-5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
-5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.paralus.local
+$ microk8s kubectl get svc -A
+NAMESPACE        NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)                         AGE
+default          kubernetes                 ClusterIP      10.152.183.1     <none>           443/TCP                         3d19h
+kube-system      kube-dns                   ClusterIP      10.152.183.10    <none>           53/UDP,53/TCP,9153/TCP          3d19h
+metallb-system   webhook-service            ClusterIP      10.152.183.206   <none>           443/TCP                         3d18h
+paralus          myrelease-kratos-courier   ClusterIP      None             <none>           80/TCP                          3d18h
+paralus          myrelease-postgresql-hl    ClusterIP      None             <none>           5432/TCP                        3d18h
+paralus          paralus                    ClusterIP      10.152.183.221   <none>           11000/TCP,10000/TCP,10001/TCP   3d18h
+paralus          myrelease-kratos-admin     ClusterIP      10.152.183.187   <none>           80/TCP                          3d18h
+paralus          dashboard                  ClusterIP      10.152.183.149   <none>           80/TCP                          3d18h
+paralus          prompt                     ClusterIP      10.152.183.65    <none>           7009/TCP                        3d18h
+paralus          myrelease-fluent-bit       ClusterIP      10.152.183.121   <none>           2020/TCP                        3d18h
+paralus          relay-server               ClusterIP      10.152.183.80    <none>           443/TCP                         3d18h
+paralus          myrelease-contour-envoy    LoadBalancer   10.152.183.106   192.168.14.160   80:30600/TCP,443:31855/TCP      3d18h
+paralus          myrelease-postgresql       ClusterIP      10.152.183.203   <none>           5432/TCP                        3d18h
+paralus          myrelease-contour          ClusterIP      10.152.183.146   <none>           8001/TCP                        3d18h
+paralus          myrelease-kratos-public    ClusterIP      10.152.183.64    <none>           80/TCP                          3d18h
+```
+
+In this case the `CLUSTER-IP` is 10.152.183.106.
+
+Open the downloaded yaml file and add the following lines under `spec.hostAliases` for `relay-agent` deployment.
+
+```yaml
+...
+hostAliases:
+  - ip: 10.152.183.106
+  hostnames:
+    - "console.paralus.local"
+    - "5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local"
+    - "5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.paralus.local"
+...
 ```
 
 ##### Updating /etc/hosts
 
-Add two new lines in `/etc/hosts` file along with the IP address obtained
+Add two new lines in `/etc/hosts` file along with the IP address obtained and the hostnames
 
 ```bash
 192.168.0.200 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
@@ -286,6 +326,23 @@ Wait for the changes to take place. On the dashboard you will see that the clust
 > _You can also execute `kubectl get pods` to check the status._
 
 <img src="/img/docs/paralus-import-cluster-3.png" alt="Import Cluster Success" height="70%" width="70%"/>
+
+#### Using Web Kubectl
+
+At this point, the cluster is successfully imported to Paralus. However, in order to use `kubectl` from the dashboard, we need to configure the `prompt` deplpoyment.
+
+Edit `prompt` deployment using `kubectl edit deployment prompt -n Paralus`. Add the following lines under `spec.hostAliases` to the deployment:
+
+```yaml
+...
+hostAliases:
+  - hostnames:
+    - console.paralus.local
+    - 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
+    - 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.core-connector.paralus.local
+  ip: 10.152.183.106
+...
+```
 
 Select your newly imported cluster and click on `kubectl` to access the prompt and interact with your cluster from the dashboard.
 
