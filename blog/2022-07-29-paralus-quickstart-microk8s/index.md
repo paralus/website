@@ -255,6 +255,8 @@ Note down the `clusterID`
 
 #### Configuring HostAliases
 
+> Note: This step is required only when you're importing the same microk8s cluster in which Paralus is deployed. Skip to [updating etc/hosts](#configuring-etchosts) if you're importing any different cluster.
+
 As this setup is being done on a local system, a public IP address or a domain is missing. Hence, there's a need to configure `spec.hostAliases` for the relay agent pod in the downloaded yaml file present in the cluster being imported.
 
 To make the configuration changes, you need the `CLUSTER-IP` address of Loadbalancer
@@ -298,7 +300,9 @@ hostAliases:
 
 ##### Updating /etc/hosts
 
-Add two new lines in `/etc/hosts` file along with the IP address obtained and the hostnames
+Add two new lines in `/etc/hosts` file along with the IP address obtained and the hostnames. This ensures that the target cluster is able to resolve the hostname and reach the LoadBalancer IP address.
+
+Only when the same microk8s cluster is imported, we specify the hostAliases, else the local system's /etc/hosts file is enough.
 
 ```bash
 192.168.0.200 5dceca49-c6cd-4a2b-b65a-f193c4fa001f.user.paralus.local
