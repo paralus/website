@@ -1,5 +1,5 @@
 ---
-slug: paralus-cnfc-sandbox-project
+slug: paralus-cncf-sandbox-project
 title: "Paralus Is Now A CNCF Sandbox Project"
 authors: [atul]
 tags: [paralus]
