@@ -3,7 +3,7 @@ slug: paralus-cncf-sandbox-project
 title: "Paralus Is Now A CNCF Sandbox Project"
 authors: [atul]
 tags: [paralus]
-image: /img/docs/paralus-cncf.png
+image: /img/docs/paralus-cncf-sandbox-banner.png
 ---
 
 June 28, 2022, was an extremely special day for all of us here at Paralus. It was the day when [Paralus was born](https://www.paralus.io/blog/hello-paralus). The day when we presented Paralus to the world. A lot of tools exist today for managing Kubernetes access. From the default role-based access control mechanism to custom DIY solutions along with a few open-source projects. However, most of these tools aren't easy to configure especially when it comes to individual clusters.
@@ -12,7 +12,7 @@ June 28, 2022, was an extremely special day for all of us here at Paralus. It wa
 
 That's where Paralus comes in, it helps everyone manage access to multiple clusters at scale. With its just-in-time service account creation and fine-grained user credential management, Paralus provides an adaptable system that guarantees secure access to resources when necessary. In addition to that, Paralus comes in with zero trust principles baked in, with support for multiple identity providers, custom roles, and much more. Read more about [Paralus features](https://github.com/paralus/paralus#features).
 
-<img src="/img/docs/paralus-cncf.png" alt="Paralus joins CNCF" height="90%" width="90%"/>
+<img src="/img/docs/paralus-cncf-sandbox-banner.png" alt="Paralus joins CNCF" height="90%" width="90%"/>
 
 ## Paralus Joins CNCF
 
@@ -28,6 +28,8 @@ There have been a lot of changes in the repo over the last few months since Para
 - will set up a bi-weekly community call ([Meeting Link](https://rafaysystems.zoom.us/j/81157040904?pwd=QUNVc2ZEN3FJelQ5bXFvTjNUTWFoUT09), [Meeting Notes](https://docs.google.com/document/d/1sSDw3nBGiLrjVjzmFv7D4gSipTapSgenM7KQ9iaD3QA/edit)) with the [maintainers of Paralus](https://github.com/paralus/paralus/blob/main/MAINTAINERS.md) that will be open for everyone - to better understand the needs of the community.
 - will have an even more robust [roadmap](https://github.com/paralus/paralus/blob/main/ROADMAP.md) to letting everyone know where Paralus is headed
 - will move #paralus slack to Kubernetes Slack making it easier for the community to reach out to us
+
+<img src="/img/docs/paralus-cncf.png" alt="Paralus joins CNCF" height="90%" width="90%"/>
 
 ## Together We Can Grow!
 
