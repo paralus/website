@@ -18,7 +18,6 @@ The quickstart guide can be followed to setup Paralus on a Kind cluster.
   - [Installing Paralus](#installing-paralus)
   - [Configuring /etc/hosts](#configuring-etchosts)
   - [Resetting Default Password](#resetting-default-password)
-  - [Accessing Paralus Dashboard](#accessing-paralus-dashboard)
   - [Importing Existing Cluster](#importing-existing-cluster)
     - [Configuring Network](#configuring-network)
       - [Getting Cluster ID and Hostname](#getting-cluster-id-and-hostname)
@@ -85,9 +84,9 @@ NOTES:
 1. Access the application URL by running these commands:
   Open http://console.paralus.local in browser.
 
-You can view the recovery link for admin user by running the following command once all the pods are running:
+You can view the default password for the admin user by running the following command once all the pods are running:
 
-kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
 ```
 
 > Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
@@ -103,7 +102,7 @@ In order to do that, edit the `/etc/hosts` file using your favourite editor and 
 
 _Refer to the value of `fqdn.domain` in your [values.yaml](https://github.com/paralus/helm-charts/blob/main/charts/ztka/values.yaml#L145) file to find the default host._
 
-Open your favorite web browser and navigate to `http://console.paralus.local`, you will be see the dashboard with the login screen
+Open your favorite web browser and navigate to `http://console.paralus.local`, you will be see the dashboard with the login screen.
 
 > **Note:** Docker-for-Mac does not expose container networks directly on the macOS host & hence you will not be able to access Paralus dashboard if you're on a Mac machine. We suggest using [docker-mac-net-connect](https://github.com/chipmk/docker-mac-net-connect) utility to overcome this issue.
 
@@ -111,26 +110,20 @@ Open your favorite web browser and navigate to `http://console.paralus.local`, y
 
 Paralus comes configured with default credentials that allow you to access the dashboard.
 
-In order to get the `Password Reset URL`, copy the command displayed after helm install and execute it
+In order to get the default passowrd, copy the command displayed after helm install and execute it
 
 ```bash
-kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
 
-Org Admin signup URL:  http://console.paralus.local/self-service/recovery?flow=9ec13c6f-414e-4cb5-bf4c-def35973118f&token=ge6bi6zmyzUlQrHlYTOCDeItV82hT08Y
+Org Admin default password: 8[&C2(74^
 ```
-
-> **Note:** The password recovery link generated while deploying Paralus is valid only for `10 minutes`. For any reason if the link is expired, refer to our [troubleshooting guide](../docs/references/troubleshooting) to re-generate the password reset link.
-
-Access the URL in a browser, and provide a new password.
-
-### Accessing Paralus Dashboard
 
 In a new browser window/tab navigate to `http://console.paralus.local` and log in with the following credentials:
 
 - username: `admin@paralus.local` - _or the one you specified in `values.yaml`_
-- password: `<The one you entered in the earlier section>`
+- password: `<generated above>`
 
-You'll be taken to the projects page where you'll see a default project.
+It will ask you to change the default password. Please provide new set of passwords to proceed. If successful, you'll be redirected to the projects page where you'll see a default project.
 
 <img src="/img/docs/paralus-dashboard.png" alt="Paralus default project screen" height="70%" width="70%"/>
 
