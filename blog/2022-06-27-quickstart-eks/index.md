@@ -16,7 +16,7 @@ With the help of this guide you'll be able to setup an Amazon Elastic Kubernetes
 - [Creating EKS Cluster](#creating-eks-cluster)
 - [Installing Paralus](#installing-paralus)
 - [Configuring DNS Settings](#configuring-dns-settings)
-  - [Accessing The Dashboard](#accessing-the-dashboard)
+  - [Resetting Default Password](#resetting-default-password)
   - [Importing Existing Cluster](#importing-existing-cluster)
 
 ## Pre Requisites
@@ -97,25 +97,25 @@ Added new context arn:aws:eks:us-west-2:645114859692:cluster/ferocious-gopher-16
      - Elasticsearch: https://raw.githubusercontent.com/paralus/helm-charts/main/examples/values.elasticsearch.yaml
 
    ```bash
-   NAME: myrelease
-   LAST DEPLOYED: Wed May 25 10:13:48 2022
-   NAMESPACE: paralus
-   STATUS: deployed
-   REVISION: 1
-   NOTES:
-   1. Access the application URL by running these commands:
-     Get load balancer address via:
-     kubectl get service envoy --namespace paralus -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+    NAME: myrelease
+    LAST DEPLOYED: Wed May 25 10:13:48 2022
+    NAMESPACE: paralus
+    STATUS: deployed
+    REVISION: 1
+    NOTES:
+    1. Access the application URL by running these commands:
+      Get load balancer address via:
+      kubectl get service envoy --namespace paralus -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
 
-     Add DNS records of following domains such that it resolves to above address:
-     - console-eks-oss.chartexample.com
-     - *.core-connector.eks-oss.chartexample.com
-     - *.user.eks-oss.chartexample.com
-     Open http://console-eks-oss.chartexample.com in browser.
+      Add DNS records of following domains such that it resolves to above address:
+        - console-eks-oss.chartexample.com
+        - *.core-connector.eks-oss.chartexample.com
+        - *.user.eks-oss.chartexample.com
+        Open http://console-eks-oss.chartexample.com in browser.
 
-   You can view the recovery link for admin user by running the following command once all the pods are running:
+        You can view the default password for admin@paralus.local by running the following command once all the pods are running:
 
-   kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize-paralus | grep 'Org Admin signup URL:'
+        kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
    ```
 
 > Note: It can take upto a few minutes before all the pods are running and you can access the Web UI. You can check the status using `watch kubectl get pods`
@@ -137,25 +137,24 @@ While you are on your DNS Setting page, for the selected domain name, you need t
 
 <img src="/img/docs/customdomain-dnssettings.png" alt="Custom Domain DNS Settings" height="70%" width="70%"/>
 
-### Accessing The Dashboard
+### Resetting Default Password
 
-Paralus is installed with a default organization and an admin user. Hence, after installation, you need to set a password for the user. To do so, execute the command that you get after installing Paralus.
+Paralus comes configured with default credentials that allow you to access the dashboard.
+
+In order to get the default passowrd, copy the command displayed after helm install and execute it
 
 ```bash
- kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
 
-Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
-
+Org Admin default password: 8[&C2(74^
 ```
 
-> **Note:** The password recovery link generated while deploying Paralus is valid only for `10 minutes`. For any reason if the link is expired, refer to our [troubleshooting guide](../docs/references/troubleshooting) to re-generate the password reset link.
-
-Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
+In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
 
 - username: `admin@paralus.local` - _or the one you specified in `values.yaml`_
-- password: `<The one you entered above>`
+- password: `<generated above>`
 
-You'll be taken to the projects page where you'll see a default project.
+It will ask you to change the default password. Please provide new set of passwords to proceed. If successful, you'll be redirected to the projects page where you'll see a default project.
 
 <img src="/img/docs/paralus-dashboard.png" alt="Paralus default project screen" height="70%" width="70%"/>
 
