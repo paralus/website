@@ -17,7 +17,7 @@ In this blog post, we'll take you through the steps to setup Paralus on Google K
 - [Creating GKE Cluster](#creating-gke-cluster)
 - [Installing Paralus](#installing-paralus)
 - [Configuring DNS Settings](#configuring-dns-settings)
-  - [Accessing The Dashboard](#accessing-the-dashboard)
+  - [Resetting Default Password](#resetting-default-password)
   - [Importing Existing Cluster](#importing-existing-cluster)
 
 ## Pre Requisites
@@ -78,9 +78,9 @@ After the cluster is created, start the cluster and connect to it. You can conne
      - *.user.chartexample.com
      Open http://console.chartexample.com in browser.
 
-   You can view the recovery link for admin user by running the following command once all the pods are running:
+    You can view the default password for admin@paralus.local by running the following command once all the pods are running:
 
-   kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
   ```
 
 > Note: It can take upto a few minutes before all the pods are running and you can access the dashboard. You can check the status using `watch kubectl get pods`
@@ -108,25 +108,24 @@ While you are on your DNS Setting page, for the selected domain name, you need t
 | A | *.core-connector.chartexample.com | 34.121.64.88 | 1 Hour |
 | A | *.user.chartexample.com | 34.121.64.88 | 1 Hour |
 
-### Accessing The Dashboard
+### Resetting Default Password
 
-Paralus is installed with a default organization and an admin user. Hence, after installation, you need to set a password for the user. To do so, execute the command that you get after installing Paralus.
+Paralus comes configured with default credentials that allow you to access the dashboard.
+
+In order to get the default passowrd, copy the command displayed after helm install and execute it
 
 ```bash
-kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
 
-Org Admin signup URL:  http://console.chartexample.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
-
+Org Admin default password: 8[&C2(74^
 ```
 
-> **Note:** The password recovery link generated while deploying Paralus is valid only for `10 minutes`. For any reason if the link is expired, refer to our [troubleshooting guide](../docs/references/troubleshooting) to re-generate the password reset link.
-
-Access the URL in a browser, and provide a new password. In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
+In a new browser window/tab navigate to `http://console.chartexample.com` and log in with the following credentials:
 
 - username: `admin@paralus.local` - _or the one you specified in `values.yaml`_
-- password: `<The one you entered above>`
+- password: `<generated above>`
 
-You'll be taken to the projects page where you'll see a default project.
+It will ask you to change the default password. Please provide new set of passwords to proceed. If successful, you'll be redirected to the projects page where you'll see a default project.
 
 <img src="/img/docs/paralus-dashboard.png" alt="Paralus default project screen" height="70%" width="70%"/>
 

@@ -143,7 +143,7 @@ contour:
     1. Access the application URL by running these commands:
     Open http://my-host.com in browser.
 
-    You can view the default password for the admin user by running the following command once all the pods are running:
+    You can view the default password for admin@paralus.local by running the following command once all the pods are running:
 
     kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
 
