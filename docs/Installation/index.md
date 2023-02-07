@@ -143,9 +143,9 @@ contour:
     1. Access the application URL by running these commands:
     Open http://my-host.com in browser.
 
-    You can view the recovery link for admin user by running the following command once all the pods are running:
+    You can view the default password for admin@paralus.local by running the following command once all the pods are running:
 
-    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+    kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
 
    ```
 
@@ -163,15 +163,17 @@ Based on your domain provider, you can login to your domain's control panel and 
 
 ## First Run
 
-Paralus is installed with a default organization and an admin user. Hence, after installation, you need to set a password for the user. To do so, execute the command that you get after installting Paralus.
+Paralus is installed with a default organization and an admin user. It also generates a default password for the admin user. You can run the below command to get the password.
 
 ```bash
-kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin signup URL:'
+kubectl logs -f --namespace paralus $(kubectl get pods --namespace paralus -l app.kubernetes.io/name='paralus' -o jsonpath='{ .items[0].metadata.name }') initialize | grep 'Org Admin default password:'
 
-Org Admin signup URL:  http://my-host.com/self-service/recovery?flow=de34efa4-934e-4916-8d3f-a1c6ce65ba39&token=IYJFI5vbORhGnz81gCjK7kucDVoiuQ7j
+Org Admin default password: [B]2(74^
 ```
 
-Open the above url in a browser and provide a new password. Once changed you can login with the `adminEmail` provided in `myvalues.yaml` along with the password set in the last step.
+> Note: You'll be asked to update the password on your first login.
+
+Open `console.my-host.com` in a browser, login with the `adminEmail` provided in `myvalues.yaml` along with the default password generated above. Upon successful login, you'll be asked to set a new password. Please do so and proceed.
 
 Congratulations, you have successfully installated Paralus.
 
