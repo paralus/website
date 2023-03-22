@@ -5,7 +5,7 @@ slug: /single-sign-on/okta
 
 ---
 
-In this document, we'll show you how to use Okta as an Identity provider for Paralus. This will allow your users to login via Okta and access Paralus. Below is the list of items that we will cover in this document:
+In this document, we'll show you how to use [Okta](https://www.okta.com) as an Identity provider for Paralus. This will allow your users to login via Okta and access Paralus. Below is the list of items that we will cover in this document:
 
 - [Creating a Okta SSO Application](#creating-a-okta-sso-application)
 - [Adding an Identity Provider to Paralus](#adding-an-identity-provider-to-paralus)
@@ -17,13 +17,17 @@ Login to your Okta account as an admin and navigate to `Applications -> Applicat
 
 In the dialog that opens, choose **OIDC - Open ID Connect** as the **Sign-in Method** and **Web Application** as the **Application Type.**
 
-On the next screen provide a name for the application. Under **Assignments -> Controlled Access**, select `Skip Group Assignment For Now`
-
 <img src="/img/docs/oidc-okta-1.png" alt="Creating New Okta OAuth App" height="75%" width="75%"/>
 
 Leave the **Application Callback URL** empty for now and Register the application.
 
-Note down the `client-id` and `client-secret` as those will be required to configure identity provider for Paralus.
+Based on who can access the Paralus app integration, select **Controlled access** options.
+
+Note down the `Client ID` and `Client Secret` as those will be required to configure identity provider for Paralus.
+
+Navigate to `Security -> API` and select the default authorization server. Click on *Add Claim** to add a groups claim.
+
+<img src="/img/docs/oidc-okta-2.png" alt="Added groups claim to Okta authorization server" height="75%" width="75%"/>
 
 ## Adding an Identity Provider to Paralus
 
@@ -31,7 +35,7 @@ Login to your Paralus dashboard and navigate to `System -> Identity Providers` a
 
 Provide the name of the identity provider and choose IdP type as `Generic` from the drop down.
 
-For client identifier & secret, provide the `client-id` & `client-secret` of the Okta app created earlier.
+For client identifier & secret, provide the `Client ID` & `Client Secret` of the Okta app created earlier.
 
 Under **Scopes** provide `openid, profile, email`
 
@@ -42,8 +46,6 @@ For **Issuer URL**, provide the url for your Okta Account. *For example: https:/
 Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the callback URL for the Okta OAuth app created in the earlier step.
-
-The **Mapper Configuration** will be set for Okta, so you don't need to change anything on this screen.
 
 On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/paralus/main/_kratos/oidc-mappers/okta.jsonnet` as the mapper url.
 
