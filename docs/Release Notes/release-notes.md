@@ -51,7 +51,7 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 **Fixed**
 
 - Fix for IdP users unable to login - [niravparikh05](https://github.com/niravparikh05)
-- Fix wrong cluster delete success message for non-priviledged users - [niravparikh05](https://github.com/niravparikh05)
+- Fix wrong cluster delete success message for non-privileged users - [niravparikh05](https://github.com/niravparikh05)
   
 
 Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
@@ -142,7 +142,7 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 ## v0.1.4
 
-**Spetember 20,2022**
+**September 20,2022**
 
 **paralus/helm-charts**
 
