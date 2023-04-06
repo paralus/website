@@ -43,7 +43,7 @@ Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the redirect URL for the Slack OAuth app created in the earlier step.
 
-On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/paralus/main/_kratos/oidc-mappers/slack.jsonnet` as the mapper url. Click Save & Exit.
+On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/paralus/v0.2.2/_kratos/oidc-mappers/slack.jsonnet` as the mapper url. Click Save & Exit.
 
 At this point, you have successfully added Slack as an identity provider for Paralus.
 
