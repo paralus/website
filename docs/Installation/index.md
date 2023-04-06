@@ -96,32 +96,32 @@ contour:
    auditLogs:
         storage: "elasticsearch"
 
-    paralus:
-        initialize:
-            partner: "example"
-            partnerDesc: "Partner description"
-            partnerHost: "example.com"
-            org: "exampleorg"
-            orgDesc: "Org description"
-            adminEmail: "foo@example.com"
-            adminFirstName: "Foo"
-            adminLastName: "Bar"
-    deploy:
-        kratos:
-            smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
-        elasticsearch:
-            address: "my-es-host:9200"
-        postgresql:
-            address: "my-pgsql-host:5432"
-            username: "user"
-            password: "pa$$word"
-            database: "dbname"
-        filebeat:
-            enable: true
-        fluentbit:
-            enable: false
-    fqdn:
-        domain: my-host.com
+   paralus:
+       initialize:
+           partner: "example"
+           partnerDesc: "Partner description"
+           partnerHost: "example.com"
+           org: "exampleorg"
+           orgDesc: "Org description"
+           adminEmail: "foo@example.com"
+           adminFirstName: "Foo"
+           adminLastName: "Bar"
+   deploy:
+       kratos:
+           smtpConnectionURI: "smtps://foo:bar@my-mailserver:1234/"
+       elasticsearch:
+           address: "my-es-host:9200"
+       postgresql:
+           address: "my-pgsql-host:5432"
+           username: "user"
+           password: "pa$$word"
+           database: "dbname"
+       filebeat:
+           enable: true
+       fluentbit:
+           enable: false
+   fqdn:
+       domain: my-host.com
    ```
 
     > Note: Since v0.1.9, elasticsearch is an optional component. By default, Paralus will use database (Postgres) as the auditlog storage component. If you're doing a fresh install, below are the values.yaml file that you must pass during installation:
