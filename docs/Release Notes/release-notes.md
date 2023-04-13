@@ -6,6 +6,34 @@ slug: /release-notes/2022
 
 ---
 
+## v0.2.0
+
+**December 30, 2022**
+
+**paralus/paralus**
+
+**What's Changed**
+
+- Fix modify userinfo service to include scope in response - [mabhi](https://github.com/mabhi)
+- Added details around dco - [niravparikh05](https://github.com/niravparikh05)
+- Changes for Sandbox Onboarding by [techmaharaj](https://github.com/techmaharaj)
+- Record user.login event by kratos hooks [mabhi](https://github.com/mabhi)
+- Delete relay agent from target cluster while cluster deletion - [niravparikh05](https://github.com/niravparikh05)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus).
+
+**paralus/dashboard**
+
+**What's Changed**
+
+- Fix managed cluster access button for read only users - [mabhi](https://github.com/mabhi)
+- Fix switching between project when logged in as non-admin - [mabhi](https://github.com/mabhi)
+- Adding dco contributing terms - [niravparikh05](https://github.com/niravparikh05)
+
+Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
+
+---
+
 ## v0.1.9
 
 **November 25, 2022**
