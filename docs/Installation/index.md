@@ -175,7 +175,7 @@ Org Admin default password: [B]2(74^
 
 Open `console.my-host.com` in a browser, login with the `adminEmail` provided in `myvalues.yaml` along with the default password generated above. Upon successful login, you'll be asked to set a new password. Please do so and proceed.
 
-Congratulations, you have successfully installated Paralus.
+Congratulations, you have successfully installed Paralus.
 
 We also recommend enabling SSL for Paralus on a production environment. Read our [SSL documentation](../ssl-setup/) for more.
 
