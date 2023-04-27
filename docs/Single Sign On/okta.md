@@ -69,7 +69,7 @@ Click Save & Continue.
 
 From the next screen copy the `Callback URL` and paste it in the callback URL for the Okta OAuth app created in the earlier step.
 
-On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/paralus/main/_kratos/oidc-mappers/okta.jsonnet` as the mapper url. The mapper url uses [the custom groups claim](#add-a-custom-groups-claim).
+On the **Mapper Configuration** screen, provide `https://raw.githubusercontent.com/paralus/paralus/v0.2.2/_kratos/oidc-mappers/okta.jsonnet` as the mapper url. The mapper url uses [the custom groups claim](#add-a-custom-groups-claim).
 
 Click Save & Exit.
 
