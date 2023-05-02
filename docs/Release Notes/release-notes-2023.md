@@ -12,6 +12,10 @@ slug: /release-notes/2023
 
 **paralus/paralus**
 
+**Breaking Change**
+
+- Okta JSONNet mapper configuration for SSO login got changed to support multiple groups. This may impact the existing Okta user logins configured with paralus versions prior to v0.2.1. As a workaround use [pinned Okta mapper URL](https://raw.githubusercontent.com/paralus/paralus/v0.2.1/_kratos/oidc-mappers/okta.jsonnet) to your existing Okta OIdC configuration.
+
 **What's Changed**
 
 - All dependabot open PRs - [akshay196](https://github.com/akshay196)
