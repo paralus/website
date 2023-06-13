@@ -5,6 +5,40 @@ slug: /release-notes/2023
 ---
 
 ---
+## v0.2.4
+
+**April 28, 2023**
+
+**paralus/paralus**
+
+**What's Changed**
+
+- Fix the number of wg.add bug - [tyut22316](https://github.com/tyut22316)
+- Remove references to admindbuser - [niravparikh05](https://github.com/niravparikh05)
+- Fixing link issues - [techmaharaj](https://github.com/techmaharaj)
+- Fix re-running admindb migration failures - [akshay196](https://github.com/akshay196)
+
+Find more details in [paralus/paralus](https://github.com/paralus/paralus/compare/v0.2.2...v0.2.3).
+
+**paralus/dashboard**
+
+**What's Changed**
+
+- chore: add dependabot.yml and CODEOWNERS - [akshay196](https://github.com/akshay196)
+- chore: pinned IDP mapper url to v0.2.2 version - [akshay196](https://github.com/akshay196)
+
+Find more details in [paralus/dashboard](https://github.com/paralus/dashboard/compare/v0.1.9...v0.2.0).
+
+**paralus/cli**
+
+**What's Changed**
+
+- Download CLI config to remove dashboard dependency for pctl usage - [hiteshwani29](https://github.com/hiteshwani29)
+- Add codeowners and dependabot configuration - [akshay196](https://github.com/akshay196)
+
+Find more details in [paralus/cli](https://github.com/paralus/cli/compare/v0.1.3...v0.1.4).
+
+---
 
 ## v0.2.3
 
@@ -29,9 +63,6 @@ slug: /release-notes/2023
 - Fix multiple bootstrap requests - [niravparikh05](https://github.com/niravparikh05)
 - Support more than one IdP groups mapping - [akshay196](https://github.com/akshay196)
 - Added api keys as headers for all grpc messages - [mabhi](https://github.com/mabhi)
-- chore(deps): Bump docker/login-action from 1.10.0 to 2.1.0 by @dependabot
-- chore(deps): Bump docker/metadata-action from 3.3.0 to 4.3.0 by @dependabot
-- chore(deps): Bump docker/build-push-action from 2.5.0 to 4.0.0 by @dependabot
 - Update Dockerfile.initialize to new Kratos version - [akshay196](https://github.com/akshay196)
 
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
@@ -50,11 +81,6 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 - Patch fix to pin golang.org/x/net to a specific version - [niravparikh05](https://github.com/niravparikh05)
 - Add dependabot.yml and CODEOWNERS - [akshay196](https://github.com/akshay196)
-- chore(deps): bump actions/checkout from 2 to 3 by @dependabot
-- chore(deps): bump docker/build-push-action from 2.5.0 to 4.0.0 by @dependabot
-- chore(deps): bump docker/metadata-action from 3.3.0 to 4.3.0 by @dependabot
-- chore(deps): bump docker/login-action from 1.10.0 to 2.1.0 by @dependabot
-- chore(deps): bump actions/setup-go from 2 to 4 by @dependabot
 - Fix same bootstrap register requests from diff target clusters - [niravparikh05](https://github.com/niravparikh05)
 
 Find more details in [paralus/relay](https://github.com/paralus/relay).
