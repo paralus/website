@@ -36,7 +36,7 @@ Teams should always be able to review alerts, verify cluster health and check me
 
 Read more about the [guiding principles for platform teams](https://www.forbes.com/sites/forbestechcouncil/2023/02/23/how-to-empower-modern-kubernetes-management-with-a-platform-team-model/?sh=1690484c52c7)
 
-*In the section below we will be referring to more on this concept **Security Preparedness,** * typical challenges that enterprises face, how paralus can help platform teams enable a seamless kubectl experience, and centralize the config of k8s access controls for their developers across clusters running in public cloud environments and/or on-premise data centers.
+*In the section below we will be referring to more on this concept **Security Preparedness,** * typical challenges that enterprises face, how Paralus can help platform teams enable a seamless kubectl experience, and centralize the config of Kubernetes access controls for their developers across clusters running in public cloud environments and/or on-premise data centers.
 
 ## Why securing access to Kubernetes is important? 
 
