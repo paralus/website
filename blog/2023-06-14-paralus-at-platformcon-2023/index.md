@@ -61,7 +61,7 @@ Access management in Kubernetes can pose several challenges, some of which are c
 
 Addressing these challenges often involves a combination of well-defined processes, training, automation, and the use of specialized tools to simplify access management and enhance security in Kubernetes environments.
 
-## Enters Paralus, centralized RBAC and authentication solution
+## Enter Paralus, a centralized RBAC and authentication solution
 
 [Paralus](https://github.io/paralus/paralus) is an open-source project that focuses on RBAC and authentication in Kubernetes environments. It offers a single pane of glass for RBAC management and enhances security through centralized control. 
 
