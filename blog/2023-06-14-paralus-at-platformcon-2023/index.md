@@ -53,7 +53,7 @@ Access management in Kubernetes can pose several challenges, some of which are c
 
 - **Complexity**: Kubernetes has a complex access control model, involving multiple components and concepts like Roles, RoleBindings, ServiceAccounts, and ClusterRoles. Understanding and managing these components can be challenging, especially for beginners or organizations without prior experience with Kubernetes.
 
-- **Role-Based Access Control (RBAC) Configuration**: Configuring RBAC policies accurately and efficiently is crucial for secure access management. Designing and implementing RBAC rules that align with an organization's security requirements can be complex, particularly when dealing with a large number of users, teams, and applications.
+- **Role-Based Access Control (RBAC) Configuration**: Configuring RBAC policies accurately and efficiently is crucial for secure access management. Designing and implementing RBAC rules that align with an organization's security requirements can be complex, particularly when dealing with a large number of clusters, users, teams, and applications.
 
 - **Dynamic Environments**: Kubernetes environments are often dynamic, with pods and services frequently created, updated, and deleted. Managing access control in such dynamic environments can be challenging, as permissions need to be adjusted accordingly to ensure users and applications have the appropriate access to resources.
 
@@ -74,7 +74,7 @@ Addressing these challenges often involves a combination of well-defined process
 
 ## Zero-Trust Kubernetes access with Paralus
 
-Paralus grants authorized users seamless and secure access to all clusters with a native and familiar kubectl experience by acting as a proxy between the users and systems needing access and the Kubernetes API server. It also addresses one of Kubernetes' main pain points by eliminating the burden of managing Kubernetes access controls cluster by cluster. Without Paralus, companies must manually manage access to each cluster using jump hosts or VPNs, and build custom tooling to audit and map all actions performed to a user's identity – all of which which is error-prone and increases the risk of breaches as the number of clusters grows.  
+Paralus grants authorized users seamless and secure access to all clusters with a native and familiar kubectl experience by acting as a proxy between the users and systems needing access and the Kubernetes API server. It also addresses one of Kubernetes' main pain points by eliminating the burden of managing Kubernetes access controls cluster by cluster. Without Paralus, companies must manually manage access to each cluster using jump hosts or VPNs, and build custom tooling to audit and map all actions performed to a user's identity – all of which which is error-prone and increases the risk of breaches as the number of clusters grow.  
 
 Benefits of using Paralus:
 
