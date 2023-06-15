@@ -14,7 +14,7 @@ The event also featured a diverse range of talks ranging from platform-culture, 
 
 <!--truncate -->
 
-In this blog post, we'll be sharing our experience of interacting with attendees at [PlatformCon 2023](https://platformcon.com/) virtually, some glimpses of our talk [Enable secure self-service access to Kubernetes clusters with Paralus](https://www.youtube.com/watch?v=UbLnCGOv0Rk). how paralus removes the cognitive load from platform team's working on repetitive tasks including setting up RBAC, revoking permissions, pre-configuring roles across clusters, namespaces, projects, and more.
+In this blog post, we'll be sharing our experience of interacting with attendees at [PlatformCon 2023](https://platformcon.com/) virtually, some glimpses of our talk - [Enable secure self-service access to Kubernetes clusters with Paralus](https://www.youtube.com/watch?v=UbLnCGOv0Rk). where we spoke about how Paralus removes the cognitive load from platform teams working on repetitive tasks including setting up RBAC, revoking permissions, pre-configuring roles across clusters, namespaces, projects, and more.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UbLnCGOv0Rk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
