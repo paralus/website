@@ -22,7 +22,7 @@ During [PlatformCon 2023](https://platformcon.com/), we were inundated with visi
 
 Platform engineering was the most discussed topic at PlatformCon. As software gets more complex and Kubernetes enters the enterprise, the idea of Kubernetes being a “platform for platforms” is becoming more and more ubiquitous. 
 
-A bit about “Platform engineering” is a discipline focused on building and maintaining the underlying infrastructure and tools that enable developers to build, deploy, and run software applications efficiently. It involves creating a stable and scalable platform that provides a foundation for software development, deployment, and operations.
+Platform engineering is a discipline focused on building and maintaining the underlying infrastructure and tools that enable developers to build, deploy, and run software applications efficiently. It involves creating a stable and scalable platform that provides a foundation for software development, deployment, and operations.
 
 **[Six Guiding Principles For Platform Teams](https://www.forbes.com/sites/forbestechcouncil/2023/02/23/how-to-empower-modern-kubernetes-management-with-a-platform-team-model/?sh=1690484c52c7)**: 
 - Consistent Automation
