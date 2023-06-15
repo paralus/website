@@ -90,7 +90,7 @@ Paralus' centralized RBAC and authentication capabilities, organizations can eff
 
 PlatformCon 2023 was packed with internal platform use cases, blueprints and stories from a wide range of companies and platform practitioners. Speakers revealed the continued excited journey, roadmap to succeeding at platform engineering with better developer productivity and accelerated product development.
 
-And while there is no one-size-fits all approach to platform engineering. It boils down to each organization’s specific requirements, many speakers stressed that continuous maintenance and development of the platform are key ingredients.
+And while there is no one-size-fits-all approach to platform engineering,  it boils down to each organization’s specific requirements. Many speakers stressed that continuous maintenance and development of the platform are vital.
 
 Developers are not necessarily the only users of the platform. Platform teams must thoroughly understand all of their internal user personas, and their needs, and develop the right kind of backend and user interfaces for the platform that delivers maximum value to all their internal users. 
 
