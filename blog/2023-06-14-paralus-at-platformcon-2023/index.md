@@ -40,7 +40,7 @@ Teams should always be able to review alerts, verify cluster health and check me
 
 Read more about the [guiding principles for platform teams](https://www.forbes.com/sites/forbestechcouncil/2023/02/23/how-to-empower-modern-kubernetes-management-with-a-platform-team-model/?sh=1690484c52c7)
 
-*In the section below we will be referring to more on this concept **Security Preparedness,** * typical challenges that enterprises face, how paralus can help platform teams enable a seamless kubectl experience, and centralize the config of k8s access controls for their developers across clusters running in public cloud environments and/or on-premise data centers.
+*In the section below we will be referring to more on this concept **Security Preparedness,** * typical challenges that enterprises face, how Paralus can help platform teams enable a seamless kubectl experience, and centralize the config of Kubernetes access controls for their developers across clusters running in public cloud environments and/or on-premise data centers.
 
 ## Why securing access to Kubernetes is important? 
 
@@ -65,7 +65,7 @@ Access management in Kubernetes can pose several challenges, some of which are c
 
 Addressing these challenges often involves a combination of well-defined processes, training, automation, and the use of specialized tools to simplify access management and enhance security in Kubernetes environments.
 
-## Enters Paralus, centralized RBAC and authentication solution
+## Enter Paralus, a centralized RBAC and authentication solution
 
 [Paralus](https://github.io/paralus/paralus) is an open-source project that focuses on RBAC and authentication in Kubernetes environments. It offers a single pane of glass for RBAC management and enhances security through centralized control. 
 
