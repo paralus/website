@@ -34,7 +34,7 @@ Platform engineering is a discipline focused on building and maintaining the und
 
 *In this blog we will be referring to more on **Kubernetes access management** or better to call it **Security Preparedness:** *
 
-With the right access to the right roles, separation of duties becomes easier to implement and enforce, and it becomes easier for the platform and security teams to protect against unauthorized use.  
+With the right access to the right roles, separation of duties becomes easier to implement and enforce, and it becomes easier for the platform and security teams to protect against unauthorized access.  
 
 ## Why is to Secure Access to k8s Important? 
 
