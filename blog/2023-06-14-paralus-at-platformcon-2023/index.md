@@ -24,7 +24,7 @@ Platform engineering was the most discussed topic at PlatformCon. As software ge
 
 Platform engineering is a discipline focused on building and maintaining the underlying infrastructure and tools that enable developers to build, deploy, and run software applications efficiently. It involves creating a stable and scalable platform that provides a foundation for software development, deployment, and operations.
 
-**[Six Guiding Principles For Platform Teams](https://www.forbes.com/sites/forbestechcouncil/2023/02/23/how-to-empower-modern-kubernetes-management-with-a-platform-team-model/?sh=1690484c52c7)**: 
+**Six Guiding Principles For Platform Teams**
 - Consistent Automation
 - Security Preparedness
 - Centralized Visibility
