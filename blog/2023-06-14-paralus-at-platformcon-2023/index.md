@@ -68,7 +68,7 @@ Paralus is an open-source project that focuses on RBAC and authentication in Kub
 <img src="/img/docs/paralus-platformcon-2023.png" alt="how paralus works" height="90%" width="90%"/>  
 
 
-## Zero-Trust K8s Access with Paralus
+## Zero-Trust Kubernetes access with Paralus
 
 Paralus grants authorized users seamless and secure access to all clusters with a native and familiar kubectl experience by acting as a proxy between the users and systems needing access and the K8s API server. It also addresses one of K8s' main pain points by eliminating the burden of managing K8s access controls cluster by cluster. Without Paralus, companies must manually manage access to each cluster using jump hosts or VPNs, and build custom tooling to audit and map all actions performed to a user's identity – all of which which is error-prone and increases the risk of breaches as the number of clusters grows.  
 
