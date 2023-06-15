@@ -63,7 +63,7 @@ Addressing these challenges often involves a combination of well-defined process
 
 ## Entering Paralus, centralized RBAC and Authentication
 
-Paralus is an open-source project that focuses on RBAC and authentication in Kubernetes environments. It offers a single pane of glass for RBAC management and enhances security through centralized control. 
+[Paralus](https://github.io/paralus/paralus) is an open-source project that focuses on RBAC and authentication in Kubernetes environments. It offers a single pane of glass for RBAC management and enhances security through centralized control. 
 
 <img src="/img/docs/paralus-platformcon-2023.png" alt="how paralus works" height="90%" width="90%"/>  
 
