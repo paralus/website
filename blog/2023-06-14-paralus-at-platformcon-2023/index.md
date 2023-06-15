@@ -6,7 +6,7 @@ tags: [paralus]
 image: /img/docs/paralus-platformcon-2023-speaker-banner.jpeg 
 ---
 
-With over 150 speakers and 20,000 attendees and countless more participated virtually, Platform engineering is constantly evolving. [PlatformCon 2023](https://platformcon.com/), the virtual conference created by and for platform engineers, is proof, it was a hub of activity and excitement for tech enthusiasts and industry professionals alike. Team paralus is so excited to be a part of such a vibrant community for second edition of #PlatformCon.
+With over 150 speakers and 20,000 attendees [PlatformCon 2023](https://platformcon.com/), the virtual conference created by and for platform engineers was a hub of activity and excitement for tech enthusiasts and industry professionals alike. Team Paralus was also a part of such a vibrant community for the second edition of PlatformCon.
 
 This event brought together a global community of techies, developers, and platform engineers enthusiasts to share the latest advancements and trends in the field of platform engineering. 
 
