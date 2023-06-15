@@ -36,7 +36,7 @@ Platform engineering is a discipline focused on building and maintaining the und
 
 With the right access to the right roles, separation of duties becomes easier to implement and enforce, and it becomes easier for the platform and security teams to protect against unauthorized access.  
 
-## Why is to Secure Access to k8s Important? 
+## Why securing access to Kubernetes is important? 
 
 The inability to secure K8s infrastructure is a growing problem for organizations. In May 2022, a non-profit security organization named [The Shadowserver Foundation](https://www.shadowserver.org/news/over-380-000-open-kubernetes-api-servers/) scanned more than 450,000 systems hosting K8s and found more than 380,000 (84 percent) of these systems were accessible via the Internet, potentially providing an opening into a corporate network. In fact, the data shows that the majority of K8s API servers are found in the United States (nearly 53 percent).
 
