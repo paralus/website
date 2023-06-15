@@ -18,6 +18,10 @@ In this blog post, we'll be sharing our experience of interacting with attendees
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UbLnCGOv0Rk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+
+<br/>
+<br/>
+
 During [PlatformCon 2023](https://platformcon.com/), we were inundated with visitors reaching out to us on the Platform Engineering community [slack channel](https://platformengin-b0m7058.slack.com/join/shared_invite/zt-1vsqjlb51-SiDy9cp2EBGffIUj5_g2mA#/shared-invite/email), who were keen to learn more about our project. We had some quick demos on how to use the project, along with some tasty cookies and cool stickers to give away. The visitors were curious about the project and its potential, and some of them even reached out for a dedicated demo of the tool post PlatformCon.   
 
 Platform engineering was the most discussed topic at PlatformCon. As software gets more complex and Kubernetes enters the enterprise, the idea of Kubernetes being a “platform for platforms” is becoming more and more ubiquitous. 
