@@ -106,7 +106,6 @@ We're a small team of maintainers and our project is easy to get involved with. 
 - Join Paralus as a [contributor](https://github.com/paralus/paralus/blob/main/CONTRIBUTING.md)
 - You can refer to our [quickstart guides](https://www.paralus.io/docs/quickstart/) to get started with Paralus.
 
-#### We know RBAC, so you don't have too, 
 
 **Remember:** *Not every user needs the unrestricted ability to create, modify and delete kubernetes resources*. 
 
