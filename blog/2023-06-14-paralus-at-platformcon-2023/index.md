@@ -10,7 +10,7 @@ With over 150 speakers and 20,000 attendees [PlatformCon 2023](https://platformc
 
 This event brought together a global community of techies, developers, and platform engineers to share the latest advancements and trends in the field of platform engineering. 
 
-The event also featured a diverse range of talks, covering topics ranging from platform-culture, platform-blueprint, platform-impact to platform-stories. While it was impossible to attend all of them, we have been revisiting some of the talks that were shared on [Platform Engineering YouTube Channel](https://www.youtube.com/@PlatformEngineering).  
+The event also featured a diverse range of talks ranging from platform-culture, platform-blueprint, platform-impact to platform-stories. You can watch all the sessions on the  [Platform Engineering YouTube Channel](https://www.youtube.com/@PlatformEngineering).  
 
 <!--truncate -->
 
