@@ -1,7 +1,7 @@
 ---
 slug: paralus-and-kamaji-integration
 title: "Streamlining Kubernetes Cluster Management and RBAC with Kamaji and Paralus"
-authors: [saim]
+authors: [saim, dario]
 tags: [paralus, Kamaji]
 image: /img/docs/paralus-kamaji-blog.png
 ---
