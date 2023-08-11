@@ -66,13 +66,13 @@ If you are unable to access your cluster via kubectl from the dashboard, check o
 
 An open source access manager for Kubernetes clusters, Paralus enables teams to provide secure access to Kubernetes clusters. It lets you create and manage access control policies for people, teams and services across multiple Kubernetes clusters without requiring any modifications to your firewall.
 
-Users can simply import K8 clusters into Paralus projects and define rights on a project to project basis. You can also use Paralus to set up any SSO service using GitHub, Azure AD, Okta, etc. so that users can sign-in onto their clusters with the access rights they were given. 
+Users can simply import K8 clusters into Paralus projects and define rights on a project to project basis. You can also use Paralus to set up any SSO service using GitHub, Gitlab, Google, Okta, and Slack at the moment so that users can sign-in onto their clusters with the access rights they were given.
 
 It also records logs for audit and compliance, so you can see who and when did what on your K8s infrastructure. Paralus can be used with a web GUI, CLI, or API.
 
 ### 2. Is Paralus a CNCF Project?
 
-Paralus is currently a candidate in the CNCF Sandbox application process.
+Paralus is a [CNCF Sandbox project](https://www.cncf.io/projects/paralus/).
 
 ### 3. How and where can I try it myself?
 
@@ -84,7 +84,14 @@ Support for Paralus is available via [community Slack](https://join.slack.com/t/
 
 ### 5. How is this different from Teleport?
 
-Teleport while it also has the ability to provide secure access to Kubernetes clusters is a much more clunky solution as it:
+[Teleport](https://goteleport.com/) is an identity-aware access management and security for dynamic environments such as Kubernetes clusters, databases, and other cloud resources. Below are some of the salient features of Teleport:
+
+- Identity-Aware Access Management: Teleport provides fine-grained access control based on user identities, roles, and permissions, ensuring secure access to resources.
+- Single Sign-On (SSO): Users can log in once and access multiple resources without the need for repeated authentication, streamlining the user experience.
+- Multi-Factor Authentication (MFA): Enhances security by requiring additional authentication factors beyond just a password.
+- Session Recording and Audit Trails: Teleport records user sessions and access events, providing a comprehensive audit trail for compliance and security monitoring.
+
+While it also has the ability to provide secure access to Kubernetes clusters is a much more clunky solution as it:
 
 - requires setup per cluster
 - requires the use of Kubernetes secrets to mount the Teleport user token to the cluster
