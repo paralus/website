@@ -5,7 +5,7 @@ description: "Learn about advanced zero trust security principles within Kuberne
 date: 2023-08-02
 authors: [nirav]
 image: /img/blogs/paralus-at-kcd-bengaluru-2023/kcd-blr-paralus.jpg
-tags: ["zero-trust-security","paralus","zero-trust-access"]
+tags: ["zero-trust-security","zero-trust-access"]
 ---
 
 <head>
