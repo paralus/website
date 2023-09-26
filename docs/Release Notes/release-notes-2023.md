@@ -17,9 +17,10 @@ We have made significant improvements to auditlogs, with v0.2.6 ability to view 
 Prior to paralus v0.2.5, users will not have org, partner metadata information in kratos identities which will impact audit logs screens, apply below migrations if you are upgrading paralus
 
 `update identities set metadata_public = jsonb_set(metadata_public, '{organization}', '"replace-with-your-organization-id"', true);`
+
 `update identities set metadata_public = jsonb_set(metadata_public, '{partner}', '"replace-with-your-partner-id"', true);`
 
-Security Improvements
+**Security Improvements**
 
 Enhance the security of all container images using [cosign](https://github.com/sigstore/cosign), providing the ability to verify images that are part of our official release.
 
@@ -43,7 +44,7 @@ Notable bug fixes that you should be aware of
 - Fixed organization admins to view secrets with restrictions enabled.
 - Cluster API response to contain relay information as part of annotations for consumption.
 
-Enhanced Security Posture
+**Enhanced Security Posture**
 - Introduced security vulnerability scanning as part of the code contributions to paralus
 
 [Click here](https://github.com/paralus/paralus/releases/tag/v0.2.4) to view the detailed changelog.
