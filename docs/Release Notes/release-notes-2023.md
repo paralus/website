@@ -16,9 +16,9 @@ We have made significant improvements to auditlogs, with v0.2.6 ability to view 
 
 Prior to paralus v0.2.5, users will not have org, partner metadata information in kratos identities which will impact audit logs screens, apply below migrations if you are upgrading paralus
 
-`update identities set metadata_public = jsonb_set(metadata_public, '{organization}', '"replace-with-your-organization-id"', true);`
+`update identities set metadata_public = jsonb_set(coalesce(metadata_public, '{}'), '{Organization}', '"replace-with-your-organization-id"', true);`
 
-`update identities set metadata_public = jsonb_set(metadata_public, '{partner}', '"replace-with-your-partner-id"', true);`
+`update identities set metadata_public = jsonb_set(coalesce(metadata_public, '{}'), '{Partner}', '"replace-with-your-partner-id"', true);`
 
 **Security Improvements**
 
