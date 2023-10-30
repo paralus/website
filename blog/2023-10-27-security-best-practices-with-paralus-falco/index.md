@@ -1,6 +1,6 @@
 ---
 slug: security-best-practices-with-paralus-and-falco
-title: "Security best practices with Paralus and Falco"
+title: "Security Best Practices for Multi-Tenant Architectures with CNCF projects Paralus and Falco"
 authors: [naveen, thomas]
 tags: [paralus, falco]
 ---
