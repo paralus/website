@@ -22,7 +22,7 @@ Teams that ignore this issue or handle this poorly not only have to deal with ma
 
 Here is the title of our presentation and we also had a live demonstration to help the attendees understand how this worked behind the scenes.
 
-![zero-trust-or-bust](/img/blogs/paralus-at-devopscon-2023/zero-trust-or-bust-devopscon-2023.png)
+<img src="/img/blogs/paralus-at-devopscon-2023/zero-trust-or-bust-devopscon-2023.png" alt="zero trust or bust" height="90%" width="90%"/>  
 
 ### Learnings
 
