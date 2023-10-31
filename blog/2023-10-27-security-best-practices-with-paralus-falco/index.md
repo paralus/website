@@ -5,7 +5,6 @@ authors: [naveen, thomas]
 tags: [paralus, falco]
 ---
 
-## Security Best Practices for Multi-Tenant Architectures with CNCF projects Paralus and Falco
 Organizations today need to efficiently manage resources, ensure security, and foster innovation—all within shared environments. [MultiTenancyCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/co-located-events/multi-tenancycon/), a co-located event at [KubeCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/) is where the brightest minds in the industry come together to address these challenges head-on.
 
 <!--truncate -->
