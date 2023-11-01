@@ -47,33 +47,33 @@ In this example we are going to deploy paralus core to the same cluster as argoc
 
 ```
 argocd app create paralus-core
+```
 
+```
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-name: paralus-core
+  name: paralus-core
 spec:
-destination:
-name: ''
-namespace: paralus
-server: 'https://kubernetes.default.svc'
-source:
-path: charts/ztka
-repoURL: 'https://github.com/paralus/helm-charts.git'
-targetRevision: HEAD
-helm:
-parameters:
-- name: analytics.enable
-value: 'false'
-- name: deploy.postgresql.enable
-value: 'true'
-- name: kratos.kratos.development
-value: 'true'
-sources: []
-project: default
-syncPolicy:
-syncOptions:
-- CreateNamespace=true
+  destination:
+    name: ''
+    namespace: paralus
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: charts/ztka
+    repoURL: 'https://github.com/paralus/helm-charts.git'
+    targetRevision: HEAD
+  helm:
+    parameters:
+      - name: deploy.postgresql.enable
+        value: 'true'
+      - name: kratos.kratos.development
+        value: 'true'
+    sources: []
+  project: default
+  syncPolicy: null
+  syncOptions:
+    - CreateNamespace=true
 ```
 
 Next up synchronize the application to deploy Paralus core components to your target cluster
@@ -92,7 +92,9 @@ Now you can access paralus console after [configuring your DNS Settings](https:/
 
 ```
 argocd app create gke-dev
+```
 
+```
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -111,6 +113,7 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+
 ```
 
 <img src="/img/docs/relay-agent-argoapp.png" alt="relay agent argo app sync" height="60%" width="60%"/>  
@@ -143,7 +146,9 @@ Let’s say we add a new guestbook application to above cluster as our destinati
 
 ```
 argocd app create guestbook
+```
 
+```
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -167,7 +172,7 @@ spec:
 
 Next up synchronize the guestbook app
 
-<img src="/img/docs/relay-agent-argoapp.png" alt="relay agent argo app sync" height="60%" width="60%"/>  
+<img src="/img/docs/guestbook-argoapp.png" alt="relay agent argo app sync" height="60%" width="60%"/>  
 <br/>
 
 
