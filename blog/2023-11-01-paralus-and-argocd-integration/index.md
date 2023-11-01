@@ -81,10 +81,12 @@ Next up synchronize the application to deploy Paralus core components to your ta
 <img src="/img/docs/paralus-core-argoapp.png" alt="paralus core argocd app sync" height="60%" width="60%"/>  
 <br/>
 
+
 Now you can access paralus console after [configuring your DNS Settings](https://www.paralus.io/docs/Installation/#domain-name-setup)
 
 <img src="/img/docs/paralus-console.png" alt="paralus console" height="60%" width="60%"/>  
 <br/>
+
 
 [**Relay Agents:**](https://www.paralus.io/docs/architecture/core-components#relay-agent) All the Paralus imported clusters can be configured as separate argocd applications. This enables managing and upgrading relay agents by just updating the version in git repo. Very useful to upgrade a fleet of agents across imported clusters.
 
@@ -113,6 +115,7 @@ spec:
 
 <img src="/img/docs/relay-agent-argoapp.png" alt="relay agent argo app sync" height="60%" width="60%"/>  
 <br/>
+
 
 ## Integrating Argo CD with Paralus
 
@@ -167,10 +170,12 @@ Next up synchronize the guestbook app
 <img src="/img/docs/relay-agent-argoapp.png" alt="relay agent argo app sync" height="60%" width="60%"/>  
 <br/>
 
+
 Verifying the auditlogs, we can see that the guestbook application has been deployed with paralus system user having necessary permissions.
 
 <img src="/img/docs/paralus-argocd-auditlogs.png" alt="paralus argocd audit logs" height="60%" width="60%"/>  
 <br/>
+
 
 By integrating Argo CD with Paralus, organizations can achieve a robust, zero-trust security model that safeguards their Kubernetes infrastructure and the applications running within it.
 
