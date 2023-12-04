@@ -17,6 +17,7 @@ Since Paralus uses OIDC under the hood, it can work with virtually every identit
 - [GitHub](github)
 - [GitLab](gitlab)
 - [Google](google)
+- [Keycloak](keycloak)
 - [OKTA](okta)
 - [Slack](slack)
 
