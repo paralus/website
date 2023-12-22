@@ -4,6 +4,26 @@ description: "Paralus release history with release notes for 2023"
 slug: /release-notes/2023
 ---
 ---
+
+## v0.2.7
+
+**December 21, 2023**
+
+Well this is our last release for the year 2023 ! 
+
+We have fixed a few minor issues related to cli, paralus and prompt improving the ability to comprehend pctl outputs.
+
+Added base mapper file for keycloak and made the documentation detailing the steps available to all, thanks [Rob Kooper](https://github.com/robkooper) for your contribution ! 
+
+Multiple components underwent changes
+
+[Click here](https://github.com/paralus/paralus/releases/tag/v0.2.6) to view the detailed changelog for paralus.
+
+[Click here](https://github.com/paralus/prompt/releases/tag/v0.1.2) to view the detailed changelog for prompt.
+
+[Click here](https://github.com/paralus/cli/releases/tag/v0.1.5) to view the detailed changelog for cli.
+
+
 ## v0.2.6
 
 **September 25, 2023**
