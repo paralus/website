@@ -40,6 +40,22 @@ const config = {
         },
       };
     },
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
+        config: {
+          petstore: { // "petstore" is considered the <id> that you will reference in the CLI
+            specPath: "examples/petstore.yaml", // path or URL to the OpenAPI spec
+            outputDir: "api/petstore", // output directory for generated *.mdx and sidebar.js files
+            sidebarOptions: {
+              groupPathsBy: "tag", // generate a sidebar.js slice that groups operations by tag
+            },
+          }
+        }
+      },
+    ]
   ],
 
   presets: [
@@ -56,6 +72,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/paralus/website/tree/main",
+          docItemComponent: "@theme/ApiItem" // add @theme/ApiItem here
         },
         blog: {
           showReadingTime: true,
@@ -66,6 +83,8 @@ const config = {
       }),
     ],
   ],
+
+  themes: ["docusaurus-theme-openapi-docs"], // exports ApiItem and ApiDemoPanel
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
