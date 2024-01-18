@@ -13,3 +13,12 @@ First things first, join our [Slack Community](https://join.slack.com/t/paralus/
 If you are on Twitter, don't forget to [Follow Paralus](https://twitter.com/paralus_) for latest updates.
 
 If you're looking to contribute to Paralus, we suggest you check out our [contribution guide](../references/contribution).
+
+We convene bi-weekly for our Paralus community meetings, a dynamic forum to discuss the latest project updates, showcase demos, address queries, and prioritize tasks.
+
+- **When** : 2nd and 4th Tuesday
+- **Time** :  20:30 IST | 10:00 EST | 07:00 PST
+- **Where** : [Zoom](https://paralus.io/meeting)
+- **Agenda** :  [Agenda](https://paralus.io/agenda)
+
+Join the community calls to know what's happening with Paralus - updates, issues, and everything else. You can also join the calls to share your ideas, suggestions or discuss any problem that you might be facing.
