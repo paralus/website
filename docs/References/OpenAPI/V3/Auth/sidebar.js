@@ -1,0 +1,1 @@
+module.exports = [{"type":"doc","id":"References/OpenAPI/V3/Auth/proto-rpc-v-3-auth-proto"}];

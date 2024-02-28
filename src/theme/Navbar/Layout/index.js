@@ -1,12 +1,21 @@
-import React from "react";
-import clsx from "clsx";
-import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import React from 'react';
+import clsx from 'clsx';
+import {useThemeConfig} from '@docusaurus/theme-common';
 import {
-  useThemeConfig,
   useHideableNavbar,
   useNavbarMobileSidebar,
-} from "@docusaurus/theme-common";
-import styles from "./styles.module.css";
+} from '@docusaurus/theme-common/internal';
+import {translate} from '@docusaurus/Translate';
+import NavbarMobileSidebar from '@theme/Navbar/MobileSidebar';
+
+import styles from './styles.module.css';
 
 function NavbarBackdrop(props) {
   return (
@@ -27,6 +36,11 @@ export default function NavbarLayout({ children }) {
   return (
     <nav
       ref={navbarRef}
+      aria-label={translate({
+        id: 'theme.NavBar.navAriaLabel',
+        message: 'Main',
+        description: 'The ARIA label for the main navigation',
+      })}
       className={clsx(
         "px-5 md:px-20 xl:px-60",
         "navbar text-sm",
