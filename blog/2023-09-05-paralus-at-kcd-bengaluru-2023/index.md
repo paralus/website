@@ -18,6 +18,8 @@ While container management and orchestration seem to be the way to go nowadays, 
 
 Securing Kubernetes and cluster access management is complicated, but following the zero trust principles, you can ensure that only verified and authorized requests can have access to the information. As part of creating awareness around securing Kubernetes with zero trust principles, I recently gave a [talk around this topic at Kubernetes Community Days Bengaluru 2023](https://youtu.be/mllYNHP6MpE?si=gZYfrHvzixDILX4t) that you can also watch. This blog post is based on my talk. Here, we will cover various aspects related to zero trust security and access management with Kubernetes with a practical application. 
 
+<!--truncate -->
+
 ![KCD Bengaluru Paralus talk](/img/blogs/paralus-at-kcd-bengaluru-2023/kcd-blr-paralus.jpg)
 
 ## What is Zero Trust Security?

@@ -7,6 +7,8 @@ tags: [paralus, kubecon, multitenancycon]
 
 Organizations today need to efficiently manage resources, ensure security, and foster innovation—all within shared environments. [MultiTenancyCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/co-located-events/multi-tenancycon/), a co-located event at [KubeCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/) is where the brightest minds in the industry come together to address these challenges head-on.
 
+<!--truncate -->
+
 ## MultiTenancyCon
 
 Multi-TenancyCon is a vendor-neutral conference designed to foster collaboration, discussion, and knowledge sharing on Multi-Tenancy framework and technologies, and challenges for implementing and adopting it in a production set-up. It's a congregation of brilliant minds in the world of Kubernetes, focused on addressing the challenges and opportunities that multi-tenancy presents. 
