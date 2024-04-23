@@ -2,8 +2,8 @@
 slug: paralus-at-kubecon-eu-2024
 title: "Paralus at KubeCon EU 2024"
 authors: [atul]
-tags: [paralus]
-image: /img/docs/paralus-kubecon-2024.png
+tags: [paralus, conference]
+image: /img/docs/paralus-at-kubecon-eu-2024.png
 ---
 
 We recently had the incredible opportunity to showcase Paralus at KubeCon EU 2024, and let us tell you, it was an experience like no other. In just two years since the inception, Paralus has been part of the major KubeCons and has been garnering interest from individuals and organizations alike.
