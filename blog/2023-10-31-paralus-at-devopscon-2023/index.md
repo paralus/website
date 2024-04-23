@@ -9,6 +9,8 @@ In late Sep 2023, we had the opportunity to speak, present and participate at De
 
 DevOpsCon is a global conference focused on **CI/CD, Kubernetes Ecosystem, Agile & Lean Business**. If you live outside the United States, you may want to attend one of their [conferences in other cities](https://devopscon.io/?loc=all) such as Munich, Singapore, London and Berlin.
 
+<!--truncate -->
+
 This year's conference in New York was held at the Marriott near [Brooklyn Bridge](https://en.wikipedia.org/wiki/Brooklyn_Bridge) which is a fantastic location, literally right across from the Brooklyn Bridge and [NYU Engineering](https://engineering.nyu.edu/).
 
 Our goals at this conference were very simple

@@ -9,6 +9,8 @@ image: /img/docs/paralus-kamaji-blog.png
 ## Introduction
 The world of Kubernetes has evolved rapidly, transforming the way organizations manage containerized applications. In this age of dynamic workloads and cloud-native architecture, security, and access control are paramount. Argo CD and Paralus are two powerful tools that have emerged to address these concerns, enabling organizations to implement zero-trust principles in their Kubernetes environments. In this blog, we'll explore the concepts behind Argo CD and Paralus and delve into their integration for zero-trust Kubernetes access.
 
+<!--truncate -->
+
 ## Understanding Argo CD
 
 [**Argo CD**](https://argo-cd.readthedocs.io/en/stable/), an open-source GitOps continuous delivery tool, simplifies the deployment and management of applications in Kubernetes clusters. GitOps is a methodology that uses Git as a single source of truth for both infrastructure and application configurations. Argo CD watches your Git repository for changes and ensures that the actual state of the cluster matches the desired state defined in the repository.
