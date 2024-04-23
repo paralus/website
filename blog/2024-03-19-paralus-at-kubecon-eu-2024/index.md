@@ -2,7 +2,7 @@
 slug: paralus-at-kubecon-eu-2024
 title: "Paralus at KubeCon EU 2024"
 authors: [atul]
-tags: [paralus, conference]
+tags: [paralus, conference, kubecon]
 image: /img/docs/paralus-at-kubecon-eu-2024.png
 ---
 
