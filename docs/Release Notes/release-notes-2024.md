@@ -13,7 +13,7 @@ In our latest release, we've fixed the issue with project creation and updates w
 
 ** Breaking changes **
 
-This relese introduces new permissions for users to download CLI configurations.
+This release introduces new permissions for non-admin users to download CLI configurations. Prior to Paralus v0.2.8, non-admin users were unable to download CLI configurations, apply below migrations if you are upgrading Paralus from a prior version
 
 ```sql
 -- insert records into authsrv_resourcepermission
