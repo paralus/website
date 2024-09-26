@@ -1,0 +1,1 @@
+module.exports = [{"type":"doc","id":"References/OpenAPI/Role/Rolepermission/rolepermission-management-service"},{"type":"category","label":"RolepermissionService","items":[{"type":"doc","id":"References/OpenAPI/Role/Rolepermission/rolepermission-service-get-rolepermissions","label":"RolepermissionService_GetRolepermissions","className":"api-method get"}]}];
