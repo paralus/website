@@ -2,18 +2,20 @@
 title: 2023
 description: "Paralus release history with release notes for 2023"
 slug: /release-notes/2023
+sidebar_position: 2
 ---
+
 ---
 
 ## v0.2.7
 
 **December 21, 2023**
 
-Well this is our last release for the year 2023 ! 
+Well this is our last release for the year 2023 !
 
 We have fixed a few minor issues related to cli, paralus and prompt improving the ability to comprehend pctl outputs.
 
-Added base mapper file for keycloak and made the documentation detailing the steps available to all, thanks [Rob Kooper](https://github.com/robkooper) for your contribution ! 
+Added base mapper file for keycloak and made the documentation detailing the steps available to all, thanks [Rob Kooper](https://github.com/robkooper) for your contribution !
 
 Multiple components underwent changes
 
@@ -22,7 +24,6 @@ Multiple components underwent changes
 [Click here](https://github.com/paralus/prompt/releases/tag/v0.1.2) to view the detailed changelog for prompt.
 
 [Click here](https://github.com/paralus/cli/releases/tag/v0.1.5) to view the detailed changelog for cli.
-
 
 ## v0.2.6
 
@@ -53,6 +54,7 @@ Multiple components were released
 [Click here](https://github.com/paralus/dashboard/releases/tag/v0.2.1) to view the detailed dashboard.
 
 ---
+
 ## v0.2.5
 
 **August 11, 2023**
@@ -60,16 +62,19 @@ Multiple components were released
 We've made multiple bug fixes and process improvements, a step in the right direction to enhance our security posture overall.
 
 Notable bug fixes that you should be aware of
+
 - GET cluster api now validates the project input given as part of the request.
 - Fixed organization admins to view secrets with restrictions enabled.
 - Cluster API response to contain relay information as part of annotations for consumption.
 
 **Enhanced Security Posture**
+
 - Introduced security vulnerability scanning as part of the code contributions to paralus
 
 [Click here](https://github.com/paralus/paralus/releases/tag/v0.2.4) to view the detailed changelog.
 
 ---
+
 ## v0.2.4
 
 **April 28, 2023**

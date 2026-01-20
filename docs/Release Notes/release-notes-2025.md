@@ -2,6 +2,7 @@
 title: 2025
 description: "Paralus release history with release notes for 2025"
 slug: /release-notes/2025
+sidebar_position: 4
 ---
 
 ---

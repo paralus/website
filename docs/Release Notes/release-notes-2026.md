@@ -2,6 +2,7 @@
 title: 2026
 description: "Paralus release history with release notes for 2026"
 slug: /release-notes/2026
+sidebar_position: 5
 ---
 
 ---
@@ -78,6 +79,6 @@ ALTER TABLE authsrv_apikey ALTER COLUMN created_at SET DEFAULT CURRENT_TIMESTAMP
 
 #### Multiple components underwent changes
 
-[Click here](https://github.com/paralus/paralus/releases/tag/v0.3.1) to view the detailed changelog for paralus.
+[Click here](https://github.com/paralus/paralus/releases/tag/v0.3.0) to view the detailed changelog for paralus.
 
 [Click here](https://github.com/paralus/dashboard/releases/tag/v0.2.5) to view the detailed changelog for dashboard.

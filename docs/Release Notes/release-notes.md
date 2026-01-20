@@ -2,6 +2,7 @@
 title: 2022
 description: "Paralus release history with release notes for 2022"
 slug: /release-notes/2022
+sidebar_position: 1
 ---
 
 ---
@@ -44,7 +45,6 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 - Added database auditlog storage option - [niravparikh05](https://github.com/niravparikh05)
 
-
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 **paralus/helm-charts**
@@ -52,7 +52,6 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 **Added**
 
 - Support database as a backend for audit logs - [akshay196](https://github.com/akshay196)
-
 
 Find more details in [paralus/helm-charts](https://github.com/paralus/helm-charts).
 
@@ -80,7 +79,6 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 - Fix for IdP users unable to login - [niravparikh05](https://github.com/niravparikh05)
 - Fix wrong cluster delete success message for non-privileged users - [niravparikh05](https://github.com/niravparikh05)
-  
 
 Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
@@ -96,7 +94,7 @@ Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 **Fixed**
 
 - Fixed creating project scoped role failed from cli - [niravparikh05](https://github.com/niravparikh05)
-  
+
 Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 
 ​
@@ -108,13 +106,13 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 - Default to kubectl tab view in audit logs - [niravparikh05](https://github.com/niravparikh05)
 - Remove groups and client column from audit logs system and kubectl commands tab - [niravparikh05](https://github.com/niravparikh05)
 - Make user clickable in auditlogs kubectl commands tab to view user details like group - [niravparikh05](https://github.com/niravparikh05)
-​
+  ​
 
 Find more details in [paralus/dashboard](https://github.com/paralus/dashboard).
 
 ---
 
-## v0.1.6 
+## v0.1.6
 
 **October 10, 2022**
 
@@ -129,6 +127,7 @@ Find more details in [paralus/paralus](https://github.com/paralus/paralus).
 ---
 
 ## v0.1.5
+
 ​
 **September 30,2022**
 

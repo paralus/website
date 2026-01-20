@@ -2,7 +2,9 @@
 title: 2024
 description: "Paralus release history with release notes for 2024"
 slug: /release-notes/2024
+sidebar_position: 3
 ---
+
 ---
 
 ## v0.2.9
